@@ -1,0 +1,12 @@
+{
+  // 只出类型声明，给浏览器一侧（将来的 packages/web）用。TypeScript 7 出声明时必须明确写 rootDir（TS5011）。
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "rootDir": "src",
+    "outDir": "dist/types"
+  },
+  "include": ["src/index.ts"]
+}

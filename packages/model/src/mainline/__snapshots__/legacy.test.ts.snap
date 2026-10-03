@@ -1,0 +1,972 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`skill 自己的旧主线 > 解析结果和快照相同 1`] = `
+{
+  "designSpec": [
+    {
+      "item": "informationArchitecture",
+      "status": "missing",
+    },
+    {
+      "item": "color",
+      "status": "missing",
+    },
+    {
+      "item": "typography",
+      "status": "missing",
+    },
+    {
+      "item": "layout",
+      "status": "missing",
+    },
+    {
+      "item": "interaction",
+      "status": "missing",
+    },
+    {
+      "item": "motion",
+      "status": "missing",
+    },
+    {
+      "item": "icons",
+      "status": "missing",
+    },
+    {
+      "heading": {
+        "endLine": 224,
+        "line": 214,
+        "text": "文案（用在：界面上所有的字）",
+      },
+      "item": "copywriting",
+      "status": "written",
+    },
+    {
+      "item": "agentInterface",
+      "status": "missing",
+    },
+    {
+      "heading": {
+        "endLine": 198,
+        "line": 188,
+        "text": "状态（用在：状态标签）",
+      },
+      "item": "states",
+      "status": "written",
+    },
+    {
+      "item": "accessibility",
+      "status": "missing",
+    },
+    {
+      "item": "approach",
+      "status": "missing",
+    },
+  ],
+  "otherSections": [
+    {
+      "endLine": 149,
+      "line": 141,
+      "text": "仓库和工程证据",
+    },
+  ],
+  "otherSpecHeadings": [
+    {
+      "endLine": 212,
+      "line": 200,
+      "text": "字段（用在：展示卡片的属性表，先用在队列上）",
+    },
+    {
+      "endLine": 234,
+      "line": 226,
+      "text": "小卡（用在：队列看板上的小卡）",
+    },
+    {
+      "endLine": 244,
+      "line": 236,
+      "text": "参考的取值（用在：参考的展示卡片）",
+    },
+    {
+      "endLine": 249,
+      "line": 246,
+      "text": "依赖用户的事单独露一条（用在：队列看板）",
+    },
+    {
+      "endLine": 269,
+      "line": 251,
+      "text": "内容配什么形式（决定 113）",
+    },
+    {
+      "endLine": 273,
+      "line": 271,
+      "text": "选项卡（决定 109）",
+    },
+    {
+      "endLine": 285,
+      "line": 275,
+      "text": "对齐那一块的小卡（决定 114）",
+    },
+    {
+      "endLine": 317,
+      "line": 287,
+      "text": "写作规范（决定 119 到 122）",
+    },
+  ],
+  "parts": [
+    {
+      "heading": {
+        "endLine": 9,
+        "line": 7,
+        "text": "一句话新闻稿（定位）",
+      },
+      "part": "pressRelease",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 13,
+        "line": 11,
+        "text": "给谁用",
+      },
+      "part": "audience",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 21,
+        "line": 15,
+        "text": "要完成的任务",
+      },
+      "part": "jobs",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 109,
+        "line": 23,
+        "text": "场景清单",
+      },
+      "part": "scenes",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 132,
+        "line": 111,
+        "text": "不做什么和胃口",
+      },
+      "part": "nonGoals",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 139,
+        "line": 134,
+        "text": "交付线",
+      },
+      "part": "deliveryLine",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 157,
+        "line": 151,
+        "text": "四个风险",
+      },
+      "part": "risks",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 164,
+        "line": 159,
+        "text": "常见问题与待定",
+      },
+      "part": "faq",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 172,
+        "line": 166,
+        "text": "事前验尸",
+      },
+      "part": "preMortem",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 317,
+        "line": 174,
+        "text": "设计规范（报告网页的）",
+      },
+      "part": "designSpec",
+      "present": true,
+    },
+  ],
+  "problems": [
+    {
+      "kind": "sceneLegacy",
+      "line": 27,
+      "scene": "回答疑问",
+    },
+    {
+      "count": 2,
+      "kind": "stepArrowExtra",
+      "line": 34,
+      "scene": "回答疑问",
+      "step": 7,
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 36,
+      "scene": "验收更改",
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 42,
+      "scene": "决定发现和提升",
+    },
+    {
+      "kind": "stepArrowMissing",
+      "line": 46,
+      "scene": "决定发现和提升",
+      "step": 4,
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 48,
+      "scene": "看使用阶段的结果",
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 53,
+      "scene": "中途接手",
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 58,
+      "scene": "skill 的问题反馈回来",
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 64,
+      "scene": "截图反馈",
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 72,
+      "scene": "删改场景清单",
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 79,
+      "scene": "删改设计规范",
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 85,
+      "scene": "在窄屏上看",
+    },
+    {
+      "kind": "writingSpecEllipsis",
+      "line": 305,
+      "phrase": "查……齐不齐",
+    },
+  ],
+  "scenes": [
+    {
+      "endLine": 34,
+      "legacy": true,
+      "line": 27,
+      "name": "回答疑问",
+      "steps": [
+        {
+          "do": "打开网页",
+          "expect": "页头写着系统、阶段、第几轮；五个阶段的进度；左边目录列出每一条，下面写着还剩几条没点。",
+          "line": 28,
+          "step": 1,
+        },
+        {
+          "do": "读第一条",
+          "expect": "左边依次是来源、待决定、选项、我的看法；来源一条一条的，右边有同名同号的图。",
+          "line": 29,
+          "step": 2,
+        },
+        {
+          "do": "点 a",
+          "expect": "这个选项加粗边、打勾；目录里这一条打勾；还剩几条少一条。",
+          "line": 30,
+          "step": 3,
+        },
+        {
+          "do": "写备注",
+          "expect": "备注进复制结果。",
+          "line": 31,
+          "step": 4,
+        },
+        {
+          "do": "想到别的",
+          "expect": "底部的输入框随时能写，写得多会变高。",
+          "line": 32,
+          "step": 5,
+        },
+        {
+          "do": "点底部「还剩几条没点」",
+          "expect": "跳到第一条没点的。",
+          "line": 33,
+          "step": 6,
+        },
+        {
+          "do": "全部点完",
+          "expect": "点复制回复 → 得到几行：第一行是阶段和第几轮，下面每行以块的名字开头；贴回会话。",
+          "line": 34,
+          "step": 7,
+        },
+      ],
+    },
+    {
+      "endLine": 40,
+      "legacy": true,
+      "line": 36,
+      "name": "验收更改",
+      "note": "这一页不用点",
+      "steps": [
+        {
+          "do": "打开网页",
+          "expect": "目录里有更改这一组。",
+          "line": 37,
+          "step": 1,
+        },
+        {
+          "do": "点目录里的更改",
+          "expect": "跳到改前改后图，一对一对。",
+          "line": 38,
+          "step": 2,
+        },
+        {
+          "do": "点图",
+          "expect": "放大；再点关掉。",
+          "line": 39,
+          "step": 3,
+        },
+        {
+          "do": "不认可的",
+          "expect": "截一块贴进输入框并写一句，见场景「截图反馈」。",
+          "line": 40,
+          "step": 4,
+        },
+      ],
+    },
+    {
+      "endLine": 46,
+      "legacy": true,
+      "line": 42,
+      "name": "决定发现和提升",
+      "steps": [
+        {
+          "do": "读发现",
+          "expect": "左边是来源、哪里不舒服、选项；右边是截图或真组件，下面是问题出现的位置，写着场景和步骤的名字。",
+          "line": 43,
+          "step": 1,
+        },
+        {
+          "do": "真组件",
+          "expect": "可以悬停、点；下面的按钮切换条件。",
+          "line": 44,
+          "step": 2,
+        },
+        {
+          "do": "读提升",
+          "expect": "右边是中保真线稿、效果图或操作流程。",
+          "line": 45,
+          "step": 3,
+        },
+        {
+          "do": "点选项、复制、贴回，同「回答疑问」。",
+          "expect": "",
+          "line": 46,
+          "step": 4,
+        },
+      ],
+    },
+    {
+      "endLine": 51,
+      "legacy": true,
+      "line": 48,
+      "name": "看使用阶段的结果",
+      "note": "这一页不用点，第 8 轮 2a",
+      "steps": [
+        {
+          "do": "打开使用阶段的那一页",
+          "expect": "每个场景一行：走通了，还是断在哪一步。",
+          "line": 49,
+          "step": 1,
+        },
+        {
+          "do": "断了的那一行",
+          "expect": "配着断的地方的截图。",
+          "line": 50,
+          "step": 2,
+        },
+        {
+          "do": "往下",
+          "expect": "覆盖表的缺口列在下面。",
+          "line": 51,
+          "step": 3,
+        },
+      ],
+    },
+    {
+      "endLine": 56,
+      "legacy": true,
+      "line": 53,
+      "name": "中途接手",
+      "steps": [
+        {
+          "do": "换一个人或换一次会话打开网页",
+          "expect": "页头的进度和「当前」说清做到哪里了。",
+          "line": 54,
+          "step": 1,
+        },
+        {
+          "do": "往下到队列那一块",
+          "expect": "看到还停着哪些事、各属于哪个阶段、谁提的。",
+          "line": 55,
+          "step": 2,
+        },
+        {
+          "do": "主线和决定两个文件",
+          "expect": "看得到每条为什么这样定。",
+          "line": 56,
+          "step": 3,
+        },
+      ],
+    },
+    {
+      "endLine": 62,
+      "legacy": true,
+      "line": 58,
+      "name": "skill 的问题反馈回来",
+      "note": "第 8 轮 3a",
+      "steps": [
+        {
+          "do": "你在项目的会话里同意反馈",
+          "expect": "那个会话把问题发给维护 skill 的会话。",
+          "line": 59,
+          "step": 1,
+        },
+        {
+          "do": "维护的会话",
+          "expect": "出现这条反馈和我的理解，这时 skill 还没有改。",
+          "line": 60,
+          "step": 2,
+        },
+        {
+          "do": "你决定什么时候改",
+          "expect": "不是现在就改的，进队列。",
+          "line": 61,
+          "step": 3,
+        },
+        {
+          "do": "到了那个阶段",
+          "expect": "你在页面上看到它。",
+          "line": 62,
+          "step": 4,
+        },
+      ],
+    },
+    {
+      "endLine": 70,
+      "legacy": true,
+      "line": 64,
+      "name": "截图反馈",
+      "note": "第 10 轮 4a",
+      "steps": [
+        {
+          "do": "在任何一个输入框里粘贴截图",
+          "expect": "立刻出现缩略图，光标的位置多出「〔图 1〕」。",
+          "line": 65,
+          "step": 1,
+        },
+        {
+          "do": "图还在存",
+          "expect": "复制按钮写着「正在存图」，点不了；存好之后变回「复制回复」。",
+          "line": 66,
+          "step": 2,
+        },
+        {
+          "do": "点缩略图",
+          "expect": "放大；再点关掉。",
+          "line": 67,
+          "step": 3,
+        },
+        {
+          "do": "点复制回复",
+          "expect": "最后一行是「图：」，每张图带标识的前六位。",
+          "line": 68,
+          "step": 4,
+        },
+        {
+          "do": "贴回会话",
+          "expect": "AI 列出页面存的图，用前六位对出完整的那一个，读到图；回应里说明在图上看到了什么，没有读图不回应。",
+          "line": 69,
+          "step": 5,
+        },
+        {
+          "do": "存不了的时候",
+          "expect": "页面如实写出来，并提示把截图贴在会话里。",
+          "line": 70,
+          "step": 6,
+        },
+      ],
+    },
+    {
+      "endLine": 77,
+      "legacy": true,
+      "line": 72,
+      "name": "删改场景清单",
+      "note": "第 11 轮 1a，只在构思阶段",
+      "steps": [
+        {
+          "do": "打开构思阶段的那一页",
+          "expect": "场景清单单独一块；每个场景一条，步骤摊开成一串格子，上面做什么，下面该看到什么。",
+          "line": 73,
+          "step": 1,
+        },
+        {
+          "do": "点留",
+          "expect": "目录里这一条打勾，还剩几条少一条。",
+          "line": 74,
+          "step": 2,
+        },
+        {
+          "do": "点改",
+          "expect": "这一条下面出一个输入框，写怎么改。",
+          "line": 75,
+          "step": 3,
+        },
+        {
+          "do": "点删",
+          "expect": "这一条变灰。",
+          "line": 76,
+          "step": 4,
+        },
+        {
+          "do": "复制回复",
+          "expect": "每行写场景的名字；改的带上怎么改。",
+          "line": 77,
+          "step": 5,
+        },
+      ],
+    },
+    {
+      "endLine": 83,
+      "legacy": true,
+      "line": 79,
+      "name": "删改设计规范",
+      "note": "第 15 轮 3a，只在构思阶段",
+      "steps": [
+        {
+          "do": "打开构思阶段的那一页",
+          "expect": "设计规范是一面样张墙：颜色是色块，字号是真实大小的字，圆角和间距是真实大小的方块。",
+          "line": 80,
+          "step": 1,
+        },
+        {
+          "do": "点动效的样张",
+          "expect": "小方块按写的时长动一下。",
+          "line": 81,
+          "step": 2,
+        },
+        {
+          "do": "点留、改、删",
+          "expect": "左边那一项打勾；改的出输入框；删的变灰；还剩几条跟着少。",
+          "line": 82,
+          "step": 3,
+        },
+        {
+          "do": "复制回复",
+          "expect": "每行写这一格的名字；改的带上怎么改。",
+          "line": 83,
+          "step": 4,
+        },
+      ],
+    },
+    {
+      "endLine": 87,
+      "legacy": true,
+      "line": 85,
+      "name": "在窄屏上看",
+      "note": "第 16 轮 3b",
+      "steps": [
+        {
+          "do": "窄屏打开",
+          "expect": "没有左边一栏；所有的屏一条接一条往下排；顶上写还剩几条；回复粘在底部。",
+          "line": 86,
+          "step": 1,
+        },
+        {
+          "do": "点顶上的还剩几条",
+          "expect": "滑到第一条没点的。",
+          "line": 87,
+          "step": 2,
+        },
+      ],
+    },
+  ],
+  "writingSpec": {
+    "banned": [
+      {
+        "phrase": "替人用的脚本",
+        "replacement": "走查脚本",
+      },
+      {
+        "phrase": "管落地的脚本",
+        "replacement": "落地脚本",
+      },
+      {
+        "phrase": "生成网页前的那道检查",
+        "replacement": "构建校验",
+      },
+      {
+        "phrase": "做偏的样例",
+        "replacement": "反例测试",
+      },
+      {
+        "phrase": "样例检查",
+        "replacement": "反例测试",
+      },
+      {
+        "phrase": "改行为",
+        "replacement": "功能改动",
+      },
+      {
+        "phrase": "整理",
+        "replacement": "重构",
+      },
+      {
+        "phrase": "露",
+        "replacement": "显示",
+      },
+      {
+        "phrase": "露出来",
+        "replacement": "显示",
+      },
+      {
+        "phrase": "收起来",
+        "replacement": "折叠",
+      },
+      {
+        "phrase": "点开",
+        "replacement": "展开",
+      },
+      {
+        "phrase": "那一格",
+        "replacement": "字段",
+      },
+      {
+        "phrase": "那一块",
+        "replacement": "区块",
+      },
+      {
+        "phrase": "那一屏",
+        "replacement": "页面",
+      },
+      {
+        "phrase": "拦住",
+        "replacement": "拦截",
+      },
+      {
+        "phrase": "放行",
+        "replacement": "通过",
+      },
+      {
+        "phrase": "提醒",
+        "replacement": "警告",
+      },
+      {
+        "phrase": "你定",
+        "replacement": "由用户决定",
+      },
+      {
+        "phrase": "问你",
+        "replacement": "请用户确认",
+      },
+    ],
+    "exceptions": [],
+  },
+}
+`;
+
+exports[`表单检查插件的旧主线 > 解析结果和快照相同 1`] = `
+{
+  "designSpec": [
+    {
+      "item": "informationArchitecture",
+      "status": "missing",
+    },
+    {
+      "item": "color",
+      "status": "missing",
+    },
+    {
+      "item": "typography",
+      "status": "missing",
+    },
+    {
+      "item": "layout",
+      "status": "missing",
+    },
+    {
+      "item": "interaction",
+      "status": "missing",
+    },
+    {
+      "item": "motion",
+      "status": "missing",
+    },
+    {
+      "item": "icons",
+      "status": "missing",
+    },
+    {
+      "item": "copywriting",
+      "status": "missing",
+    },
+    {
+      "item": "agentInterface",
+      "status": "missing",
+    },
+    {
+      "item": "states",
+      "status": "missing",
+    },
+    {
+      "item": "accessibility",
+      "status": "missing",
+    },
+    {
+      "item": "approach",
+      "status": "missing",
+    },
+  ],
+  "otherSections": [
+    {
+      "endLine": 96,
+      "line": 94,
+      "text": "覆盖表",
+    },
+  ],
+  "otherSpecHeadings": [],
+  "parts": [
+    {
+      "heading": {
+        "endLine": 8,
+        "line": 5,
+        "text": "1 一句话新闻稿",
+      },
+      "part": "pressRelease",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 13,
+        "line": 10,
+        "text": "2 给谁用",
+      },
+      "part": "audience",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 21,
+        "line": 15,
+        "text": "3 要完成的任务",
+      },
+      "part": "jobs",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 40,
+        "line": 23,
+        "text": "4 场景清单",
+      },
+      "part": "scenes",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 48,
+        "line": 42,
+        "text": "5 不做什么和胃口",
+      },
+      "part": "nonGoals",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 53,
+        "line": 50,
+        "text": "6 交付线",
+      },
+      "part": "deliveryLine",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 61,
+        "line": 55,
+        "text": "7 四个风险",
+      },
+      "part": "risks",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 67,
+        "line": 63,
+        "text": "8 常见问题与待定",
+      },
+      "part": "faq",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 74,
+        "line": 69,
+        "text": "9 事前验尸",
+      },
+      "part": "preMortem",
+      "present": true,
+    },
+    {
+      "heading": {
+        "endLine": 92,
+        "line": 76,
+        "text": "10 设计规范",
+      },
+      "part": "designSpec",
+      "present": true,
+    },
+  ],
+  "problems": [
+    {
+      "kind": "sceneLegacy",
+      "line": 27,
+      "scene": "任务 1，产品卖的就是这条",
+    },
+    {
+      "kind": "stepArrowMissing",
+      "line": 29,
+      "scene": "任务 1，产品卖的就是这条",
+      "step": 2,
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 31,
+      "scene": "第一次进来、空项目",
+    },
+    {
+      "kind": "stepArrowMissing",
+      "line": 32,
+      "scene": "第一次进来、空项目",
+      "step": 1,
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 34,
+      "scene": "回头看、改、管理已有的东西",
+    },
+    {
+      "kind": "stepArrowMissing",
+      "line": 35,
+      "scene": "回头看、改、管理已有的东西",
+      "step": 1,
+    },
+    {
+      "kind": "sceneLegacy",
+      "line": 37,
+      "scene": "等待和出错：加载中、失败、进行中、外部服务不在",
+    },
+    {
+      "kind": "stepArrowMissing",
+      "line": 38,
+      "scene": "等待和出错：加载中、失败、进行中、外部服务不在",
+      "step": 1,
+    },
+    {
+      "kind": "designSpecTable",
+      "line": 80,
+    },
+  ],
+  "scenes": [
+    {
+      "endLine": 29,
+      "legacy": true,
+      "line": 27,
+      "name": "任务 1，产品卖的就是这条",
+      "steps": [
+        {
+          "do": "用户做什么",
+          "expect": "看到什么",
+          "line": 28,
+          "step": 1,
+        },
+        {
+          "do": "…",
+          "expect": "",
+          "line": 29,
+          "step": 2,
+        },
+      ],
+    },
+    {
+      "endLine": 32,
+      "legacy": true,
+      "line": 31,
+      "name": "第一次进来、空项目",
+      "steps": [
+        {
+          "do": "…",
+          "expect": "",
+          "line": 32,
+          "step": 1,
+        },
+      ],
+    },
+    {
+      "endLine": 35,
+      "legacy": true,
+      "line": 34,
+      "name": "回头看、改、管理已有的东西",
+      "steps": [
+        {
+          "do": "…",
+          "expect": "",
+          "line": 35,
+          "step": 1,
+        },
+      ],
+    },
+    {
+      "endLine": 38,
+      "legacy": true,
+      "line": 37,
+      "name": "等待和出错：加载中、失败、进行中、外部服务不在",
+      "steps": [
+        {
+          "do": "…",
+          "expect": "",
+          "line": 38,
+          "step": 1,
+        },
+      ],
+    },
+  ],
+  "writingSpec": {
+    "banned": [],
+    "exceptions": [],
+  },
+}
+`;

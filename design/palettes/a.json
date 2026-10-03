@@ -1,0 +1,212 @@
+{
+ "id": "a",
+ "name": "黑白为主，一个蓝",
+ "direction": "A：纯中性灰（零彩度，不带蓝），主按钮和强调用近黑的墨；蓝只出现在选中、当前位置、链接和焦点；状态色只留绿和橙，只做字和圆点，不铺色块。",
+ "named": [
+  {
+   "name": "白",
+   "hex": "#FFFFFF",
+   "use": "页面、卡片、弹层；主按钮和蓝色圆点上的字"
+  },
+  {
+   "name": "浅底",
+   "hex": "#FAFAFA",
+   "use": "看板的列、表头、左边一栏、页面的底；标签的底；「现在」块和选中选项的底；改动行的一条浅带"
+  },
+  {
+   "name": "线",
+   "hex": "#EBEBEB",
+   "use": "所有边框和分隔线（含标签细框）；悬停的底、阶段条的底、分段按钮选中的底"
+  },
+  {
+   "name": "图标灰",
+   "hex": "#8D8D8D",
+   "use": "线性图标、空的计数、未选的圆圈、已收尾的小方块、虚线空框、悬停描边（对白底 3.3:1、对浅底 3.2:1）"
+  },
+  {
+   "name": "次字",
+   "hex": "#5C5C5C",
+   "use": "说明、属性值、属性名、时间、小标题、输入框占位字（对白底 6.7:1、对浅底 6.4:1）"
+  },
+  {
+   "name": "墨",
+   "hex": "#171717",
+   "use": "标题、正文、表格正文、主按钮、勾选框、提示框、顶栏（对白底 17.9:1）"
+  },
+  {
+   "name": "蓝",
+   "hex": "#0066DB",
+   "use": "只用在选中、当前位置（当前阶段/当前一条/等你回复）、打勾、链接、焦点环；只做字、圆点、选中框，不铺底、不描标签"
+  },
+  {
+   "name": "绿",
+   "hex": "#15803D",
+   "use": "已完成、AI 已收到、看过了、加的行的字；删/加图例（只做字、圆点、打勾）"
+  },
+  {
+   "name": "橙",
+   "hex": "#CB4600",
+   "use": "等待、没收尾、要体检、不认可、停了七天、删的行的字、出错（只做字、圆点、小方块）"
+  }
+ ],
+ "roles": {
+  "底": "白",
+  "次一级的底": "浅底",
+  "悬停的底": "线",
+  "线": "线",
+  "重一点的线": "图标灰",
+  "字": "墨",
+  "次要的字": "墨",
+  "说明的字": "次字",
+  "标注的字": "次字",
+  "图标": "图标灰",
+  "强调": "蓝",
+  "强调（主按钮）": "墨",
+  "强调的深色": "蓝",
+  "强调的浅底": "浅底",
+  "选中的底": "浅底",
+  "完成": "绿",
+  "等待": "橙",
+  "删": "橙",
+  "删的底": "浅底",
+  "加的底": "浅底"
+ },
+ "vars": {
+  "--color-neutral-50": "#FAFAFA",
+  "--color-neutral-100": "#EBEBEB",
+  "--color-neutral-200": "#EBEBEB",
+  "--color-neutral-300": "#8D8D8D",
+  "--color-neutral-400": "#8D8D8D",
+  "--color-neutral-500": "#5C5C5C",
+  "--color-neutral-600": "#5C5C5C",
+  "--color-neutral-700": "#171717",
+  "--color-neutral-800": "#171717",
+  "--color-neutral-900": "#171717",
+  "--color-neutral-950": "#171717",
+  "--color-brand-25": "#FAFAFA",
+  "--color-brand-50": "#FAFAFA",
+  "--color-brand-100": "#EBEBEB",
+  "--color-brand-200": "#EBEBEB",
+  "--color-brand-300": "#0066DB",
+  "--color-brand-400": "#0066DB",
+  "--color-brand-500": "#0066DB",
+  "--color-brand-600": "#0066DB",
+  "--color-brand-700": "#0066DB",
+  "--color-brand-800": "#0066DB",
+  "--color-brand-900": "#0066DB",
+  "--color-brand-950": "#0066DB",
+  "--color-green-50": "#FAFAFA",
+  "--color-green-100": "#EBEBEB",
+  "--color-green-200": "#15803D",
+  "--color-green-300": "#15803D",
+  "--color-green-400": "#15803D",
+  "--color-green-500": "#15803D",
+  "--color-green-600": "#15803D",
+  "--color-green-700": "#15803D",
+  "--color-green-800": "#15803D",
+  "--color-green-900": "#15803D",
+  "--color-green-950": "#15803D",
+  "--color-red-50": "#FAFAFA",
+  "--color-red-100": "#EBEBEB",
+  "--color-red-200": "#CB4600",
+  "--color-red-300": "#CB4600",
+  "--color-red-400": "#CB4600",
+  "--color-red-500": "#CB4600",
+  "--color-red-600": "#CB4600",
+  "--color-red-700": "#CB4600",
+  "--color-red-800": "#CB4600",
+  "--color-red-900": "#CB4600",
+  "--color-red-950": "#CB4600",
+  "--color-yellow-50": "#FAFAFA",
+  "--color-yellow-100": "#EBEBEB",
+  "--color-yellow-200": "#EBEBEB",
+  "--color-yellow-300": "#CB4600",
+  "--color-yellow-400": "#FFFFFF",
+  "--color-yellow-500": "#CB4600",
+  "--color-yellow-600": "#CB4600",
+  "--color-yellow-700": "#CB4600",
+  "--color-yellow-800": "#CB4600",
+  "--color-yellow-900": "#CB4600",
+  "--color-yellow-950": "#CB4600",
+  "--color-white": "#FFFFFF",
+  "--color-gray-600": "#5C5C5C",
+  "--color-gray-900": "#171717",
+  "--color-bg-brand-solid": "var(--color-neutral-900)",
+  "--color-bg-brand-solid_hover": "#171717E6",
+  "--color-border-primary": "var(--color-neutral-200)",
+  "--color-border-secondary_alt": "#1717171A",
+  "--shadow-xs": "0 1px 2px #1717170A",
+  "--shadow-skeuomorphic": "0px 0px 0px 1px #1717172E inset, 0px -2px 0px 0px #1717170D inset"
+ },
+ "literals": {
+  "#FFFFFF": "#FFFFFF",
+  "#F7F8FA": "#FAFAFA",
+  "#F0F1F4": "#EBEBEB",
+  "#E4E6EB": "#EBEBEB",
+  "#D0D4DB": "#8D8D8D",
+  "#16191E": "#171717",
+  "#3A404A": "#171717",
+  "#545B67": "#5C5C5C",
+  "#717885": "#5C5C5C",
+  "#9EA4AE": "#8D8D8D",
+  "#3558D4": "#0066DB",
+  "#2B47B3": "#0066DB",
+  "#EEF2FD": "#FAFAFA",
+  "#F6F8FE": "#FAFAFA",
+  "#1F7A4D": "#15803D",
+  "#8A5A00": "#CB4600",
+  "#9A2D24": "#CB4600",
+  "#EEF7F2": "#FAFAFA",
+  "#FDF1F0": "#FAFAFA",
+  "#10141C": "#171717",
+  "#000000": "#171717",
+  "#D5D7DA": "#8D8D8D"
+ },
+ "rationale": "旧的 18 色脏在两处：灰带蓝（#F7F8FA 到 #3A404A 都是偏蓝的冷灰，和蓝色强调互相染色，字灰还分了五级），状态色又暗又铺成浅色块（#8A5A00 读成褐、#9A2D24 读成暗红、#1F7A4D 发闷，各配一块浅底）。A 的做法：① 灰全部零彩度，照 Geist 和 shadcn 的 neutral 只留 6 级——白、#FAFAFA、#EBEBEB、#8D8D8D、#5C5C5C、#171717；字只分两级（墨 17.9:1，次字 6.7:1），图标和表示状态的线统一用 #8D8D8D（3.3:1，就是 Carbon border-strong 和 Radix gray9 的值）；悬停的底并进线色，Geist 的 gray-200 本来就同时当悬停底和边框。② 主按钮、勾选框和强调用墨，同 Vercel/shadcn 的 primary；蓝 #0066DB（Geist 的蓝相 212°，压到 43% 明度让它能当字用）只剩选中、当前位置、链接、焦点、打勾，而且只做字、圆点、2px 选中框和焦点环，不铺底、不描标签的框，Linear 改版时也是靠少用蓝来显得中性耐看。③ 状态色只留两个：绿 #15803D，和一个橙 #CB4600，后者由等待、没收尾、要体检、不认可和删共用（OKLCH 色相 40，彩度 0.18，是在浅底上还能到 4.5:1 的最艳的橙，不发褐）；都只做字和圆点，任何状态都不再有浅色底，标签一律是浅底加线色细框、字带颜色，改动行只有一条 #FAFAFA 浅带。代价：已收尾的小方块和未选的圆圈从 1.5:1 提到 3.3:1，项目页的方块会比原来重一些；green-200/red-200 同时是删/加图例的小方块，必须保留色相，所以「已完成」「看过了」标签多一圈绿细框，这是全套唯一带色的描边。",
+ "sources": [
+  {
+   "title": "Vercel Geist — Colors（步骤用途：100–300 组件底、400–600 边框、900–1000 字和图标）",
+   "url": "https://vercel.com/geist/colors"
+  },
+  {
+   "title": "Vercel 线上样式表里的 Geist 亮色值（background-200 #FAFAFA、gray-200 #EBEBEB、gray-700 #8F8F8F、gray-1000 #171717、blue-700 hsl(212 100% 48%)）",
+   "url": "https://vercel.com/geist/colors"
+  },
+  {
+   "title": "shadcn/ui — Theming（Neutral：全部 oklch 零彩度，primary oklch(0.205 0 0)≈#171717，border oklch(0.922 0 0)）",
+   "url": "https://ui.shadcn.com/docs/theming"
+  },
+  {
+   "title": "shadcn/ui button.tsx（主按钮 bg-primary hover:bg-primary/90）",
+   "url": "https://github.com/shadcn-ui/ui/blob/main/apps/v4/registry/new-york-v4/ui/button.tsx"
+  },
+  {
+   "title": "Linear — How we redesigned the Linear UI (part Ⅱ)（限制 chrome 蓝的用量；亮色下字和中性图标加深）",
+   "url": "https://linear.app/now/how-we-redesigned-the-linear-ui"
+  },
+  {
+   "title": "IBM Carbon — Color tokens（White 主题：灰阶零彩度，交互、焦点、链接共用一个蓝）",
+   "url": "https://carbondesignsystem.com/elements/color/tokens/"
+  },
+  {
+   "title": "@carbon/themes 的 white.js（layer-01 gray10 #F4F4F4、border-strong-01 gray50 #8D8D8D、text-secondary gray70、interactive/focus/link-primary = blue60 #0F62FE）",
+   "url": "https://cdn.jsdelivr.net/npm/@carbon/themes@11/src/white.js"
+  },
+  {
+   "title": "Radix Colors — Understanding the scale（1–2 底、6–8 边框、11–12 字；gray9 #8D8D8D，orange11 #CC4E00）",
+   "url": "https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale"
+  },
+  {
+   "title": "Tailwind CSS v3 默认色板（green-700 #15803D）",
+   "url": "https://v3.tailwindcss.com/docs/customizing-colors"
+  },
+  {
+   "title": "WCAG 2.2 Understanding 1.4.11 Non-text Contrast（界面部件和状态图形 3:1）",
+   "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html"
+  },
+  {
+   "title": "WCAG 2.2 Understanding 1.4.6 Contrast (Enhanced)（正文 7:1）",
+   "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-enhanced.html"
+  }
+ ]
+}

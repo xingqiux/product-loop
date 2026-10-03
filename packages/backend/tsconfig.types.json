@@ -1,0 +1,13 @@
+{
+  // 只生成类型声明，给客户端和工作台取 AppType，见「01 架构」第三节。
+  // TypeScript 7 生成声明时必须写明 rootDir，否则报 TS5011，见「02 技术选型」第三节。
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "rootDir": "src",
+    "outDir": "dist/types"
+  },
+  "include": ["src/index.ts"]
+}

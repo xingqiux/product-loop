@@ -1,0 +1,27 @@
+# 这个文件让 spikes/backend 自成一个 pnpm 工作区：在这里运行 pnpm 时，它就是工作区的根，
+# 不会被仓库根目录的工作区收进去。版本按「02 技术选型」取所选大版本或小版本里最新的补丁号，写死。
+packages:
+  - packages/*
+
+# pnpm 11 把「有被忽略的构建脚本」当成错误（ERR_PNPM_IGNORED_BUILDS），必须逐个写明。
+# better-sqlite3 13 自带预编译文件，构建脚本（node-gyp rebuild）不用跑；
+# esbuild 由 drizzle-kit 带进来，平台包已经装好，postinstall 不用跑。
+allowBuilds:
+  better-sqlite3: false
+  esbuild: false
+
+catalog:
+  '@commander-js/extra-typings': 15.0.0
+  '@hono/node-server': 2.1.1
+  '@hono/zod-validator': 0.9.1
+  '@types/better-sqlite3': 9.6.0
+  '@types/node': 24.19.0
+  better-sqlite3: 13.0.3
+  commander: 15.0.0
+  drizzle-kit: 0.31.11
+  drizzle-orm: 0.45.3
+  hono: 4.13.9
+  string-width: 8.3.0
+  tsdown: 0.23.0
+  typescript: 7.0.2
+  zod: 4.6.5

@@ -1,0 +1,206 @@
+{
+ "id": "b",
+ "name": "Radix 纯灰 + 靛蓝，十色",
+ "direction": "B：一套成体系的色阶，只取几级。Radix Colors 的 Gray（纯灰）取 2 / 6 / 9 / 11 / 12 五级加白，强调取 Indigo 11 一级，状态各取一级 11：Grass、Red、Orange。",
+ "named": [
+  {
+   "name": "白",
+   "hex": "#FFFFFF",
+   "use": "页面、卡片、弹层；状态标签的底。原来的浅绿、浅红、浅黄底都归到这里（Radix：浅色模式页面底可以直接用白）"
+  },
+  {
+   "name": "灰 2",
+   "hex": "#F9F9F9",
+   "use": "次一级的底：看板的列、表头、左边一栏、灰标签（Radix Gray 2 · subtle background）"
+  },
+  {
+   "name": "灰 6",
+   "hex": "#D9D9D9",
+   "use": "线：卡片、表格、分隔线，输入框和次按钮的边（Radix Gray 6 · subtle borders）"
+  },
+  {
+   "name": "灰 9",
+   "hex": "#8D8D8D",
+   "use": "图标、未选的圆圈、已收尾的小方块、悬停描边、空的计数和占位横线（Radix Gray 9 · graphics / accent borders，对白 3.3:1）"
+  },
+  {
+   "name": "灰 11",
+   "hex": "#646464",
+   "use": "说明、属性名和属性值、时间、小标题（Radix Gray 11 · low-contrast text）"
+  },
+  {
+   "name": "灰 12",
+   "hex": "#202020",
+   "use": "标题、正文、表格正文；阴影和悬停用它的透明度（Radix Gray 12 · high-contrast text）"
+  },
+  {
+   "name": "靛蓝 11",
+   "hex": "#3A5BC7",
+   "use": "主按钮、选中、当前阶段、打勾、等你回复、链接和选中的字；8% 透明度作当前和选中的浅底（Radix Indigo 11 · text，白字在它上面 6.0:1，所以兼作按钮底）"
+  },
+  {
+   "name": "草绿 11",
+   "hex": "#2A7E3B",
+   "use": "已完成、AI 已收到、加的行（Radix Grass 11 · text）"
+  },
+  {
+   "name": "红 11",
+   "hex": "#CE2C31",
+   "use": "删的行、改前、错误（Radix Red 11 · text）"
+  },
+  {
+   "name": "橙 11",
+   "hex": "#CC4E00",
+   "use": "等待、没收尾、要体检、停了七天、不认可；只作字、小点和细线，只放在白底上（Radix Orange 11 · text）"
+  }
+ ],
+ "roles": {
+  "底": "白",
+  "次一级的底": "灰 2",
+  "悬停的底": "灰 12（6% 透明度）",
+  "线": "灰 6",
+  "重一点的线": "灰 9",
+  "字": "灰 12",
+  "次要的字": "灰 12",
+  "说明的字": "灰 11",
+  "标注的字": "灰 11",
+  "图标": "灰 9",
+  "强调": "靛蓝 11",
+  "强调的深色": "靛蓝 11",
+  "强调的浅底": "靛蓝 11（8% 透明度）",
+  "选中的底": "靛蓝 11（8% 透明度）",
+  "完成": "草绿 11",
+  "等待": "橙 11",
+  "删": "红 11",
+  "删的底": "白",
+  "加的底": "白"
+ },
+ "vars": {
+  "--color-neutral-50": "#F9F9F9",
+  "--color-neutral-100": "#2020200F",
+  "--color-neutral-200": "#D9D9D9",
+  "--color-neutral-300": "#8D8D8D",
+  "--color-neutral-400": "#8D8D8D",
+  "--color-neutral-500": "#646464",
+  "--color-neutral-600": "#646464",
+  "--color-neutral-700": "#202020",
+  "--color-neutral-800": "#202020",
+  "--color-neutral-900": "#202020",
+  "--color-neutral-950": "#202020",
+  "--color-brand-25": "#3A5BC714",
+  "--color-brand-50": "#3A5BC714",
+  "--color-brand-100": "#3A5BC759",
+  "--color-brand-200": "#3A5BC714",
+  "--color-brand-300": "#3A5BC7",
+  "--color-brand-400": "#3A5BC7",
+  "--color-brand-500": "#3A5BC7",
+  "--color-brand-600": "#3A5BC7",
+  "--color-brand-700": "#3A5BC7",
+  "--color-brand-800": "#3A5BC7",
+  "--color-brand-900": "#3A5BC7",
+  "--color-brand-950": "#3A5BC7",
+  "--color-green-50": "#FFFFFF",
+  "--color-green-100": "#FFFFFF",
+  "--color-green-200": "#2A7E3B59",
+  "--color-green-300": "#2A7E3B59",
+  "--color-green-400": "#2A7E3B",
+  "--color-green-500": "#2A7E3B",
+  "--color-green-600": "#2A7E3B",
+  "--color-green-700": "#2A7E3B",
+  "--color-green-800": "#2A7E3B",
+  "--color-green-900": "#2A7E3B",
+  "--color-green-950": "#2A7E3B",
+  "--color-yellow-50": "#FFFFFF",
+  "--color-yellow-100": "#FFFFFF",
+  "--color-yellow-200": "#CC4E0059",
+  "--color-yellow-300": "#CC4E0059",
+  "--color-yellow-400": "#CC4E00",
+  "--color-yellow-500": "#CC4E00",
+  "--color-yellow-600": "#CC4E00",
+  "--color-yellow-700": "#CC4E00",
+  "--color-yellow-800": "#CC4E00",
+  "--color-yellow-900": "#CC4E00",
+  "--color-yellow-950": "#CC4E00",
+  "--color-red-50": "#FFFFFF",
+  "--color-red-100": "#FFFFFF",
+  "--color-red-200": "#CE2C3159",
+  "--color-red-300": "#CE2C3159",
+  "--color-red-400": "#CE2C31",
+  "--color-red-500": "#CE2C31",
+  "--color-red-600": "#CE2C31",
+  "--color-red-700": "#CE2C31",
+  "--color-red-800": "#CE2C31",
+  "--color-red-900": "#CE2C31",
+  "--color-red-950": "#CE2C31",
+  "--color-border-primary": "#D9D9D9",
+  "--color-border-secondary_alt": "#2020201A",
+  "--color-alpha-black": "#202020"
+ },
+ "literals": {
+  "#FFFFFF": "#FFFFFF",
+  "#F7F8FA": "#F9F9F9",
+  "#F0F1F4": "#2020200F",
+  "#E4E6EB": "#D9D9D9",
+  "#D0D4DB": "#8D8D8D",
+  "#16191E": "#202020",
+  "#3A404A": "#202020",
+  "#545B67": "#646464",
+  "#717885": "#646464",
+  "#9EA4AE": "#8D8D8D",
+  "#3558D4": "#3A5BC7",
+  "#2B47B3": "#3A5BC7",
+  "#EEF2FD": "#3A5BC714",
+  "#F6F8FE": "#3A5BC714",
+  "#1F7A4D": "#2A7E3B",
+  "#8A5A00": "#CC4E00",
+  "#9A2D24": "#CE2C31",
+  "#EEF7F2": "#FFFFFF",
+  "#FDF1F0": "#FFFFFF",
+  "#D5D7DA": "#D9D9D9",
+  "#373A41": "#202020",
+  "#10141C": "#202020",
+  "#000000": "#202020",
+  "#0C0E11": "#202020",
+  "#C98A12": "#CC4E00"
+ },
+ "rationale": "一、灰用 Radix 的 Gray（纯灰），不用带蓝的 Slate。旧稿的灰偏蓝紫，中段的 #717885、#545B67 看着发闷，再和褐黄、墨绿放在一起就脏；纯灰没有色相，屏幕上的色相只剩四个、各有意思：靛蓝是要你动手和选中，绿是完成和加，红是删，橙是等待和没收尾。二、每一级都按 Radix 文档写的用途取：2 级是次一级的底，6 级是不可点的细线，9 级是图形和强调描边，11 级是低对比字，12 级是高对比字；页面底按文档建议直接用白。旧稿连白在内 10 个中性色，并成白加 5 级灰：字和次要的字并为 12，说明和标注并为 11，图标和重一点的线并为 9；悬停不单列一级，用灰 12 的 6% 透明度，落在白上约等于 Gray 3，落在灰 2 上自动再深一点，这正是 Radix 透明色阶的用法。三、强调只取 Indigo 一级，按钮和字共用，省掉「强调的深色」。Radix 本来让 9 级做按钮底、11 级做字；两件事交给同一级时选 11：它做字对白 6.0:1，落在「现在」卡片里两层浅底叠起来的地方还有 4.8:1，白字在它上面也是 6.0:1；若选 9 级，那一处只剩 4.2:1（检查脚本抓到的）。8% 透明度约等于 Indigo 3，做当前和选中的浅底。四、状态色都取 11 级（文档里专给字用的一级），只作字、小点和 35% 的细线，不再铺浅底：浅绿、浅黄、浅红底全部归白，改动对比也只靠字色、删除线和 +/−。五、对比度（b-check.txt）：灰 12 对白 16.29:1；灰 11 对白 5.92:1、对灰 2 5.62:1；灰 9 对白 3.32:1、对灰 2 3.15:1，所以未选圆圈、图标和空的计数过 3:1；靛蓝 11 对白 6.00:1、对灰 2 5.70:1；草绿 11 对白 5.07:1；红 11 对白 5.21:1；橙 11 对白 4.51:1，对灰 2 只有 4.28:1，所以只放白底（渲染检查确认七个画面里的橙字都在白底上）。渲染检查逐段量了字和它真实底色的对比，没有一段低于要求。代价：已收尾的小方块和未选圆圈是同一个变量，为了圆圈过 3:1，小方块也成了灰 9，比原来重；主按钮悬停不再变深（只取了一级强调）；灰 9 落在悬停底上是 2.95:1，只在指针停留时出现。",
+ "sources": [
+  {
+   "title": "Radix Colors · Understanding the scale（12 级各自的用途、11/12 级对 2 级的对比保证、浅色模式可用白底）",
+   "url": "https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale"
+  },
+  {
+   "title": "Radix Colors · Composing a palette（Gray 是纯灰；状态色的推荐：成功 green/grass，警示 yellow/amber/orange，错误 red）",
+   "url": "https://www.radix-ui.com/colors/docs/palette-composition/composing-a-palette"
+  },
+  {
+   "title": "Radix Colors 首页（每个色阶都有对应的透明色阶，用于要和底色融合的元素）",
+   "url": "https://www.radix-ui.com/colors"
+  },
+  {
+   "title": "@radix-ui/colors 3.0.0（本方案的色值出处）",
+   "url": "https://www.npmjs.com/package/@radix-ui/colors"
+  },
+  {
+   "title": "Linear · How we redesigned the Linear UI (part Ⅱ)（主题只由底色、强调色、对比度三个量生成；减少界面里的蓝，回到中性；浅色下把字和中性图标调深）",
+   "url": "https://linear.app/now/how-we-redesigned-the-linear-ui"
+  },
+  {
+   "title": "GitHub Primer · Color usage（功能色只分字、底、线几类，底只有 default 和 muted 两个；状态色用来表达状态和动作）",
+   "url": "https://primer.style/product/getting-started/foundations/color-usage/"
+  },
+  {
+   "title": "Raycast API · Colors（整套界面只有 PrimaryText、SecondaryText 两个字色加 7 个语义色，并自动调到够对比）",
+   "url": "https://developers.raycast.com/api-reference/user-interface/colors"
+  },
+  {
+   "title": "WCAG 2.1 · Understanding 1.4.11 Non-text Contrast（界面元件和表达状态的图形至少 3:1）",
+   "url": "https://www.w3.org/WAI/WCAG21/Understanding/non-text-contrast.html"
+  }
+ ],
+ "alpha_rules": [
+  "灰 12 · 6%：悬停、阶段条和进度条的底、表格里最淡的分隔线（落在白上≈Radix Gray 3）",
+  "靛蓝 11 · 8%：当前一条、当前阶段、等你回复标签、选中的选项整列的底（≈Radix Indigo 3）",
+  "任一色 · 35%：只作细线和小点——状态标签的描边、删/加图例、删除线、「现在」卡片的描边、选中文字的底"
+ ]
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>产品循环报告</title>
+<meta name="description" content="产品循环的一轮：疑问、发现问题、提升、回到构思（每条一张卡，点选项后复制回复）、更改（改前改后图），最下面写你自己的想法。">
+<!--
+  用法：只改下面 <script id="report-data"> 里的 JSON，其余不动。
+  字段说明在同目录 README.md。图片放 report-img/，草图用 README 里的 wf-* 积木拼，证据用 evidence 对象画。
+-->
+<script id="report-data" type="application/json">
+{}
+</script>
+<style>
+/*@css*/
+</style>
+
+<div class="wrap" id="app"></div>
+<div class="lightbox" id="lightbox"><img alt=""><div class="cap"></div></div>
+<div class="sheet" id="sheet"><div class="sh-box" role="dialog" aria-modal="true" aria-labelledby="sh-t">
+  <div class="sh-h"><h3 class="sh-t" id="sh-t"></h3><span class="sh-at"></span>
+    <button type="button" class="sh-prev" title="上一条">上一条</button><button type="button" class="sh-next" title="下一条">下一条</button>
+    <button type="button" class="sh-x" title="关掉">关掉</button></div>
+  <dl class="sh-attrs"></dl><div class="sh-body"></div><div class="sh-foot"></div>
+</div></div>
+
+<script>
+/*@js*/
+</script>
+</html>

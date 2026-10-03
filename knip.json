@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/knip/schema.json",
+  "ignore": ["packages/web/src/components/ui/**", "packages/web/src/lib/is-react-component.ts"],
+  "workspaces": {
+    ".": {
+      "project": [
+        "**/*.{js,mjs,cjs,jsx,ts,tsx,mts,cts}",
+        "!skill/**",
+        "!spikes/**",
+        "!tools/legacy/**",
+        "!design/**"
+      ],
+      "vitest": {
+        "entry": ["**/*.test.ts", "!skill/**", "!spikes/**", "!tools/legacy/**", "!design/**"]
+      },
+      "entry": ["scripts/use/run.ts", "scripts/use/scenes/*.ts"]
+    }
+  }
+}

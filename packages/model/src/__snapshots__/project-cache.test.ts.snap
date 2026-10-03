@@ -1,0 +1,55 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`JSON Schema > projectId 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+  "type": "string",
+}
+`;
+
+exports[`JSON Schema > projectIdentity 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "mainlineBase": {
+      "additionalProperties": false,
+      "properties": {
+        "hash": {
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string",
+        },
+        "revision": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "revision",
+        "hash",
+      ],
+      "type": "object",
+    },
+    "projectId": {
+      "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+      "type": "string",
+    },
+    "schemaVersion": {
+      "const": 1,
+      "type": "number",
+    },
+    "skillVersion": {
+      "pattern": "^(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)(?:-[0-9A-Za-z-]+(?:\\.[0-9A-Za-z-]+)*)?$",
+      "type": "string",
+    },
+  },
+  "required": [
+    "schemaVersion",
+    "projectId",
+    "skillVersion",
+  ],
+  "type": "object",
+}
+`;

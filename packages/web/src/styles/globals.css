@@ -1,0 +1,77 @@
+/*
+ * 工作台的全局样式。按上游 styles/globals.css 改写：
+ * 先清掉 Tailwind 自带的颜色，页面上只能用主题里定义的颜色；不装 tailwindcss-animate 和排版插件（决定 192）。
+ */
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/noto-sans-sc";
+@import "@fontsource-variable/jetbrains-mono";
+@import "./reset-colors.css";
+@import "./untitled-theme.css";
+@import "./theme.css";
+
+@plugin "tailwindcss-react-aria-components";
+
+/* 深色只认 .dark-mode，系统切到深色时页面不变（决定 193）。 */
+@custom-variant dark (&:where(.dark-mode, .dark-mode *));
+/* 一千一百像素以上是宽屏的版式，和 lib/use-media.ts 的 useWide 是同一个数。 */
+@custom-variant wide (@media (min-width: 1100px));
+@custom-variant label (& [data-label]);
+@custom-variant focus-input-within (&:has(input:focus));
+
+@utility scrollbar-hide {
+  &::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+  }
+  scrollbar-width: none;
+}
+
+@utility transition-inherit-all {
+  transition-property: inherit;
+  transition-duration: inherit;
+  transition-timing-function: inherit;
+}
+
+html,
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: contextual;
+  font-kerning: normal;
+}
+
+/* 键盘停在哪里都要看得见（主线的「无障碍」一节）：自己没写焦点框的链接和按钮，用同一个蓝框。
+   放在 base 层，组件自己写的焦点样式（工具类）优先。 */
+@layer base {
+  :where(a, button, summary, select):focus-visible {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+/* 窄屏的长页顶上有一条悬浮的栏，滚到一项时开头留出它的高度。 */
+[data-item] {
+  scroll-margin-top: 3.5rem;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}

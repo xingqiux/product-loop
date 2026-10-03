@@ -1,0 +1,8 @@
+{
+  // 带 Node 的类型，查测试和只给 Node 用的入口 src/node/。浏览器的配置见 tsconfig.json。
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["node"]
+  },
+  "include": ["src"]
+}

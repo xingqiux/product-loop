@@ -1,0 +1,152 @@
+{
+  "system": "产品循环 skill",
+  "stage": "修复",
+  "round": 2,
+  "date": "2026-09-19",
+  "progress": [
+    {
+      "stage": "构思",
+      "summary": "第 3 轮七条还在等你点",
+      "state": "todo"
+    },
+    {
+      "stage": "使用",
+      "summary": "atlas design 会话会第一个用新做法跑一遍",
+      "state": "todo"
+    },
+    {
+      "stage": "检查",
+      "summary": "这一轮的来源：atlas design 会话发来三方面反馈，说你在那边逐条同意了",
+      "state": "done"
+    },
+    {
+      "stage": "修复",
+      "summary": "三方面改进了 skill，下面四条更改；新证据的样子问你一条",
+      "state": "current"
+    },
+    {
+      "stage": "提升",
+      "summary": "没有",
+      "state": "todo"
+    }
+  ],
+  "current": [
+    {
+      "problem": "一个选中加悬停的界面问题，四个阶段都没发现",
+      "fix": "检查多一种看法：推理条件叠加"
+    },
+    {
+      "problem": "有中间态的东西，截图和文字都说不清",
+      "fix": "报告右边多一种证据：真组件，能直接悬停、点"
+    },
+    {
+      "problem": "每漏一条补一条，提醒越堆越多",
+      "fix": "先抽象成类，能归进已有的不新增"
+    },
+    {
+      "problem": "用的一方容易把个案写成规则发过来",
+      "fix": "正文加一节，发的收的各三条"
+    }
+  ],
+  "asks": [
+    {
+      "title": "真组件证据：这个样子对不对",
+      "tag": "证据",
+      "saw": "atlas design 会话转来你加的一条：有中间态、要推理的组合效果，放进右边的证据，用户能直接交互。\n我做出来的样子：组件在上，一条虚线，下面一排按钮切条件。\n右边点「证据」可以试：先点「选中」，再把鼠标移上去。",
+      "why": "这是第一次做，样子定了，atlas design 那边才照着往里放真的。",
+      "options": [
+        {
+          "key": "a",
+          "title": "就这样",
+          "see": "组件在上，切条件的按钮在下，悬停和点由你自己动鼠标。\n下面一行小字写这是从哪一屏哪个组件抠的。",
+          "why": "按钮只管鼠标做不到的条件，其余都是真的手感。",
+          "cost": "右边只有三百宽，宽的组件要横向滚。",
+          "sketch": ""
+        },
+        {
+          "key": "b",
+          "title": "点开后放大到整页宽",
+          "see": "右边只放一个「打开真组件」的按钮。\n点了在页面中间弹出一个大框，组件按原尺寸放，按钮在旁边。",
+          "why": "表格行、顶栏这类宽组件放得下。",
+          "cost": "要多点一次；看证据时看不到左边的选项。",
+          "sketch": ""
+        }
+      ],
+      "stance": "站 a。\n先按小组件做；真撞到放不下的再加放大。",
+      "sources": [
+        {
+          "label": "转来的原话",
+          "kind": "file",
+          "excerpt": "把那个组件真实的样子搬过来，用户在报告页上能直接交互（悬停、点、看它动），而不是看图或读文字。\n这和已定的「可视化的东西不能用文字展示」是同一条。"
+        }
+      ],
+      "side": {
+        "note": "点「证据」试一下。这一个是我手写的样例；真用的时候必须由脚本从真实界面抠，不能手写。"
+      },
+      "evidence": {
+        "type": "live",
+        "from": "样例，不是从真实界面抠的：只为让你试这种证据的样子",
+        "html": "<button class=\"chip\">5 页</button> <button class=\"chip is-on\">10 页</button><script>1</script>",
+        "css": ".chip{padding:4px 10px;border:1px solid #ccc;border-radius:999px;background:#fff;color:#222;transition:background .2s}.chip.is-on{background:#111;color:#fff}.chip:hover{background:#eee}",
+        "toggles": [
+          {
+            "label": "选中",
+            "selector": ".chip",
+            "class": "is-on"
+          }
+        ],
+        "caption": "先点「选中」，再把鼠标移到标签上：白字落在浅灰底上",
+        "height": 170
+      }
+    }
+  ],
+  "changes": [
+    {
+      "title": "检查多一种看法：推理条件叠加",
+      "problem": "检查只看截图，截图是一个条件下的一个瞬间，条件叠起来的结果看不到",
+      "fix": "按一类组件、只两两推；截图只用来核对推理；只由检查负责，必要性和认知一致性仍逐屏看图",
+      "before": {
+        "src": "report-img/r3-check-before.jpg",
+        "caption": "改之前"
+      },
+      "after": {
+        "src": "report-img/r3-check-after.jpg",
+        "caption": "改之后"
+      }
+    },
+    {
+      "title": "报告右边多一种证据：真组件",
+      "problem": "选中再悬停、动效这类，截图和文字都说不清",
+      "fix": "脚本从真实界面抠出组件放进右边，能悬停、点；只搬得动纯样式决定的状态，搬不了的才用文字",
+      "after": {
+        "src": "report-img/r3-live.jpg",
+        "caption": "样例：选中后悬停，左边那个标签白字落在浅灰底上"
+      }
+    },
+    {
+      "title": "「每漏一条补一条」作废",
+      "problem": "漏一条就加一条提醒，提醒越堆越多，写的都是个案",
+      "fix": "先抽象成类，能归进已有提醒的不新增，原始情况只当例子。现有的提醒这次没动",
+      "before": {
+        "src": "report-img/r3-rule-before.jpg",
+        "caption": "改之前"
+      },
+      "after": {
+        "src": "report-img/r3-rule-after.jpg",
+        "caption": "改之后"
+      }
+    },
+    {
+      "title": "正文加一节：给这个 skill 提反馈",
+      "problem": "用的一方看得到原始情况，容易把个案写成规则；收的一方照单全收，skill 会劣化",
+      "fix": "发的一方三条，收的一方三条",
+      "after": {
+        "src": "report-img/r3-feedback-after.jpg",
+        "caption": "新增的一节"
+      }
+    }
+  ],
+  "findings": [],
+  "improvements": [],
+  "rethink": []
+}

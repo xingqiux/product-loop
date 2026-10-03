@@ -1,0 +1,6 @@
+{
+  // 模拟浏览器一侧的配置：lib 有 dom，没有 Node 的类型。AppType 仍然从包 A 的源码拿。
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "lib": ["es2024", "dom"], "types": [] },
+  "include": ["src/index.ts", "src/type-assertions.ts"]
+}

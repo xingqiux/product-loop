@@ -1,0 +1,1387 @@
+{
+  "exported_from": "v1-final",
+  "commit": "a6c9d9ab30135b031c6ce4950d94925283cc1c7a",
+  "function": "templates/report/10-app.js:391-463 compose",
+  "sample": "templates/report/sample.json",
+  "count": 19,
+  "shapes": [
+    {
+      "id": "empty",
+      "name": "什么都没点时的占位文字",
+      "cases": [
+        "reply-001"
+      ]
+    },
+    {
+      "id": "header",
+      "name": "第一行：阶段和第几轮",
+      "cases": [
+        "reply-008",
+        "reply-009",
+        "reply-010",
+        "reply-011",
+        "reply-012",
+        "reply-013",
+        "reply-014",
+        "reply-015",
+        "reply-018",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "header.renamed",
+      "name": "第一行的阶段是改名以前的「修复」",
+      "cases": [
+        "reply-002",
+        "reply-003",
+        "reply-004",
+        "reply-005",
+        "reply-006",
+        "reply-007",
+        "reply-016",
+        "reply-017"
+      ]
+    },
+    {
+      "id": "scenes.keep",
+      "name": "场景 保留",
+      "cases": [
+        "reply-010",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "scenes.modify",
+      "name": "场景 修改，写了怎么改",
+      "cases": [
+        "reply-010",
+        "reply-018",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "scenes.modifyBlank",
+      "name": "场景 修改，没写怎么改",
+      "cases": [
+        "reply-011"
+      ]
+    },
+    {
+      "id": "scenes.remove",
+      "name": "场景 删除",
+      "cases": [
+        "reply-010",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "spec.keep",
+      "name": "规范 保留",
+      "cases": [
+        "reply-012",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "spec.modify",
+      "name": "规范 修改，写了怎么改",
+      "cases": [
+        "reply-012",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "spec.modifyBlank",
+      "name": "规范 修改，没写怎么改",
+      "cases": [
+        "reply-013"
+      ]
+    },
+    {
+      "id": "spec.remove",
+      "name": "规范 删除",
+      "cases": [
+        "reply-012"
+      ]
+    },
+    {
+      "id": "align.understood",
+      "name": "对齐 明白",
+      "cases": [
+        "reply-014",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "align.notUnderstood",
+      "name": "对齐 不明白",
+      "cases": [
+        "reply-014",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "align.say",
+      "name": "对齐带着用户自己的话",
+      "cases": [
+        "reply-014",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "queue.drop",
+      "name": "队列 不做了",
+      "cases": [
+        "reply-015",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "card.option",
+      "name": "卡片选了选项",
+      "cases": [
+        "reply-002",
+        "reply-006",
+        "reply-007",
+        "reply-008",
+        "reply-009",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "card.optionNote",
+      "name": "选了选项，写了备注",
+      "cases": [
+        "reply-003",
+        "reply-006",
+        "reply-007",
+        "reply-017",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "card.noteOnly",
+      "name": "只写了备注",
+      "cases": [
+        "reply-004",
+        "reply-005",
+        "reply-007",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "card.veto",
+      "name": "只有一个方向的卡点了否决",
+      "cases": [
+        "reply-009"
+      ]
+    },
+    {
+      "id": "card.noteLines",
+      "name": "备注写了几行",
+      "cases": [
+        "reply-019"
+      ]
+    },
+    {
+      "id": "block.asks",
+      "name": "疑问",
+      "cases": [
+        "reply-002",
+        "reply-003",
+        "reply-004",
+        "reply-005",
+        "reply-006",
+        "reply-007",
+        "reply-008",
+        "reply-009",
+        "reply-017",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "block.findings",
+      "name": "发现",
+      "cases": [
+        "reply-006",
+        "reply-007",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "block.improvements",
+      "name": "提升",
+      "cases": [
+        "reply-006",
+        "reply-007",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "block.rethink",
+      "name": "回到构思",
+      "cases": [
+        "reply-006",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "idea",
+      "name": "想法",
+      "cases": [
+        "reply-016",
+        "reply-017",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "idea.lines",
+      "name": "想法写了几行",
+      "cases": [
+        "reply-016",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "image.mark",
+      "name": "备注和想法里的图的标记",
+      "cases": [
+        "reply-017",
+        "reply-018",
+        "reply-019"
+      ]
+    },
+    {
+      "id": "images",
+      "name": "最后一行：图的序号和标识的前六位",
+      "cases": [
+        "reply-017",
+        "reply-018",
+        "reply-019"
+      ]
+    }
+  ],
+  "pages": {
+    "sample": {
+      "system": "项目名",
+      "stage": "修复",
+      "round": 1,
+      "date": "2026-01-01",
+      "progress": [
+        {
+          "stage": "构思",
+          "summary": "定位、给谁用、场景清单、交付线写进主线",
+          "state": "done"
+        },
+        {
+          "stage": "使用",
+          "summary": "使用脚本盖住所有场景，全跑没有断点",
+          "state": "done"
+        },
+        {
+          "stage": "检查",
+          "summary": "逐屏做元素清单、问三个根问题",
+          "state": "done"
+        },
+        {
+          "stage": "修复",
+          "summary": "按用户选的选项改，改完重跑出改前改后图",
+          "state": "current"
+        },
+        {
+          "stage": "提升",
+          "summary": "以顶级产品经理的眼光提这个产品还能多做什么",
+          "state": "todo"
+        }
+      ],
+      "current": [
+        {
+          "problem": "问题简述",
+          "fix": "一句话修复方案"
+        }
+      ],
+      "asks": [
+        {
+          "title": "图标与 SVG：一套还是两套（构思用；没有就删掉这块）",
+          "tag": "图标与 SVG",
+          "saw": "代码里图标用过六种尺寸。\n两份图标文件，线宽差 0.1。",
+          "sources": [
+            {
+              "label": "第 7 轮 菜单截图",
+              "kind": "shot",
+              "src": "report-img/x.jpg"
+            },
+            {
+              "label": "两份图标文件",
+              "kind": "file",
+              "excerpt": "ui/icons.tsx  23 个，stroke 1.5，默认 14\nworkbench/icons.tsx  8 个，stroke 1.4，固定 16"
+            }
+          ],
+          "why": "两份文件就是两套规则，下次谁加图标不知道往哪加。",
+          "side": {
+            "note": "六种尺寸按真实像素画在下面，点「证据」看。"
+          },
+          "evidence": {
+            "type": "sizes",
+            "unit": "px",
+            "values": [
+              11,
+              12,
+              13,
+              16,
+              18,
+              22
+            ],
+            "keep": [
+              12,
+              14,
+              16
+            ]
+          },
+          "where": {
+            "scenario": 4,
+            "step": 3,
+            "scenarios": 9,
+            "steps": 9
+          },
+          "prior": [
+            {
+              "id": 38,
+              "text": "菜单两项用文件夹和复制图标，和其余行一样"
+            }
+          ],
+          "impact": [
+            {
+              "row": "「…」菜单",
+              "scenarios": [
+                1,
+                4
+              ]
+            },
+            {
+              "row": "工作台顶栏",
+              "scenarios": [
+                4,
+                9
+              ]
+            }
+          ],
+          "options": [
+            {
+              "key": "a",
+              "title": "并成一套",
+              "see": "选了以后主线里写成什么",
+              "why": "它成立的理由，最多三句",
+              "cost": "选它放弃了什么",
+              "sketch": "<div class=\"wf\"><div class=\"wf-row\"><span class=\"wf-pill on\">12</span><span class=\"wf-pill on\">14</span><span class=\"wf-pill on\">16</span></div></div>"
+            },
+            {
+              "key": "b",
+              "title": "保留两套",
+              "see": "…",
+              "why": "它成立的理由",
+              "cost": "…",
+              "sketch": "<div class=\"wf\"><div class=\"wf-row\"><span class=\"wf-pill\">公共 1.5</span><span class=\"wf-pill\">工作台 1.4</span></div></div>"
+            }
+          ],
+          "stance": "站 a。\n两套的差别只有 0.1 线宽和默认尺寸。"
+        },
+        {
+          "title": "追问：上次你自己做这件事是什么时候，用的什么？",
+          "saw": "我看了哪个文件、哪句话才问的",
+          "why": "答案直接写进「给谁用」",
+          "options": []
+        }
+      ],
+      "changes": [
+        {
+          "title": "改了什么",
+          "problem": "之前哪里不对",
+          "fix": "现在是什么样",
+          "before": {
+            "src": "report-img/x-before.jpg",
+            "caption": "看哪里"
+          },
+          "after": {
+            "src": "report-img/x-after.jpg",
+            "caption": "看哪里"
+          },
+          "more": []
+        }
+      ],
+      "findings": [
+        {
+          "title": "问题标题",
+          "tag": "认知一致性",
+          "saw": "我看了哪张图、哪个文件",
+          "why": "哪里不舒服",
+          "image": {
+            "src": "report-img/y.jpg",
+            "caption": "看哪里"
+          },
+          "where": {
+            "scenario": 1,
+            "step": 5
+          },
+          "options": [
+            {
+              "key": "a",
+              "title": "改法一",
+              "see": "改完用户看到什么",
+              "why": "去掉的是哪个根因",
+              "cost": "代价",
+              "sketch": "<div class=\"wf\"><div class=\"wf-bar\"></div><div class=\"wf-row\"><div class=\"wf-box\"></div><div class=\"wf-box\"></div></div></div>"
+            },
+            {
+              "key": "b",
+              "title": "改法二",
+              "see": "…",
+              "why": "…",
+              "cost": "…",
+              "sketch": ""
+            },
+            {
+              "key": "c",
+              "title": "不改",
+              "see": "留下的是什么",
+              "why": "",
+              "cost": "",
+              "sketch": ""
+            }
+          ]
+        }
+      ],
+      "rethink": [
+        {
+          "title": "回到构思：质疑主线的哪一样（和定义一致，但定义本身可以更好；没有就删掉这块）",
+          "saw": "检查哪一屏时看到了什么，和定义对上了",
+          "why": "为什么觉得定义本身可以更好：哪条设计原则、哪个行业的做法、哪条信息，在这个项目里为什么",
+          "options": [
+            {
+              "key": "a",
+              "title": "改成（删或重构）",
+              "see": "改后的定义",
+              "why": "设计原则、行业做法、信息、本项目为什么，最多三句",
+              "cost": "改了以后哪些场景要跟着改",
+              "sketch": ""
+            },
+            {
+              "key": "b",
+              "title": "保持现在的定义",
+              "see": "定义原文",
+              "why": "它成立的理由，最多三句",
+              "cost": "",
+              "sketch": ""
+            }
+          ],
+          "stance": "站 a。因为…（说事实不说感觉）"
+        }
+      ],
+      "improvements": [
+        {
+          "title": "建议加的功能",
+          "tag": "加",
+          "saw": "哪个场景、哪一屏",
+          "why": "用户在这一步想干什么，现在干不了",
+          "mock": "<div class=\"mk-top\"><span class=\"mk-tab on\">我的设计</span><span class=\"mk-tab\">工作台</span><span class=\"mk-select\" style=\"margin-left:auto\">最近更新 ▾</span><span class=\"mk-btn primary\">新建设计</span></div><div class=\"mk-row\"><span class=\"mk-thumb\"></span><span>2027 年招聘计划</span><span class=\"mk-meta\">5 页　04:00</span></div><div class=\"mk-row\"><span class=\"mk-thumb\"></span><span>新同事入职第一周</span><span class=\"mk-meta\">5 页　03:27</span></div>",
+          "mockCaption": "选 a 的样子",
+          "flow": [
+            "点排序旁的「列表」",
+            "每份设计一行",
+            "点一行打开工作台"
+          ],
+          "options": [
+            {
+              "key": "a",
+              "title": "做法一",
+              "see": "加了以后用户看到什么",
+              "why": "它替用户解决的是什么",
+              "cost": "代价",
+              "sketch": ""
+            },
+            {
+              "key": "b",
+              "title": "不加",
+              "see": "留下的是什么",
+              "why": "",
+              "cost": "",
+              "sketch": ""
+            }
+          ]
+        }
+      ],
+      "queue": [
+        {
+          "stage": "构思",
+          "text": "Q3 队列看板的等待列",
+          "from": "用户",
+          "state": "待办",
+          "note": "",
+          "since": "2026-09-20",
+          "dep": "",
+          "accept": "",
+          "proof": "",
+          "items": [],
+          "origin": ""
+        },
+        {
+          "stage": "落地",
+          "text": "Q5 把「修复」改名成「落地」",
+          "from": "AI",
+          "state": "进行中",
+          "note": "",
+          "since": "2026-09-21",
+          "dep": "",
+          "accept": "",
+          "proof": "",
+          "items": [],
+          "origin": ""
+        },
+        {
+          "stage": "提升",
+          "text": "Q8 窄屏上的回复框",
+          "from": "用户",
+          "state": "等待",
+          "note": "",
+          "since": "2026-09-22",
+          "dep": "用户",
+          "accept": "",
+          "proof": "",
+          "items": [],
+          "origin": ""
+        }
+      ]
+    },
+    "think": {
+      "system": "项目名",
+      "stage": "构思",
+      "round": 3,
+      "date": "2026-01-01",
+      "progress": [
+        {
+          "stage": "构思",
+          "summary": "定位、给谁用、场景清单、交付线写进主线",
+          "state": "done"
+        },
+        {
+          "stage": "使用",
+          "summary": "使用脚本盖住所有场景，全跑没有断点",
+          "state": "done"
+        },
+        {
+          "stage": "检查",
+          "summary": "逐屏做元素清单、问三个根问题",
+          "state": "done"
+        },
+        {
+          "stage": "修复",
+          "summary": "按用户选的选项改，改完重跑出改前改后图",
+          "state": "current"
+        },
+        {
+          "stage": "提升",
+          "summary": "以顶级产品经理的眼光提这个产品还能多做什么",
+          "state": "todo"
+        }
+      ],
+      "current": [
+        {
+          "problem": "问题简述",
+          "fix": "一句话修复方案"
+        }
+      ],
+      "asks": [
+        {
+          "title": "图标与 SVG：一套还是两套（构思用；没有就删掉这块）",
+          "tag": "图标与 SVG",
+          "saw": "代码里图标用过六种尺寸。\n两份图标文件，线宽差 0.1。",
+          "sources": [
+            {
+              "label": "第 7 轮 菜单截图",
+              "kind": "shot",
+              "src": "report-img/x.jpg"
+            },
+            {
+              "label": "两份图标文件",
+              "kind": "file",
+              "excerpt": "ui/icons.tsx  23 个，stroke 1.5，默认 14\nworkbench/icons.tsx  8 个，stroke 1.4，固定 16"
+            }
+          ],
+          "why": "两份文件就是两套规则，下次谁加图标不知道往哪加。",
+          "side": {
+            "note": "六种尺寸按真实像素画在下面，点「证据」看。"
+          },
+          "evidence": {
+            "type": "sizes",
+            "unit": "px",
+            "values": [
+              11,
+              12,
+              13,
+              16,
+              18,
+              22
+            ],
+            "keep": [
+              12,
+              14,
+              16
+            ]
+          },
+          "where": {
+            "scenario": 4,
+            "step": 3,
+            "scenarios": 9,
+            "steps": 9
+          },
+          "prior": [
+            {
+              "id": 38,
+              "text": "菜单两项用文件夹和复制图标，和其余行一样"
+            }
+          ],
+          "impact": [
+            {
+              "row": "「…」菜单",
+              "scenarios": [
+                1,
+                4
+              ]
+            },
+            {
+              "row": "工作台顶栏",
+              "scenarios": [
+                4,
+                9
+              ]
+            }
+          ],
+          "options": [
+            {
+              "key": "a",
+              "title": "并成一套",
+              "see": "选了以后主线里写成什么",
+              "why": "它成立的理由，最多三句",
+              "cost": "选它放弃了什么",
+              "sketch": "<div class=\"wf\"><div class=\"wf-row\"><span class=\"wf-pill on\">12</span><span class=\"wf-pill on\">14</span><span class=\"wf-pill on\">16</span></div></div>"
+            },
+            {
+              "key": "b",
+              "title": "保留两套",
+              "see": "…",
+              "why": "它成立的理由",
+              "cost": "…",
+              "sketch": "<div class=\"wf\"><div class=\"wf-row\"><span class=\"wf-pill\">公共 1.5</span><span class=\"wf-pill\">工作台 1.4</span></div></div>"
+            }
+          ],
+          "stance": "站 a。\n两套的差别只有 0.1 线宽和默认尺寸。"
+        },
+        {
+          "title": "追问：上次你自己做这件事是什么时候，用的什么？",
+          "saw": "我看了哪个文件、哪句话才问的",
+          "why": "答案直接写进「给谁用」",
+          "options": []
+        },
+        {
+          "title": "每一页交出去之前，先自己挑一遍刺",
+          "why": "页面交出去以后才发现的问题，要多走一轮。",
+          "sources": [
+            {
+              "name": "上一轮的回复",
+              "saw": "第 3 张卡的截图是旧的。",
+              "quote": true
+            }
+          ],
+          "only": true,
+          "rows": [
+            "什么时候挑"
+          ],
+          "options": [
+            {
+              "key": "a",
+              "title": "交出去之前挑一遍",
+              "diffs": [
+                "生成网页以后、发出去之前"
+              ],
+              "why": "用户看到的是挑过的一版。",
+              "cost": "每一页多花几分钟。",
+              "when": "每一页都这样做。"
+            }
+          ],
+          "dropped": [
+            {
+              "name": "交出去以后再挑",
+              "because": "用户已经看过了，改了还要再看一遍。"
+            }
+          ]
+        }
+      ],
+      "changes": [
+        {
+          "title": "改了什么",
+          "problem": "之前哪里不对",
+          "fix": "现在是什么样",
+          "before": {
+            "src": "report-img/x-before.jpg",
+            "caption": "看哪里"
+          },
+          "after": {
+            "src": "report-img/x-after.jpg",
+            "caption": "看哪里"
+          },
+          "more": []
+        }
+      ],
+      "findings": [
+        {
+          "title": "问题标题",
+          "tag": "认知一致性",
+          "saw": "我看了哪张图、哪个文件",
+          "why": "哪里不舒服",
+          "image": {
+            "src": "report-img/y.jpg",
+            "caption": "看哪里"
+          },
+          "where": {
+            "scenario": 1,
+            "step": 5
+          },
+          "options": [
+            {
+              "key": "a",
+              "title": "改法一",
+              "see": "改完用户看到什么",
+              "why": "去掉的是哪个根因",
+              "cost": "代价",
+              "sketch": "<div class=\"wf\"><div class=\"wf-bar\"></div><div class=\"wf-row\"><div class=\"wf-box\"></div><div class=\"wf-box\"></div></div></div>"
+            },
+            {
+              "key": "b",
+              "title": "改法二",
+              "see": "…",
+              "why": "…",
+              "cost": "…",
+              "sketch": ""
+            },
+            {
+              "key": "c",
+              "title": "不改",
+              "see": "留下的是什么",
+              "why": "",
+              "cost": "",
+              "sketch": ""
+            }
+          ]
+        }
+      ],
+      "rethink": [
+        {
+          "title": "回到构思：质疑主线的哪一样（和定义一致，但定义本身可以更好；没有就删掉这块）",
+          "saw": "检查哪一屏时看到了什么，和定义对上了",
+          "why": "为什么觉得定义本身可以更好：哪条设计原则、哪个行业的做法、哪条信息，在这个项目里为什么",
+          "options": [
+            {
+              "key": "a",
+              "title": "改成（删或重构）",
+              "see": "改后的定义",
+              "why": "设计原则、行业做法、信息、本项目为什么，最多三句",
+              "cost": "改了以后哪些场景要跟着改",
+              "sketch": ""
+            },
+            {
+              "key": "b",
+              "title": "保持现在的定义",
+              "see": "定义原文",
+              "why": "它成立的理由，最多三句",
+              "cost": "",
+              "sketch": ""
+            }
+          ],
+          "stance": "站 a。因为…（说事实不说感觉）"
+        }
+      ],
+      "improvements": [
+        {
+          "title": "建议加的功能",
+          "tag": "加",
+          "saw": "哪个场景、哪一屏",
+          "why": "用户在这一步想干什么，现在干不了",
+          "mock": "<div class=\"mk-top\"><span class=\"mk-tab on\">我的设计</span><span class=\"mk-tab\">工作台</span><span class=\"mk-select\" style=\"margin-left:auto\">最近更新 ▾</span><span class=\"mk-btn primary\">新建设计</span></div><div class=\"mk-row\"><span class=\"mk-thumb\"></span><span>2027 年招聘计划</span><span class=\"mk-meta\">5 页　04:00</span></div><div class=\"mk-row\"><span class=\"mk-thumb\"></span><span>新同事入职第一周</span><span class=\"mk-meta\">5 页　03:27</span></div>",
+          "mockCaption": "选 a 的样子",
+          "flow": [
+            "点排序旁的「列表」",
+            "每份设计一行",
+            "点一行打开工作台"
+          ],
+          "options": [
+            {
+              "key": "a",
+              "title": "做法一",
+              "see": "加了以后用户看到什么",
+              "why": "它替用户解决的是什么",
+              "cost": "代价",
+              "sketch": ""
+            },
+            {
+              "key": "b",
+              "title": "不加",
+              "see": "留下的是什么",
+              "why": "",
+              "cost": "",
+              "sketch": ""
+            }
+          ]
+        }
+      ],
+      "queue": [
+        {
+          "stage": "构思",
+          "text": "Q3 队列看板的等待列",
+          "from": "用户",
+          "state": "待办",
+          "note": "",
+          "since": "2026-09-20",
+          "dep": "",
+          "accept": "",
+          "proof": "",
+          "items": [],
+          "origin": ""
+        },
+        {
+          "stage": "落地",
+          "text": "Q5 把「修复」改名成「落地」",
+          "from": "AI",
+          "state": "进行中",
+          "note": "",
+          "since": "2026-09-21",
+          "dep": "",
+          "accept": "",
+          "proof": "",
+          "items": [],
+          "origin": ""
+        },
+        {
+          "stage": "提升",
+          "text": "Q8 窄屏上的回复框",
+          "from": "用户",
+          "state": "等待",
+          "note": "",
+          "since": "2026-09-22",
+          "dep": "用户",
+          "accept": "",
+          "proof": "",
+          "items": [],
+          "origin": ""
+        }
+      ],
+      "scenes": [
+        {
+          "name": "S1 看所有项目停在哪",
+          "who": "用户，早上打开电脑时",
+          "steps": [
+            {
+              "do": "打开项目页",
+              "see": "每个项目一行，写着停在哪一轮"
+            }
+          ]
+        },
+        {
+          "name": "等待和出错（断网）",
+          "steps": [
+            {
+              "do": "断网以后刷新",
+              "see": "页面写明没有连上，点过的还在"
+            }
+          ]
+        },
+        {
+          "name": "回头改一笔、撤一批",
+          "steps": [
+            {
+              "do": "在列表里点一笔",
+              "see": "能改金额和备注"
+            }
+          ]
+        }
+      ],
+      "spec": [
+        {
+          "name": "配色",
+          "kind": "colors",
+          "for": "整个页面",
+          "values": [
+            {
+              "name": "底",
+              "hex": "#ffffff"
+            },
+            {
+              "name": "强调",
+              "hex": "#2f6fed"
+            }
+          ]
+        },
+        {
+          "name": "字号",
+          "kind": "type",
+          "for": "正文和标题",
+          "values": [
+            {
+              "name": "正文",
+              "size": 14
+            },
+            {
+              "name": "标题",
+              "size": 18,
+              "weight": 600
+            }
+          ]
+        },
+        {
+          "name": "动效",
+          "kind": "motion",
+          "for": "换一屏",
+          "values": [
+            {
+              "name": "换一屏",
+              "ms": 200,
+              "easing": "ease-out",
+              "effect": "fade"
+            }
+          ]
+        }
+      ],
+      "align": [
+        {
+          "name": "交付线",
+          "usedIn": [
+            "每一页交出去之前，先自己挑一遍刺"
+          ],
+          "meaning": "这一版做到哪里算交付。",
+          "example": "个人网站的第一版只做首页和项目页。"
+        },
+        {
+          "name": "胃口",
+          "usedIn": [
+            "每一页交出去之前，先自己挑一遍刺"
+          ],
+          "meaning": "这一版愿意花多少时间。",
+          "example": "第一版只花三个晚上。"
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "reply-001",
+      "name": "什么都没点",
+      "page": "sample",
+      "actions": {},
+      "text": "还没有要复制的内容"
+    },
+    {
+      "id": "reply-002",
+      "name": "疑问点了选项",
+      "page": "sample",
+      "actions": {
+        "cards": [
+          {
+            "key": "q1",
+            "pick": "a"
+          }
+        ]
+      },
+      "text": "修复第 1 轮\n疑问 1a"
+    },
+    {
+      "id": "reply-003",
+      "name": "选了选项，又写了备注",
+      "page": "sample",
+      "actions": {
+        "cards": [
+          {
+            "key": "q1",
+            "pick": "b",
+            "note": "两套各有用处，先都留着"
+          }
+        ]
+      },
+      "text": "修复第 1 轮\n疑问 1b（两套各有用处，先都留着）"
+    },
+    {
+      "id": "reply-004",
+      "name": "只有备注框的卡写了备注",
+      "page": "sample",
+      "actions": {
+        "cards": [
+          {
+            "key": "q2",
+            "note": "上周五，用的是 Keynote"
+          }
+        ]
+      },
+      "text": "修复第 1 轮\n疑问 2（上周五，用的是 Keynote）"
+    },
+    {
+      "id": "reply-005",
+      "name": "有选项的卡没点选项，只写了备注",
+      "page": "sample",
+      "actions": {
+        "cards": [
+          {
+            "key": "q1",
+            "note": "两个都不对，下一轮再谈"
+          }
+        ]
+      },
+      "text": "修复第 1 轮\n疑问 1（两个都不对，下一轮再谈）"
+    },
+    {
+      "id": "reply-006",
+      "name": "四块各点一张",
+      "page": "sample",
+      "actions": {
+        "cards": [
+          {
+            "key": "q1",
+            "pick": "a"
+          },
+          {
+            "key": "f1",
+            "pick": "c"
+          },
+          {
+            "key": "p1",
+            "pick": "b",
+            "note": "先不加"
+          },
+          {
+            "key": "r1",
+            "pick": "a"
+          }
+        ]
+      },
+      "text": "修复第 1 轮\n疑问 1a\n发现 1c\n提升 1b（先不加）\n回到构思 1a"
+    },
+    {
+      "id": "reply-007",
+      "name": "备注写了几行，有括号，也有空两格",
+      "page": "sample",
+      "actions": {
+        "cards": [
+          {
+            "key": "q2",
+            "note": "第一行写的是去年（大概十月）\n第二行接着说  还有 2b 那件事\n3. 最后一行"
+          },
+          {
+            "key": "f1",
+            "pick": "a",
+            "note": "按（附录）里的做"
+          },
+          {
+            "key": "p1",
+            "pick": "b"
+          }
+        ]
+      },
+      "text": "修复第 1 轮\n疑问 2（第一行写的是去年（大概十月）\n第二行接着说  还有 2b 那件事\n3. 最后一行）\n发现 1a（按（附录）里的做）\n提升 1b"
+    },
+    {
+      "id": "reply-008",
+      "name": "只有一个方向的卡点了那个方向",
+      "page": "think",
+      "actions": {
+        "cards": [
+          {
+            "key": "q3",
+            "pick": "a"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n疑问 3a"
+    },
+    {
+      "id": "reply-009",
+      "name": "只有一个方向的卡点了否决，写了原因",
+      "page": "think",
+      "actions": {
+        "cards": [
+          {
+            "key": "q1",
+            "pick": "b"
+          },
+          {
+            "key": "q3",
+            "pick": "否决",
+            "note": "挑刺交给评审去做"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n疑问 1b  3否决（挑刺交给评审去做）"
+    },
+    {
+      "id": "reply-010",
+      "name": "场景点了保留、修改和删除",
+      "page": "think",
+      "actions": {
+        "scenes": [
+          {
+            "n": 1,
+            "pick": "保留"
+          },
+          {
+            "n": 2,
+            "pick": "修改",
+            "edit": "第 2 步改成先断网再刷新"
+          },
+          {
+            "n": 3,
+            "pick": "删除"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n场景 保留：「S1 看所有项目停在哪」\n场景 修改：「等待和出错（断网）」（第 2 步改成先断网再刷新）\n场景 删除：「回头改一笔、撤一批」"
+    },
+    {
+      "id": "reply-011",
+      "name": "场景点了修改，没写怎么改",
+      "page": "think",
+      "actions": {
+        "scenes": [
+          {
+            "n": 1,
+            "pick": "修改"
+          },
+          {
+            "n": 3,
+            "pick": "修改",
+            "edit": "  "
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n场景 修改：「S1 看所有项目停在哪」（没写怎么改）  「回头改一笔、撤一批」（没写怎么改）"
+    },
+    {
+      "id": "reply-012",
+      "name": "设计规范点了保留、修改和删除，修改写了两行",
+      "page": "think",
+      "actions": {
+        "spec": [
+          {
+            "n": 1,
+            "pick": "保留"
+          },
+          {
+            "n": 2,
+            "pick": "修改",
+            "edit": "正文改成 15px\n标题改成 20px"
+          },
+          {
+            "n": 3,
+            "pick": "删除"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n规范 保留：「配色」\n规范 修改：「字号」（正文改成 15px\n标题改成 20px）\n规范 删除：「动效」"
+    },
+    {
+      "id": "reply-013",
+      "name": "设计规范点了修改，没写怎么改",
+      "page": "think",
+      "actions": {
+        "spec": [
+          {
+            "n": 3,
+            "pick": "修改"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n规范 修改：「动效」（没写怎么改）"
+    },
+    {
+      "id": "reply-014",
+      "name": "先对齐点了明白和不明白",
+      "page": "think",
+      "actions": {
+        "align": [
+          {
+            "n": 1,
+            "pick": "明白",
+            "say": "交付线就是这一版做到哪里"
+          },
+          {
+            "n": 2,
+            "pick": "不明白"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n对齐 明白：「交付线」（交付线就是这一版做到哪里）\n对齐 不明白：「胃口」"
+    },
+    {
+      "id": "reply-015",
+      "name": "队列里取消了两件",
+      "page": "think",
+      "actions": {
+        "queue": [
+          "Q5 把「修复」改名成「落地」",
+          "Q3 队列看板的等待列"
+        ]
+      },
+      "text": "构思第 3 轮\n队列 不做了：「Q5 把「修复」改名成「落地」」  「Q3 队列看板的等待列」"
+    },
+    {
+      "id": "reply-016",
+      "name": "想法写了几行",
+      "page": "sample",
+      "actions": {
+        "ideas": "列表视图可以按日期分组\n\n另外，窄屏上回复框太小"
+      },
+      "text": "修复第 1 轮\n想法：列表视图可以按日期分组\n\n另外，窄屏上回复框太小"
+    },
+    {
+      "id": "reply-017",
+      "name": "备注和想法里贴了图，有一张的标记又删掉了",
+      "page": "sample",
+      "actions": {
+        "cards": [
+          {
+            "key": "q1",
+            "pick": "a",
+            "note": "像这样〔图 1〕"
+          }
+        ],
+        "ideas": "这里也不对〔图 2〕〔图 3〕",
+        "images": [
+          {
+            "n": 1,
+            "id": "2e8f4df637887bd8900ee1bf729d5cca7ad71d2e46f3452b828ea0e64da55fbd"
+          },
+          {
+            "n": 2,
+            "id": "92c9d423c93302d23bae97a199608452b8dfc329c13de54ef29c8ac592d3191d"
+          },
+          {
+            "n": 3,
+            "id": "3f68d34f4364fe888b77de596d23898b02b22f41b81569bbf025febdb0d08c7b"
+          },
+          {
+            "n": 4,
+            "id": "38bb6caaaf6272504d84d61fdb55fa7a2e0274cd23df1028ee77fd46676719f5"
+          }
+        ]
+      },
+      "text": "修复第 1 轮\n疑问 1a（像这样〔图 1〕）\n想法：这里也不对〔图 2〕〔图 3〕\n图：图 1=2e8f4d  图 2=92c9d4  图 3=3f68d3"
+    },
+    {
+      "id": "reply-018",
+      "name": "场景的修改里贴了图",
+      "page": "think",
+      "actions": {
+        "scenes": [
+          {
+            "n": 2,
+            "pick": "修改",
+            "edit": "改成这样〔图 1〕"
+          }
+        ],
+        "images": [
+          {
+            "n": 1,
+            "id": "2e8f4df637887bd8900ee1bf729d5cca7ad71d2e46f3452b828ea0e64da55fbd"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n场景 修改：「等待和出错（断网）」（改成这样〔图 1〕）\n图：图 1=2e8f4d"
+    },
+    {
+      "id": "reply-019",
+      "name": "所有的行都有",
+      "page": "think",
+      "actions": {
+        "scenes": [
+          {
+            "n": 1,
+            "pick": "保留"
+          },
+          {
+            "n": 2,
+            "pick": "修改",
+            "edit": "第 2 步改成先断网再刷新"
+          },
+          {
+            "n": 3,
+            "pick": "删除"
+          }
+        ],
+        "spec": [
+          {
+            "n": 1,
+            "pick": "修改",
+            "edit": "强调色换成绿色〔图 1〕"
+          },
+          {
+            "n": 2,
+            "pick": "保留"
+          },
+          {
+            "n": 3,
+            "pick": "保留"
+          }
+        ],
+        "align": [
+          {
+            "n": 1,
+            "pick": "明白"
+          },
+          {
+            "n": 2,
+            "pick": "不明白",
+            "say": "是说花多少时间吗"
+          }
+        ],
+        "queue": [
+          "Q8 窄屏上的回复框"
+        ],
+        "cards": [
+          {
+            "key": "q1",
+            "pick": "b",
+            "note": "两套都留着"
+          },
+          {
+            "key": "q2",
+            "note": "上周，用的是 Keynote"
+          },
+          {
+            "key": "q3",
+            "pick": "a"
+          },
+          {
+            "key": "f1",
+            "pick": "c"
+          },
+          {
+            "key": "r1",
+            "pick": "b"
+          },
+          {
+            "key": "p1",
+            "pick": "a",
+            "note": "先做一个最小的\n下一轮再加筛选"
+          }
+        ],
+        "ideas": "看板上等待的事可以单独放一列\n〔图 2〕是现在的样子",
+        "images": [
+          {
+            "n": 1,
+            "id": "2e8f4df637887bd8900ee1bf729d5cca7ad71d2e46f3452b828ea0e64da55fbd"
+          },
+          {
+            "n": 2,
+            "id": "92c9d423c93302d23bae97a199608452b8dfc329c13de54ef29c8ac592d3191d"
+          }
+        ]
+      },
+      "text": "构思第 3 轮\n场景 保留：「S1 看所有项目停在哪」\n场景 修改：「等待和出错（断网）」（第 2 步改成先断网再刷新）\n场景 删除：「回头改一笔、撤一批」\n规范 保留：「字号」  「动效」\n规范 修改：「配色」（强调色换成绿色〔图 1〕）\n对齐 明白：「交付线」\n对齐 不明白：「胃口」（是说花多少时间吗）\n队列 不做了：「Q8 窄屏上的回复框」\n疑问 1b（两套都留着）  2（上周，用的是 Keynote）  3a\n发现 1c\n提升 1a（先做一个最小的\n下一轮再加筛选）\n回到构思 1b\n想法：看板上等待的事可以单独放一列\n〔图 2〕是现在的样子\n图：图 1=2e8f4d  图 2=92c9d4"
+    }
+  ]
+}

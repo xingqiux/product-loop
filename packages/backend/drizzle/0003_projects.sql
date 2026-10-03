@@ -1,0 +1,1 @@
+ALTER TABLE `product_versions` ADD `end_reason` text;

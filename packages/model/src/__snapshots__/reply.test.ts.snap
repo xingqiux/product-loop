@@ -1,0 +1,792 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`JSON Schema > replyDestination 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "part": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "revision": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "to": {
+          "const": "主线",
+          "type": "string",
+        },
+      },
+      "required": [
+        "to",
+        "revision",
+        "part",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "to": {
+          "const": "决定",
+          "type": "string",
+        },
+      },
+      "required": [
+        "to",
+        "id",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^Q[1-9]\\d*$",
+          "type": "string",
+        },
+        "to": {
+          "const": "队列",
+          "type": "string",
+        },
+      },
+      "required": [
+        "to",
+        "id",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "round": {
+          "pattern": "^v[1-9]\\d*-(?:构思|使用|检查|落地|提升)-[1-9]\\d*$",
+          "type": "string",
+        },
+        "to": {
+          "const": "当场做",
+          "type": "string",
+        },
+      },
+      "required": [
+        "to",
+        "round",
+        "evidence",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "reason": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "to": {
+          "const": "不处理",
+          "type": "string",
+        },
+      },
+      "required": [
+        "to",
+        "reason",
+      ],
+      "type": "object",
+    },
+  ],
+}
+`;
+
+exports[`JSON Schema > replyHandleEntry 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "imagesRead": {
+          "type": "boolean",
+        },
+        "line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "part": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "revision": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "to": {
+          "const": "主线",
+          "type": "string",
+        },
+      },
+      "required": [
+        "line",
+        "to",
+        "part",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "case": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "decision": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "imagesRead": {
+          "type": "boolean",
+        },
+        "kind": {
+          "enum": [
+            "决定",
+            "以后再说",
+          ],
+          "type": "string",
+        },
+        "line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "reason": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "to": {
+          "const": "决定",
+          "type": "string",
+        },
+      },
+      "required": [
+        "line",
+        "to",
+        "decision",
+        "reason",
+        "case",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^Q[1-9]\\d*$",
+          "type": "string",
+        },
+        "imagesRead": {
+          "type": "boolean",
+        },
+        "item": {
+          "additionalProperties": false,
+          "properties": {
+            "acceptance": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "content": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "dependsOn": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "note": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "proposer": {
+              "enum": [
+                "用户",
+                "AI",
+                "评审",
+                "别的项目",
+              ],
+              "type": "string",
+            },
+            "source": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "stage": {
+              "enum": [
+                "构思",
+                "使用",
+                "检查",
+                "落地",
+                "提升",
+              ],
+              "type": "string",
+            },
+            "subItems": {
+              "items": {
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "type": "array",
+            },
+          },
+          "required": [
+            "content",
+            "stage",
+            "proposer",
+          ],
+          "type": "object",
+        },
+        "line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "stage": {
+          "enum": [
+            "构思",
+            "使用",
+            "检查",
+            "落地",
+            "提升",
+          ],
+          "type": "string",
+        },
+        "to": {
+          "const": "队列",
+          "type": "string",
+        },
+      },
+      "required": [
+        "line",
+        "to",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "evidence": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "imagesRead": {
+          "type": "boolean",
+        },
+        "line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "to": {
+          "const": "当场做",
+          "type": "string",
+        },
+      },
+      "required": [
+        "line",
+        "to",
+        "evidence",
+      ],
+      "type": "object",
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "imagesRead": {
+          "type": "boolean",
+        },
+        "line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "reason": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "to": {
+          "const": "不处理",
+          "type": "string",
+        },
+      },
+      "required": [
+        "line",
+        "to",
+        "reason",
+      ],
+      "type": "object",
+    },
+  ],
+}
+`;
+
+exports[`JSON Schema > replyHandleInput 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "items": {
+    "oneOf": [
+      {
+        "additionalProperties": false,
+        "properties": {
+          "imagesRead": {
+            "type": "boolean",
+          },
+          "line": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer",
+          },
+          "part": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "revision": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer",
+          },
+          "to": {
+            "const": "主线",
+            "type": "string",
+          },
+        },
+        "required": [
+          "line",
+          "to",
+          "part",
+        ],
+        "type": "object",
+      },
+      {
+        "additionalProperties": false,
+        "properties": {
+          "case": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "decision": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "imagesRead": {
+            "type": "boolean",
+          },
+          "kind": {
+            "enum": [
+              "决定",
+              "以后再说",
+            ],
+            "type": "string",
+          },
+          "line": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer",
+          },
+          "reason": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "to": {
+            "const": "决定",
+            "type": "string",
+          },
+        },
+        "required": [
+          "line",
+          "to",
+          "decision",
+          "reason",
+          "case",
+        ],
+        "type": "object",
+      },
+      {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "pattern": "^Q[1-9]\\d*$",
+            "type": "string",
+          },
+          "imagesRead": {
+            "type": "boolean",
+          },
+          "item": {
+            "additionalProperties": false,
+            "properties": {
+              "acceptance": {
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "content": {
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "dependsOn": {
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "proposer": {
+                "enum": [
+                  "用户",
+                  "AI",
+                  "评审",
+                  "别的项目",
+                ],
+                "type": "string",
+              },
+              "source": {
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "stage": {
+                "enum": [
+                  "构思",
+                  "使用",
+                  "检查",
+                  "落地",
+                  "提升",
+                ],
+                "type": "string",
+              },
+              "subItems": {
+                "items": {
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+                "type": "array",
+              },
+            },
+            "required": [
+              "content",
+              "stage",
+              "proposer",
+            ],
+            "type": "object",
+          },
+          "line": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer",
+          },
+          "stage": {
+            "enum": [
+              "构思",
+              "使用",
+              "检查",
+              "落地",
+              "提升",
+            ],
+            "type": "string",
+          },
+          "to": {
+            "const": "队列",
+            "type": "string",
+          },
+        },
+        "required": [
+          "line",
+          "to",
+        ],
+        "type": "object",
+      },
+      {
+        "additionalProperties": false,
+        "properties": {
+          "evidence": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "imagesRead": {
+            "type": "boolean",
+          },
+          "line": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer",
+          },
+          "to": {
+            "const": "当场做",
+            "type": "string",
+          },
+        },
+        "required": [
+          "line",
+          "to",
+          "evidence",
+        ],
+        "type": "object",
+      },
+      {
+        "additionalProperties": false,
+        "properties": {
+          "imagesRead": {
+            "type": "boolean",
+          },
+          "line": {
+            "maximum": 9007199254740991,
+            "minimum": 1,
+            "type": "integer",
+          },
+          "reason": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "to": {
+            "const": "不处理",
+            "type": "string",
+          },
+        },
+        "required": [
+          "line",
+          "to",
+          "reason",
+        ],
+        "type": "object",
+      },
+    ],
+  },
+  "minItems": 1,
+  "type": "array",
+}
+`;
+
+exports[`JSON Schema > replyLine 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "card": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "cardTitle": {
+      "minLength": 1,
+      "type": "string",
+    },
+    "handled": {
+      "additionalProperties": false,
+      "properties": {
+        "at": {
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+          "type": "string",
+        },
+        "by": {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "destination": {
+          "oneOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "part": {
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+                "revision": {
+                  "maximum": 9007199254740991,
+                  "minimum": 1,
+                  "type": "integer",
+                },
+                "to": {
+                  "const": "主线",
+                  "type": "string",
+                },
+              },
+              "required": [
+                "to",
+                "revision",
+                "part",
+              ],
+              "type": "object",
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "maximum": 9007199254740991,
+                  "minimum": 1,
+                  "type": "integer",
+                },
+                "to": {
+                  "const": "决定",
+                  "type": "string",
+                },
+              },
+              "required": [
+                "to",
+                "id",
+              ],
+              "type": "object",
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "pattern": "^Q[1-9]\\d*$",
+                  "type": "string",
+                },
+                "to": {
+                  "const": "队列",
+                  "type": "string",
+                },
+              },
+              "required": [
+                "to",
+                "id",
+              ],
+              "type": "object",
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "evidence": {
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+                "round": {
+                  "pattern": "^v[1-9]\\d*-(?:构思|使用|检查|落地|提升)-[1-9]\\d*$",
+                  "type": "string",
+                },
+                "to": {
+                  "const": "当场做",
+                  "type": "string",
+                },
+              },
+              "required": [
+                "to",
+                "round",
+                "evidence",
+              ],
+              "type": "object",
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+                "to": {
+                  "const": "不处理",
+                  "type": "string",
+                },
+              },
+              "required": [
+                "to",
+                "reason",
+              ],
+              "type": "object",
+            },
+          ],
+        },
+      },
+      "required": [
+        "destination",
+        "at",
+        "by",
+      ],
+      "type": "object",
+    },
+    "images": {
+      "items": {
+        "pattern": "^[0-9a-f]{64}$",
+        "type": "string",
+      },
+      "type": "array",
+    },
+    "imagesRead": {
+      "type": "boolean",
+    },
+    "kind": {
+      "enum": [
+        "选了选项",
+        "同意",
+        "否决",
+        "保留",
+        "修改",
+        "删除",
+        "明白",
+        "不明白",
+        "只写了备注",
+        "想法",
+        "取消队列事项",
+        "不认可一条更改",
+        "认可一条更改",
+      ],
+      "type": "string",
+    },
+    "line": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer",
+    },
+    "note": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "option": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "queue": {
+      "pattern": "^Q[1-9]\\d*$",
+      "type": "string",
+    },
+    "section": {
+      "enum": [
+        "先对齐",
+        "场景清单",
+        "设计规范",
+        "疑问",
+        "发现问题",
+        "提升",
+        "更改",
+        "队列看板",
+        "取消的事",
+      ],
+      "type": "string",
+    },
+    "submission": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer",
+    },
+  },
+  "required": [
+    "submission",
+    "line",
+    "kind",
+    "images",
+    "imagesRead",
+  ],
+  "type": "object",
+}
+`;

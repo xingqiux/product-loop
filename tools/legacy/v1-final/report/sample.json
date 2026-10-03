@@ -1,0 +1,96 @@
+{
+  "system": "项目名",
+  "stage": "修复",
+  "round": 1,
+  "date": "2026-01-01",
+  "progress": [
+    { "stage": "构思", "summary": "定位、给谁用、场景清单、交付线写进主线", "state": "done" },
+    { "stage": "使用", "summary": "使用脚本盖住所有场景，全跑没有断点", "state": "done" },
+    { "stage": "检查", "summary": "逐屏做元素清单、问三个根问题", "state": "done" },
+    { "stage": "修复", "summary": "按用户选的选项改，改完重跑出改前改后图", "state": "current" },
+    { "stage": "提升", "summary": "以顶级产品经理的眼光提这个产品还能多做什么", "state": "todo" }
+  ],
+  "current": [
+    { "problem": "问题简述", "fix": "一句话修复方案" }
+  ],
+  "asks": [
+    {
+      "title": "图标与 SVG：一套还是两套（构思用；没有就删掉这块）",
+      "tag": "图标与 SVG",
+      "saw": "代码里图标用过六种尺寸。\n两份图标文件，线宽差 0.1。",
+      "sources": [
+        { "label": "第 7 轮 菜单截图", "kind": "shot", "src": "report-img/x.jpg" },
+        { "label": "两份图标文件", "kind": "file", "excerpt": "ui/icons.tsx  23 个，stroke 1.5，默认 14\nworkbench/icons.tsx  8 个，stroke 1.4，固定 16" }
+      ],
+      "why": "两份文件就是两套规则，下次谁加图标不知道往哪加。",
+      "side": { "note": "六种尺寸按真实像素画在下面，点「证据」看。" },
+      "evidence": { "type": "sizes", "unit": "px", "values": [11, 12, 13, 16, 18, 22], "keep": [12, 14, 16] },
+      "where": { "scenario": 4, "step": 3, "scenarios": 9, "steps": 9 },
+      "prior": [ { "id": 38, "text": "菜单两项用文件夹和复制图标，和其余行一样" } ],
+      "impact": [ { "row": "「…」菜单", "scenarios": [1, 4] }, { "row": "工作台顶栏", "scenarios": [4, 9] } ],
+      "options": [
+        { "key": "a", "title": "并成一套", "see": "选了以后主线里写成什么", "why": "它成立的理由，最多三句", "cost": "选它放弃了什么", "sketch": "<div class=\"wf\"><div class=\"wf-row\"><span class=\"wf-pill on\">12</span><span class=\"wf-pill on\">14</span><span class=\"wf-pill on\">16</span></div></div>" },
+        { "key": "b", "title": "保留两套", "see": "…", "why": "它成立的理由", "cost": "…", "sketch": "<div class=\"wf\"><div class=\"wf-row\"><span class=\"wf-pill\">公共 1.5</span><span class=\"wf-pill\">工作台 1.4</span></div></div>" }
+      ],
+      "stance": "站 a。\n两套的差别只有 0.1 线宽和默认尺寸。"
+    },
+    {
+      "title": "追问：上次你自己做这件事是什么时候，用的什么？",
+      "saw": "我看了哪个文件、哪句话才问的",
+      "why": "答案直接写进「给谁用」",
+      "options": []
+    }
+  ],
+  "changes": [
+    {
+      "title": "改了什么",
+      "problem": "之前哪里不对",
+      "fix": "现在是什么样",
+      "before": { "src": "report-img/x-before.jpg", "caption": "看哪里" },
+      "after": { "src": "report-img/x-after.jpg", "caption": "看哪里" },
+      "more": []
+    }
+  ],
+  "findings": [
+    {
+      "title": "问题标题",
+      "tag": "认知一致性",
+      "saw": "我看了哪张图、哪个文件",
+      "why": "哪里不舒服",
+      "image": { "src": "report-img/y.jpg", "caption": "看哪里" },
+      "where": { "scenario": 1, "step": 5 },
+      "options": [
+        { "key": "a", "title": "改法一", "see": "改完用户看到什么", "why": "去掉的是哪个根因", "cost": "代价", "sketch": "<div class=\"wf\"><div class=\"wf-bar\"></div><div class=\"wf-row\"><div class=\"wf-box\"></div><div class=\"wf-box\"></div></div></div>" },
+        { "key": "b", "title": "改法二", "see": "…", "why": "…", "cost": "…", "sketch": "" },
+        { "key": "c", "title": "不改", "see": "留下的是什么", "why": "", "cost": "", "sketch": "" }
+      ]
+    }
+  ],
+  "rethink": [
+    {
+      "title": "回到构思：质疑主线的哪一样（和定义一致，但定义本身可以更好；没有就删掉这块）",
+      "saw": "检查哪一屏时看到了什么，和定义对上了",
+      "why": "为什么觉得定义本身可以更好：哪条设计原则、哪个行业的做法、哪条信息，在这个项目里为什么",
+      "options": [
+        { "key": "a", "title": "改成（删或重构）", "see": "改后的定义", "why": "设计原则、行业做法、信息、本项目为什么，最多三句", "cost": "改了以后哪些场景要跟着改", "sketch": "" },
+        { "key": "b", "title": "保持现在的定义", "see": "定义原文", "why": "它成立的理由，最多三句", "cost": "", "sketch": "" }
+      ],
+      "stance": "站 a。因为…（说事实不说感觉）"
+    }
+  ],
+  "improvements": [
+    {
+      "title": "建议加的功能",
+      "tag": "加",
+      "saw": "哪个场景、哪一屏",
+      "why": "用户在这一步想干什么，现在干不了",
+      "mock": "<div class=\"mk-top\"><span class=\"mk-tab on\">我的设计</span><span class=\"mk-tab\">工作台</span><span class=\"mk-select\" style=\"margin-left:auto\">最近更新 ▾</span><span class=\"mk-btn primary\">新建设计</span></div><div class=\"mk-row\"><span class=\"mk-thumb\"></span><span>2027 年招聘计划</span><span class=\"mk-meta\">5 页　04:00</span></div><div class=\"mk-row\"><span class=\"mk-thumb\"></span><span>新同事入职第一周</span><span class=\"mk-meta\">5 页　03:27</span></div>",
+      "mockCaption": "选 a 的样子",
+      "flow": ["点排序旁的「列表」", "每份设计一行", "点一行打开工作台"],
+      "options": [
+        { "key": "a", "title": "做法一", "see": "加了以后用户看到什么", "why": "它替用户解决的是什么", "cost": "代价", "sketch": "" },
+        { "key": "b", "title": "不加", "see": "留下的是什么", "why": "", "cost": "", "sketch": "" }
+      ]
+    }
+  ]
+}

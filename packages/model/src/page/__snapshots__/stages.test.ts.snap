@@ -1,0 +1,4777 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`使用阶段的 JSON Schema > 导出的样子 1`] = `
+{
+  "$defs": {
+    "cardId": {
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string",
+    },
+    "diagram": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "description": "图表库的文字定义。目录树直接写文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "kind": {
+          "description": "图表的种类，从取值里选，按内容配。",
+          "enum": [
+            "流程图",
+            "时序图",
+            "状态图",
+            "架构图",
+            "思维导图",
+            "象限图",
+            "时间线",
+            "改前改后的结构",
+            "目录树",
+          ],
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这张图叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "kind",
+        "title",
+        "code",
+      ],
+      "type": "object",
+    },
+    "dropped": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "because": {
+            "description": "为什么排除，一句话。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "name": {
+            "description": "排除的方向叫什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "name",
+          "because",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "尺寸",
+              "type": "string",
+            },
+            "unit": {
+              "description": "数值的单位，例如 px。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "色块",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "hex": {
+                    "description": "色值，写成 # 加十六进制数。",
+                    "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "type": "string",
+                  },
+                  "name": {
+                    "description": "这一格规范的名字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                },
+                "required": [
+                  "name",
+                  "hex",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "字号",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "sample": {
+                    "description": "样张上的字，用项目里的真文字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                  "size": {
+                    "description": "字号，单位是像素。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                  "weight": {
+                    "description": "字重，例如 400、600。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                },
+                "required": [
+                  "size",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "间距",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "img": {
+              "description": "截图的路径，相对工作区。",
+              "type": "string",
+            },
+            "type": {
+              "const": "截图",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "img",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "bg": {
+              "description": "框的底色，默认白色。深色主题的组件要写。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "css": {
+              "description": "这个组件生效的样式。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "from": {
+              "description": "真组件从哪一屏、哪个组件取来。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "height": {
+              "description": "框的高度，默认 160。",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991,
+              "type": "integer",
+            },
+            "html": {
+              "description": "从真实界面取来的 HTML。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "toggles": {
+              "description": "真组件下面的按钮，用来切类名或改属性。悬停和聚焦不用写。",
+              "items": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "class": {
+                        "description": "按下按钮时，给这个元素加或去掉的类名。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "class",
+                    ],
+                    "type": "object",
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "attr": {
+                        "description": "按下按钮时，改这个元素的哪个属性。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "off": {
+                        "description": "属性关闭时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "on": {
+                        "description": "属性打开时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "attr",
+                    ],
+                    "type": "object",
+                  },
+                ],
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "真组件",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "from",
+            "html",
+            "css",
+          ],
+          "type": "object",
+        },
+      ],
+    },
+    "figure": {
+      "additionalProperties": false,
+      "properties": {
+        "caption": {
+          "description": "图下面的一行说明。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "img": {
+          "description": "图的路径，相对页面数据所在的工作区，例如 img/before.png。",
+          "type": "string",
+        },
+      },
+      "required": [
+        "img",
+      ],
+      "type": "object",
+    },
+    "option": {
+      "additionalProperties": false,
+      "properties": {
+        "cost": {
+          "description": "代价：选它要放弃什么。不写它为什么不如别的选项。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "diffs": {
+          "description": "这个选项在每一行上的做法，和卡上的 rows 一一对应。每格最多两行。",
+          "items": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "key": {
+          "description": "选项的字母，依次写 a、b、c。用户的回复用它指出选了哪个选项。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+        "sketch": {
+          "description": "低保真线稿，HTML 片段，也可以放一张草稿图的 img 标签。设计类的卡每个选项都要有。可用的积木见 ploop page schema --blocks。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这个选项叫什么，不用颜色或阵营称呼选项。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "when": {
+          "description": "适用场景：什么情况下该选它。说不出来的选项是陪衬，删掉。叫「不改」的可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "why": {
+          "description": "理由：它去掉的是哪个根因，指到数据或代码里的事实。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "key",
+        "title",
+        "diffs",
+      ],
+      "type": "object",
+    },
+    "queueRefs": {
+      "items": {
+        "pattern": "^Q[1-9][0-9]*$",
+        "type": "string",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "shared": {
+      "additionalProperties": false,
+      "properties": {
+        "diagrams": {
+          "description": "共同部分的图表。",
+          "items": {
+            "$ref": "#/$defs/diagram",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "text": {
+          "description": "共同部分的文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "text",
+      ],
+      "type": "object",
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "description": "文字来源的文件，写相对项目根目录的路径。原文由命令摘录。",
+          "type": "string",
+        },
+        "img": {
+          "description": "界面来源的截图，写相对工作区的路径，例如 img/before.png。",
+          "type": "string",
+        },
+        "lines": {
+          "description": "摘哪几行，写成 12-20。只摘一行写 12。",
+          "pattern": "^[1-9][0-9]*(-[1-9][0-9]*)?$",
+          "type": "string",
+        },
+        "mark": {
+          "description": "要标出的行号，都在 lines 的范围里。",
+          "items": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "name": {
+          "description": "这样东西叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "outside": {
+          "const": true,
+          "description": "截图来自已有的产品或网上的设计时写 true。设计类的卡至少要有一条。",
+          "type": "boolean",
+        },
+        "quote": {
+          "const": true,
+          "description": "用户说过的原话写 true，原话写在 saw 里，不配图。",
+          "type": "boolean",
+        },
+        "saw": {
+          "description": "在它上面看到了什么。用户的原话来源，在这里照原样写出原话。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "name",
+      ],
+      "type": "object",
+    },
+    "stance": {
+      "additionalProperties": false,
+      "properties": {
+        "because": {
+          "description": "因为什么，一句话。页面显示成我的看法是 a，因为……",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "pick": {
+          "description": "看法选的是哪个选项，写它的字母。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+      },
+      "required": [
+        "pick",
+        "because",
+      ],
+      "type": "object",
+    },
+    "where": {
+      "additionalProperties": false,
+      "properties": {
+        "scene": {
+          "description": "场景编号，例如 S3。",
+          "pattern": "^S[1-9][0-9]*$",
+          "type": "string",
+        },
+        "step": {
+          "description": "步号，从 1 数，和主线里这个场景的步骤编号相同。",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "scene",
+        "step",
+      ],
+      "type": "object",
+    },
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "使用阶段的区块：疑问。",
+  "properties": {
+    "asks": {
+      "description": "疑问：要用户定的事，或者要追问的事。每张卡一件事。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "design": {
+            "const": true,
+            "description": "设计类的卡写 true，指长什么样、怎么摆的问题。只有构思阶段会查来源和草稿。",
+            "type": "boolean",
+          },
+          "diagrams": {
+            "description": "图表。种类要和内容对得上，例如流程配流程图。",
+            "items": {
+              "$ref": "#/$defs/diagram",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "dropped": {
+            "$ref": "#/$defs/dropped",
+            "description": "想过又排除的方向，每个写名称和一句原因。用户可以在备注里点名捞回来。",
+          },
+          "evidence": {
+            "description": "证据，画在卡片右边。只放能看的东西，不放说明文字。一项也写成数组。",
+            "items": {
+              "$ref": "#/$defs/evidence",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "flow": {
+            "description": "操作流程，每步一句，画成一串带箭头的步骤。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "image": {
+            "$ref": "#/$defs/figure",
+            "description": "一张图，直接显示在右边。",
+          },
+          "mock": {
+            "description": "中保真线稿，画改完的样子，用真文字，HTML 片段。可用的积木见 ploop page schema --blocks。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "mockCaption": {
+            "description": "线稿下面的一句说明，只能和 mock 一起写。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "only": {
+            "const": true,
+            "description": "只有一个方向站得住时写 true。options 只放这一个，dropped 列出排除的方向。",
+            "type": "boolean",
+          },
+          "options": {
+            "description": "选项，两到三个。每个选项按 rows 逐行写差别。不写选项时，这张卡只有备注框，用来追问已经发生的事。",
+            "items": {
+              "$ref": "#/$defs/option",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "research": {
+            "additionalProperties": false,
+            "description": "调研分档。来源里有外面的东西的疑问卡必填。先定下查多深，再去查。",
+            "properties": {
+              "approved": {
+                "description": "深查时写问句和检索计划是哪个阶段给用户批的，例如第 2 版的构思阶段。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "reason": {
+                "description": "不查时写理由，说明这一条为什么不用查。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "tier": {
+                "description": "不查、快查、深查三选一。不查要写 reason，深查要写 approved。",
+                "enum": [
+                  "不查",
+                  "快查",
+                  "深查",
+                ],
+                "type": "string",
+              },
+            },
+            "required": [
+              "tier",
+            ],
+            "type": "object",
+          },
+          "rows": {
+            "description": "选项之间有差别的地方，每处一个名称，不超过八个字。选项的 diffs 按这个顺序一行对一行。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "shared": {
+            "$ref": "#/$defs/shared",
+            "description": "几个选项共同的部分，只写一遍。有两个以上选项时必填。",
+          },
+          "sources": {
+            "description": "这张卡的依据，至少一条。每条只写一样东西。没看过的不写。",
+            "items": {
+              "$ref": "#/$defs/source",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "stance": {
+            "$ref": "#/$defs/stance",
+            "description": "我的看法：选哪个、因为什么。先写完所有选项，最后才写看法。",
+          },
+          "tag": {
+            "description": "一个短语，说这条属于哪一类，显示在标题旁边。例如检查的三个根问题之一。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。说这张卡是哪件事，解释写进 why。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这件事出现在主线的哪个场景的第几步。发现问题和提升必填，疑问可以不写。",
+          },
+          "why": {
+            "description": "含义随卡的种类变。疑问写待决定的事，发现问题写哪里不对，提升写替用户解决什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "why",
+          "sources",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+  },
+  "title": "使用阶段的页面数据",
+  "type": "object",
+}
+`;
+
+exports[`提升阶段的 JSON Schema > 导出的样子 1`] = `
+{
+  "$defs": {
+    "cardId": {
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string",
+    },
+    "diagram": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "description": "图表库的文字定义。目录树直接写文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "kind": {
+          "description": "图表的种类，从取值里选，按内容配。",
+          "enum": [
+            "流程图",
+            "时序图",
+            "状态图",
+            "架构图",
+            "思维导图",
+            "象限图",
+            "时间线",
+            "改前改后的结构",
+            "目录树",
+          ],
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这张图叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "kind",
+        "title",
+        "code",
+      ],
+      "type": "object",
+    },
+    "dropped": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "because": {
+            "description": "为什么排除，一句话。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "name": {
+            "description": "排除的方向叫什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "name",
+          "because",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "尺寸",
+              "type": "string",
+            },
+            "unit": {
+              "description": "数值的单位，例如 px。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "色块",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "hex": {
+                    "description": "色值，写成 # 加十六进制数。",
+                    "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "type": "string",
+                  },
+                  "name": {
+                    "description": "这一格规范的名字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                },
+                "required": [
+                  "name",
+                  "hex",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "字号",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "sample": {
+                    "description": "样张上的字，用项目里的真文字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                  "size": {
+                    "description": "字号，单位是像素。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                  "weight": {
+                    "description": "字重，例如 400、600。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                },
+                "required": [
+                  "size",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "间距",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "img": {
+              "description": "截图的路径，相对工作区。",
+              "type": "string",
+            },
+            "type": {
+              "const": "截图",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "img",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "bg": {
+              "description": "框的底色，默认白色。深色主题的组件要写。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "css": {
+              "description": "这个组件生效的样式。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "from": {
+              "description": "真组件从哪一屏、哪个组件取来。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "height": {
+              "description": "框的高度，默认 160。",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991,
+              "type": "integer",
+            },
+            "html": {
+              "description": "从真实界面取来的 HTML。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "toggles": {
+              "description": "真组件下面的按钮，用来切类名或改属性。悬停和聚焦不用写。",
+              "items": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "class": {
+                        "description": "按下按钮时，给这个元素加或去掉的类名。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "class",
+                    ],
+                    "type": "object",
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "attr": {
+                        "description": "按下按钮时，改这个元素的哪个属性。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "off": {
+                        "description": "属性关闭时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "on": {
+                        "description": "属性打开时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "attr",
+                    ],
+                    "type": "object",
+                  },
+                ],
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "真组件",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "from",
+            "html",
+            "css",
+          ],
+          "type": "object",
+        },
+      ],
+    },
+    "figure": {
+      "additionalProperties": false,
+      "properties": {
+        "caption": {
+          "description": "图下面的一行说明。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "img": {
+          "description": "图的路径，相对页面数据所在的工作区，例如 img/before.png。",
+          "type": "string",
+        },
+      },
+      "required": [
+        "img",
+      ],
+      "type": "object",
+    },
+    "option": {
+      "additionalProperties": false,
+      "properties": {
+        "cost": {
+          "description": "代价：选它要放弃什么。不写它为什么不如别的选项。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "diffs": {
+          "description": "这个选项在每一行上的做法，和卡上的 rows 一一对应。每格最多两行。",
+          "items": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "key": {
+          "description": "选项的字母，依次写 a、b、c。用户的回复用它指出选了哪个选项。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+        "sketch": {
+          "description": "低保真线稿，HTML 片段，也可以放一张草稿图的 img 标签。设计类的卡每个选项都要有。可用的积木见 ploop page schema --blocks。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这个选项叫什么，不用颜色或阵营称呼选项。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "when": {
+          "description": "适用场景：什么情况下该选它。说不出来的选项是陪衬，删掉。叫「不改」的可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "why": {
+          "description": "理由：它去掉的是哪个根因，指到数据或代码里的事实。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "key",
+        "title",
+        "diffs",
+      ],
+      "type": "object",
+    },
+    "queueRefs": {
+      "items": {
+        "pattern": "^Q[1-9][0-9]*$",
+        "type": "string",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "shared": {
+      "additionalProperties": false,
+      "properties": {
+        "diagrams": {
+          "description": "共同部分的图表。",
+          "items": {
+            "$ref": "#/$defs/diagram",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "text": {
+          "description": "共同部分的文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "text",
+      ],
+      "type": "object",
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "description": "文字来源的文件，写相对项目根目录的路径。原文由命令摘录。",
+          "type": "string",
+        },
+        "img": {
+          "description": "界面来源的截图，写相对工作区的路径，例如 img/before.png。",
+          "type": "string",
+        },
+        "lines": {
+          "description": "摘哪几行，写成 12-20。只摘一行写 12。",
+          "pattern": "^[1-9][0-9]*(-[1-9][0-9]*)?$",
+          "type": "string",
+        },
+        "mark": {
+          "description": "要标出的行号，都在 lines 的范围里。",
+          "items": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "name": {
+          "description": "这样东西叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "outside": {
+          "const": true,
+          "description": "截图来自已有的产品或网上的设计时写 true。设计类的卡至少要有一条。",
+          "type": "boolean",
+        },
+        "quote": {
+          "const": true,
+          "description": "用户说过的原话写 true，原话写在 saw 里，不配图。",
+          "type": "boolean",
+        },
+        "saw": {
+          "description": "在它上面看到了什么。用户的原话来源，在这里照原样写出原话。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "name",
+      ],
+      "type": "object",
+    },
+    "stance": {
+      "additionalProperties": false,
+      "properties": {
+        "because": {
+          "description": "因为什么，一句话。页面显示成我的看法是 a，因为……",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "pick": {
+          "description": "看法选的是哪个选项，写它的字母。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+      },
+      "required": [
+        "pick",
+        "because",
+      ],
+      "type": "object",
+    },
+    "where": {
+      "additionalProperties": false,
+      "properties": {
+        "scene": {
+          "description": "场景编号，例如 S3。",
+          "pattern": "^S[1-9][0-9]*$",
+          "type": "string",
+        },
+        "step": {
+          "description": "步号，从 1 数，和主线里这个场景的步骤编号相同。",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "scene",
+        "step",
+      ],
+      "type": "object",
+    },
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "提升阶段的区块：疑问、提升。",
+  "properties": {
+    "asks": {
+      "description": "疑问：要用户定的事，或者要追问的事。每张卡一件事。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "design": {
+            "const": true,
+            "description": "设计类的卡写 true，指长什么样、怎么摆的问题。只有构思阶段会查来源和草稿。",
+            "type": "boolean",
+          },
+          "diagrams": {
+            "description": "图表。种类要和内容对得上，例如流程配流程图。",
+            "items": {
+              "$ref": "#/$defs/diagram",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "dropped": {
+            "$ref": "#/$defs/dropped",
+            "description": "想过又排除的方向，每个写名称和一句原因。用户可以在备注里点名捞回来。",
+          },
+          "evidence": {
+            "description": "证据，画在卡片右边。只放能看的东西，不放说明文字。一项也写成数组。",
+            "items": {
+              "$ref": "#/$defs/evidence",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "flow": {
+            "description": "操作流程，每步一句，画成一串带箭头的步骤。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "image": {
+            "$ref": "#/$defs/figure",
+            "description": "一张图，直接显示在右边。",
+          },
+          "mock": {
+            "description": "中保真线稿，画改完的样子，用真文字，HTML 片段。可用的积木见 ploop page schema --blocks。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "mockCaption": {
+            "description": "线稿下面的一句说明，只能和 mock 一起写。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "only": {
+            "const": true,
+            "description": "只有一个方向站得住时写 true。options 只放这一个，dropped 列出排除的方向。",
+            "type": "boolean",
+          },
+          "options": {
+            "description": "选项，两到三个。每个选项按 rows 逐行写差别。不写选项时，这张卡只有备注框，用来追问已经发生的事。",
+            "items": {
+              "$ref": "#/$defs/option",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "research": {
+            "additionalProperties": false,
+            "description": "调研分档。来源里有外面的东西的疑问卡必填。先定下查多深，再去查。",
+            "properties": {
+              "approved": {
+                "description": "深查时写问句和检索计划是哪个阶段给用户批的，例如第 2 版的构思阶段。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "reason": {
+                "description": "不查时写理由，说明这一条为什么不用查。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "tier": {
+                "description": "不查、快查、深查三选一。不查要写 reason，深查要写 approved。",
+                "enum": [
+                  "不查",
+                  "快查",
+                  "深查",
+                ],
+                "type": "string",
+              },
+            },
+            "required": [
+              "tier",
+            ],
+            "type": "object",
+          },
+          "rows": {
+            "description": "选项之间有差别的地方，每处一个名称，不超过八个字。选项的 diffs 按这个顺序一行对一行。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "shared": {
+            "$ref": "#/$defs/shared",
+            "description": "几个选项共同的部分，只写一遍。有两个以上选项时必填。",
+          },
+          "sources": {
+            "description": "这张卡的依据，至少一条。每条只写一样东西。没看过的不写。",
+            "items": {
+              "$ref": "#/$defs/source",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "stance": {
+            "$ref": "#/$defs/stance",
+            "description": "我的看法：选哪个、因为什么。先写完所有选项，最后才写看法。",
+          },
+          "tag": {
+            "description": "一个短语，说这条属于哪一类，显示在标题旁边。例如检查的三个根问题之一。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。说这张卡是哪件事，解释写进 why。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这件事出现在主线的哪个场景的第几步。发现问题和提升必填，疑问可以不写。",
+          },
+          "why": {
+            "description": "含义随卡的种类变。疑问写待决定的事，发现问题写哪里不对，提升写替用户解决什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "why",
+          "sources",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "improvements": {
+      "description": "提升：从整个产品看，还能留、加、删、重构或理清的地方。每张卡给选项。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "design": {
+            "const": true,
+            "description": "设计类的卡写 true，指长什么样、怎么摆的问题。只有构思阶段会查来源和草稿。",
+            "type": "boolean",
+          },
+          "diagrams": {
+            "description": "图表。种类要和内容对得上，例如流程配流程图。",
+            "items": {
+              "$ref": "#/$defs/diagram",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "dropped": {
+            "$ref": "#/$defs/dropped",
+            "description": "想过又排除的方向，每个写名称和一句原因。用户可以在备注里点名捞回来。",
+          },
+          "evidence": {
+            "description": "证据，画在卡片右边。只放能看的东西，不放说明文字。一项也写成数组。",
+            "items": {
+              "$ref": "#/$defs/evidence",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "flow": {
+            "description": "操作流程，每步一句，画成一串带箭头的步骤。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "image": {
+            "$ref": "#/$defs/figure",
+            "description": "一张图，直接显示在右边。",
+          },
+          "mock": {
+            "description": "中保真线稿，画改完的样子，用真文字，HTML 片段。可用的积木见 ploop page schema --blocks。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "mockCaption": {
+            "description": "线稿下面的一句说明，只能和 mock 一起写。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "only": {
+            "const": true,
+            "description": "只有一个方向站得住时写 true。options 只放这一个，dropped 列出排除的方向。",
+            "type": "boolean",
+          },
+          "options": {
+            "description": "选项，两到三个。每个选项按 rows 逐行写差别。不写选项时，这张卡只有备注框，用来追问已经发生的事。",
+            "items": {
+              "$ref": "#/$defs/option",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "rows": {
+            "description": "选项之间有差别的地方，每处一个名称，不超过八个字。选项的 diffs 按这个顺序一行对一行。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "shared": {
+            "$ref": "#/$defs/shared",
+            "description": "几个选项共同的部分，只写一遍。有两个以上选项时必填。",
+          },
+          "sources": {
+            "description": "这张卡的依据，至少一条。每条只写一样东西。没看过的不写。",
+            "items": {
+              "$ref": "#/$defs/source",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "stance": {
+            "$ref": "#/$defs/stance",
+            "description": "我的看法：选哪个、因为什么。先写完所有选项，最后才写看法。",
+          },
+          "tag": {
+            "description": "一个短语，说这条属于哪一类，显示在标题旁边。例如检查的三个根问题之一。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。说这张卡是哪件事，解释写进 why。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这件事出现在主线的哪个场景的第几步。发现问题和提升必填，疑问可以不写。",
+          },
+          "why": {
+            "description": "含义随卡的种类变。疑问写待决定的事，发现问题写哪里不对，提升写替用户解决什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "why",
+          "sources",
+          "where",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+  },
+  "title": "提升阶段的页面数据",
+  "type": "object",
+}
+`;
+
+exports[`构思阶段的 JSON Schema > 导出的样子 1`] = `
+{
+  "$defs": {
+    "cardId": {
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string",
+    },
+    "diagram": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "description": "图表库的文字定义。目录树直接写文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "kind": {
+          "description": "图表的种类，从取值里选，按内容配。",
+          "enum": [
+            "流程图",
+            "时序图",
+            "状态图",
+            "架构图",
+            "思维导图",
+            "象限图",
+            "时间线",
+            "改前改后的结构",
+            "目录树",
+          ],
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这张图叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "kind",
+        "title",
+        "code",
+      ],
+      "type": "object",
+    },
+    "dropped": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "because": {
+            "description": "为什么排除，一句话。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "name": {
+            "description": "排除的方向叫什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "name",
+          "because",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "尺寸",
+              "type": "string",
+            },
+            "unit": {
+              "description": "数值的单位，例如 px。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "色块",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "hex": {
+                    "description": "色值，写成 # 加十六进制数。",
+                    "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "type": "string",
+                  },
+                  "name": {
+                    "description": "这一格规范的名字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                },
+                "required": [
+                  "name",
+                  "hex",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "字号",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "sample": {
+                    "description": "样张上的字，用项目里的真文字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                  "size": {
+                    "description": "字号，单位是像素。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                  "weight": {
+                    "description": "字重，例如 400、600。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                },
+                "required": [
+                  "size",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "间距",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "img": {
+              "description": "截图的路径，相对工作区。",
+              "type": "string",
+            },
+            "type": {
+              "const": "截图",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "img",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "bg": {
+              "description": "框的底色，默认白色。深色主题的组件要写。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "css": {
+              "description": "这个组件生效的样式。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "from": {
+              "description": "真组件从哪一屏、哪个组件取来。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "height": {
+              "description": "框的高度，默认 160。",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991,
+              "type": "integer",
+            },
+            "html": {
+              "description": "从真实界面取来的 HTML。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "toggles": {
+              "description": "真组件下面的按钮，用来切类名或改属性。悬停和聚焦不用写。",
+              "items": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "class": {
+                        "description": "按下按钮时，给这个元素加或去掉的类名。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "class",
+                    ],
+                    "type": "object",
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "attr": {
+                        "description": "按下按钮时，改这个元素的哪个属性。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "off": {
+                        "description": "属性关闭时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "on": {
+                        "description": "属性打开时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "attr",
+                    ],
+                    "type": "object",
+                  },
+                ],
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "真组件",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "from",
+            "html",
+            "css",
+          ],
+          "type": "object",
+        },
+      ],
+    },
+    "figure": {
+      "additionalProperties": false,
+      "properties": {
+        "caption": {
+          "description": "图下面的一行说明。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "img": {
+          "description": "图的路径，相对页面数据所在的工作区，例如 img/before.png。",
+          "type": "string",
+        },
+      },
+      "required": [
+        "img",
+      ],
+      "type": "object",
+    },
+    "option": {
+      "additionalProperties": false,
+      "properties": {
+        "cost": {
+          "description": "代价：选它要放弃什么。不写它为什么不如别的选项。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "diffs": {
+          "description": "这个选项在每一行上的做法，和卡上的 rows 一一对应。每格最多两行。",
+          "items": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "key": {
+          "description": "选项的字母，依次写 a、b、c。用户的回复用它指出选了哪个选项。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+        "sketch": {
+          "description": "低保真线稿，HTML 片段，也可以放一张草稿图的 img 标签。设计类的卡每个选项都要有。可用的积木见 ploop page schema --blocks。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这个选项叫什么，不用颜色或阵营称呼选项。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "when": {
+          "description": "适用场景：什么情况下该选它。说不出来的选项是陪衬，删掉。叫「不改」的可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "why": {
+          "description": "理由：它去掉的是哪个根因，指到数据或代码里的事实。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "key",
+        "title",
+        "diffs",
+      ],
+      "type": "object",
+    },
+    "queueRefs": {
+      "items": {
+        "pattern": "^Q[1-9][0-9]*$",
+        "type": "string",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "shared": {
+      "additionalProperties": false,
+      "properties": {
+        "diagrams": {
+          "description": "共同部分的图表。",
+          "items": {
+            "$ref": "#/$defs/diagram",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "text": {
+          "description": "共同部分的文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "text",
+      ],
+      "type": "object",
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "description": "文字来源的文件，写相对项目根目录的路径。原文由命令摘录。",
+          "type": "string",
+        },
+        "img": {
+          "description": "界面来源的截图，写相对工作区的路径，例如 img/before.png。",
+          "type": "string",
+        },
+        "lines": {
+          "description": "摘哪几行，写成 12-20。只摘一行写 12。",
+          "pattern": "^[1-9][0-9]*(-[1-9][0-9]*)?$",
+          "type": "string",
+        },
+        "mark": {
+          "description": "要标出的行号，都在 lines 的范围里。",
+          "items": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "name": {
+          "description": "这样东西叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "outside": {
+          "const": true,
+          "description": "截图来自已有的产品或网上的设计时写 true。设计类的卡至少要有一条。",
+          "type": "boolean",
+        },
+        "quote": {
+          "const": true,
+          "description": "用户说过的原话写 true，原话写在 saw 里，不配图。",
+          "type": "boolean",
+        },
+        "saw": {
+          "description": "在它上面看到了什么。用户的原话来源，在这里照原样写出原话。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "name",
+      ],
+      "type": "object",
+    },
+    "stance": {
+      "additionalProperties": false,
+      "properties": {
+        "because": {
+          "description": "因为什么，一句话。页面显示成我的看法是 a，因为……",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "pick": {
+          "description": "看法选的是哪个选项，写它的字母。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+      },
+      "required": [
+        "pick",
+        "because",
+      ],
+      "type": "object",
+    },
+    "where": {
+      "additionalProperties": false,
+      "properties": {
+        "scene": {
+          "description": "场景编号，例如 S3。",
+          "pattern": "^S[1-9][0-9]*$",
+          "type": "string",
+        },
+        "step": {
+          "description": "步号，从 1 数，和主线里这个场景的步骤编号相同。",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "scene",
+        "step",
+      ],
+      "type": "object",
+    },
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "构思阶段的区块：先对齐、场景清单、设计规范、疑问、参考。",
+  "properties": {
+    "align": {
+      "description": "先对齐：这一页的选项要用到的新词。每个词写意思和例子，用户点明白或不明白。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "diagram": {
+            "$ref": "#/$defs/diagram",
+            "description": "一张图，文字讲不清时用。",
+          },
+          "example": {
+            "description": "例子，这个项目里的一件真事。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "meaning": {
+            "description": "意思，一句话，用大白话。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "name": {
+            "description": "术语的名称，全篇只用这一个。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "usedIn": {
+            "description": "用到它的疑问卡的标题，要和本页的标题对得上。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+        },
+        "required": [
+          "name",
+          "usedIn",
+          "meaning",
+          "example",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "asks": {
+      "description": "疑问：要用户定的事，或者要追问的事。每张卡一件事。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "design": {
+            "const": true,
+            "description": "设计类的卡写 true，指长什么样、怎么摆的问题。只有构思阶段会查来源和草稿。",
+            "type": "boolean",
+          },
+          "diagrams": {
+            "description": "图表。种类要和内容对得上，例如流程配流程图。",
+            "items": {
+              "$ref": "#/$defs/diagram",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "dropped": {
+            "$ref": "#/$defs/dropped",
+            "description": "想过又排除的方向，每个写名称和一句原因。用户可以在备注里点名捞回来。",
+          },
+          "evidence": {
+            "description": "证据，画在卡片右边。只放能看的东西，不放说明文字。一项也写成数组。",
+            "items": {
+              "$ref": "#/$defs/evidence",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "flow": {
+            "description": "操作流程，每步一句，画成一串带箭头的步骤。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "image": {
+            "$ref": "#/$defs/figure",
+            "description": "一张图，直接显示在右边。",
+          },
+          "mock": {
+            "description": "中保真线稿，画改完的样子，用真文字，HTML 片段。可用的积木见 ploop page schema --blocks。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "mockCaption": {
+            "description": "线稿下面的一句说明，只能和 mock 一起写。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "only": {
+            "const": true,
+            "description": "只有一个方向站得住时写 true。options 只放这一个，dropped 列出排除的方向。",
+            "type": "boolean",
+          },
+          "options": {
+            "description": "选项，两到三个。每个选项按 rows 逐行写差别。不写选项时，这张卡只有备注框，用来追问已经发生的事。",
+            "items": {
+              "$ref": "#/$defs/option",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "research": {
+            "additionalProperties": false,
+            "description": "调研分档。来源里有外面的东西的疑问卡必填。先定下查多深，再去查。",
+            "properties": {
+              "approved": {
+                "description": "深查时写问句和检索计划是哪个阶段给用户批的，例如第 2 版的构思阶段。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "reason": {
+                "description": "不查时写理由，说明这一条为什么不用查。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "tier": {
+                "description": "不查、快查、深查三选一。不查要写 reason，深查要写 approved。",
+                "enum": [
+                  "不查",
+                  "快查",
+                  "深查",
+                ],
+                "type": "string",
+              },
+            },
+            "required": [
+              "tier",
+            ],
+            "type": "object",
+          },
+          "rows": {
+            "description": "选项之间有差别的地方，每处一个名称，不超过八个字。选项的 diffs 按这个顺序一行对一行。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "shared": {
+            "$ref": "#/$defs/shared",
+            "description": "几个选项共同的部分，只写一遍。有两个以上选项时必填。",
+          },
+          "sources": {
+            "description": "这张卡的依据，至少一条。每条只写一样东西。没看过的不写。",
+            "items": {
+              "$ref": "#/$defs/source",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "stance": {
+            "$ref": "#/$defs/stance",
+            "description": "我的看法：选哪个、因为什么。先写完所有选项，最后才写看法。",
+          },
+          "tag": {
+            "description": "一个短语，说这条属于哪一类，显示在标题旁边。例如检查的三个根问题之一。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。说这张卡是哪件事，解释写进 why。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这件事出现在主线的哪个场景的第几步。发现问题和提升必填，疑问可以不写。",
+          },
+          "why": {
+            "description": "含义随卡的种类变。疑问写待决定的事，发现问题写哪里不对，提升写替用户解决什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "why",
+          "sources",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "refs": {
+      "description": "参考：构思调研时看过的外部资料。只给人看，不用点。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "advice": {
+            "description": "建议：采用、试用、观察或不用。",
+            "enum": [
+              "采用",
+              "试用",
+              "观察",
+              "不用",
+            ],
+            "type": "string",
+          },
+          "body": {
+            "description": "它说了什么，以及这个项目用到了哪一条。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "depth": {
+            "description": "读到了哪一步：已读原文，或者仅摘要。",
+            "enum": [
+              "已读原文",
+              "仅摘要",
+            ],
+            "type": "string",
+          },
+          "kind": {
+            "description": "资料的种类。",
+            "enum": [
+              "书",
+              "文章",
+              "规范",
+              "产品",
+              "开源项目",
+              "研究",
+            ],
+            "type": "string",
+          },
+          "name": {
+            "description": "这份资料叫什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "relevance": {
+            "description": "和这个项目的相关度。",
+            "enum": [
+              "高",
+              "中",
+              "低",
+            ],
+            "type": "string",
+          },
+          "strength": {
+            "description": "证据的强度。",
+            "enum": [
+              "强",
+              "中",
+              "弱",
+            ],
+            "type": "string",
+          },
+          "where": {
+            "description": "用在这个项目的哪里。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "name",
+          "kind",
+          "depth",
+          "relevance",
+          "strength",
+          "advice",
+          "body",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "scenes": {
+      "description": "场景清单：要用户删改的场景草稿。每个场景点保留、修改或删除。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "mark": {
+            "description": "名字旁边的小标记，例如新、改过。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "name": {
+            "description": "场景的名字。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "scene": {
+            "description": "场景编号，例如 S3。新场景不写，收进主线时由命令补上。",
+            "pattern": "^S[1-9][0-9]*$",
+            "type": "string",
+          },
+          "steps": {
+            "description": "场景的每一步，按顺序写。",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "do": {
+                  "description": "这一步做什么。",
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+                "expect": {
+                  "description": "这一步该看到什么。",
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+                "img": {
+                  "description": "这一步的截图，相对工作区。",
+                  "type": "string",
+                },
+              },
+              "required": [
+                "do",
+                "expect",
+              ],
+              "type": "object",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "who": {
+            "description": "谁在什么时候用。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "name",
+          "steps",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "spec": {
+      "description": "设计规范：要用户删改的规范草稿，画成样张。每一格点保留、修改或删除。",
+      "items": {
+        "oneOf": [
+          {
+            "additionalProperties": false,
+            "properties": {
+              "for": {
+                "description": "用在哪个组件上。新写的页面必填。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "id": {
+                "$ref": "#/$defs/cardId",
+                "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+              },
+              "kind": {
+                "const": "颜色",
+                "type": "string",
+              },
+              "name": {
+                "description": "这一格规范的名字。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "description": "一句补充，显示在名字旁边。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "queue": {
+                "$ref": "#/$defs/queueRefs",
+                "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+              },
+              "values": {
+                "description": "这一格的取值，每个取值一项。",
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "hex": {
+                      "description": "色值，写成 # 加十六进制数。",
+                      "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                      "type": "string",
+                    },
+                    "name": {
+                      "description": "这一格规范的名字。",
+                      "pattern": "\\S",
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "name",
+                    "hex",
+                  ],
+                  "type": "object",
+                },
+                "minItems": 1,
+                "type": "array",
+              },
+            },
+            "required": [
+              "name",
+              "kind",
+              "values",
+            ],
+            "type": "object",
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "for": {
+                "description": "用在哪个组件上。新写的页面必填。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "id": {
+                "$ref": "#/$defs/cardId",
+                "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+              },
+              "kind": {
+                "const": "字号",
+                "type": "string",
+              },
+              "name": {
+                "description": "这一格规范的名字。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "description": "一句补充，显示在名字旁边。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "queue": {
+                "$ref": "#/$defs/queueRefs",
+                "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+              },
+              "values": {
+                "description": "这一格的取值，每个取值一项。",
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "name": {
+                      "description": "这一格规范的名字。",
+                      "pattern": "\\S",
+                      "type": "string",
+                    },
+                    "sample": {
+                      "description": "样张上的字，用项目里的真文字。",
+                      "pattern": "\\S",
+                      "type": "string",
+                    },
+                    "size": {
+                      "description": "字号，单位是像素。",
+                      "exclusiveMinimum": 0,
+                      "type": "number",
+                    },
+                    "weight": {
+                      "description": "字重，例如 400、600。",
+                      "exclusiveMinimum": 0,
+                      "type": "number",
+                    },
+                  },
+                  "required": [
+                    "name",
+                    "size",
+                  ],
+                  "type": "object",
+                },
+                "minItems": 1,
+                "type": "array",
+              },
+            },
+            "required": [
+              "name",
+              "kind",
+              "values",
+            ],
+            "type": "object",
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "for": {
+                "description": "用在哪个组件上。新写的页面必填。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "id": {
+                "$ref": "#/$defs/cardId",
+                "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+              },
+              "kind": {
+                "const": "圆角",
+                "type": "string",
+              },
+              "name": {
+                "description": "这一格规范的名字。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "description": "一句补充，显示在名字旁边。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "queue": {
+                "$ref": "#/$defs/queueRefs",
+                "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+              },
+              "values": {
+                "description": "这一格的取值，每个取值一项。",
+                "items": {
+                  "minimum": 0,
+                  "type": "number",
+                },
+                "minItems": 1,
+                "type": "array",
+              },
+            },
+            "required": [
+              "name",
+              "kind",
+              "values",
+            ],
+            "type": "object",
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "for": {
+                "description": "用在哪个组件上。新写的页面必填。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "id": {
+                "$ref": "#/$defs/cardId",
+                "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+              },
+              "kind": {
+                "const": "间距",
+                "type": "string",
+              },
+              "name": {
+                "description": "这一格规范的名字。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "description": "一句补充，显示在名字旁边。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "queue": {
+                "$ref": "#/$defs/queueRefs",
+                "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+              },
+              "values": {
+                "description": "这一格的取值，每个取值一项。",
+                "items": {
+                  "minimum": 0,
+                  "type": "number",
+                },
+                "minItems": 1,
+                "type": "array",
+              },
+            },
+            "required": [
+              "name",
+              "kind",
+              "values",
+            ],
+            "type": "object",
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "for": {
+                "description": "用在哪个组件上。新写的页面必填。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "id": {
+                "$ref": "#/$defs/cardId",
+                "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+              },
+              "kind": {
+                "const": "动效",
+                "type": "string",
+              },
+              "name": {
+                "description": "这一格规范的名字。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "description": "一句补充，显示在名字旁边。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "queue": {
+                "$ref": "#/$defs/queueRefs",
+                "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+              },
+              "values": {
+                "description": "这一格的取值，每个取值一项。",
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "easing": {
+                      "description": "缓动曲线的名字。",
+                      "pattern": "\\S",
+                      "type": "string",
+                    },
+                    "effect": {
+                      "description": "点一下样张时小方块怎么动：移动、淡入或放大。",
+                      "enum": [
+                        "移动",
+                        "淡入",
+                        "放大",
+                      ],
+                      "type": "string",
+                    },
+                    "ms": {
+                      "description": "时长，单位是毫秒。",
+                      "minimum": 0,
+                      "type": "number",
+                    },
+                    "name": {
+                      "description": "这一格规范的名字。",
+                      "pattern": "\\S",
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "name",
+                    "ms",
+                  ],
+                  "type": "object",
+                },
+                "minItems": 1,
+                "type": "array",
+              },
+            },
+            "required": [
+              "name",
+              "kind",
+              "values",
+            ],
+            "type": "object",
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "columns": {
+                "description": "表格的列。as 决定这一列的格子怎么画。",
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "as": {
+                      "description": "这一列的格子怎么画：加粗、色块、正例、反例或旧叫法。",
+                      "enum": [
+                        "加粗",
+                        "色块",
+                        "正例",
+                        "反例",
+                        "旧叫法",
+                      ],
+                      "type": "string",
+                    },
+                    "name": {
+                      "description": "这一格规范的名字。",
+                      "pattern": "\\S",
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "name",
+                  ],
+                  "type": "object",
+                },
+                "minItems": 1,
+                "type": "array",
+              },
+              "for": {
+                "description": "用在哪个组件上。新写的页面必填。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "id": {
+                "$ref": "#/$defs/cardId",
+                "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+              },
+              "kind": {
+                "const": "表格",
+                "type": "string",
+              },
+              "name": {
+                "description": "这一格规范的名字。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "description": "一句补充，显示在名字旁边。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "queue": {
+                "$ref": "#/$defs/queueRefs",
+                "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+              },
+              "rows": {
+                "description": "表格的行，一行一条规范。每行的格数和列数一样多。",
+                "items": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string",
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "text": {
+                            "description": "状态标签上的字。",
+                            "pattern": "\\S",
+                            "type": "string",
+                          },
+                          "tone": {
+                            "description": "状态标签的色调，取队列的五种状态之一。",
+                            "enum": [
+                              "待办",
+                              "进行中",
+                              "等待",
+                              "已完成",
+                              "已取消",
+                            ],
+                            "type": "string",
+                          },
+                        },
+                        "required": [
+                          "text",
+                          "tone",
+                        ],
+                        "type": "object",
+                      },
+                    ],
+                  },
+                  "type": "array",
+                },
+                "minItems": 1,
+                "type": "array",
+              },
+            },
+            "required": [
+              "name",
+              "kind",
+              "columns",
+              "rows",
+            ],
+            "type": "object",
+          },
+          {
+            "additionalProperties": false,
+            "properties": {
+              "for": {
+                "description": "用在哪个组件上。新写的页面必填。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "id": {
+                "$ref": "#/$defs/cardId",
+                "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+              },
+              "kind": {
+                "const": "文字",
+                "type": "string",
+              },
+              "name": {
+                "description": "这一格规范的名字。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "note": {
+                "description": "一句补充，显示在名字旁边。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "queue": {
+                "$ref": "#/$defs/queueRefs",
+                "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+              },
+              "text": {
+                "description": "说不成样张的，写一条规则或一个例子，不超过三行。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+            },
+            "required": [
+              "name",
+              "kind",
+              "text",
+            ],
+            "type": "object",
+          },
+        ],
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+  },
+  "title": "构思阶段的页面数据",
+  "type": "object",
+}
+`;
+
+exports[`检查阶段的 JSON Schema > 导出的样子 1`] = `
+{
+  "$defs": {
+    "cardId": {
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string",
+    },
+    "diagram": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "description": "图表库的文字定义。目录树直接写文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "kind": {
+          "description": "图表的种类，从取值里选，按内容配。",
+          "enum": [
+            "流程图",
+            "时序图",
+            "状态图",
+            "架构图",
+            "思维导图",
+            "象限图",
+            "时间线",
+            "改前改后的结构",
+            "目录树",
+          ],
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这张图叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "kind",
+        "title",
+        "code",
+      ],
+      "type": "object",
+    },
+    "dropped": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "because": {
+            "description": "为什么排除，一句话。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "name": {
+            "description": "排除的方向叫什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "name",
+          "because",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "尺寸",
+              "type": "string",
+            },
+            "unit": {
+              "description": "数值的单位，例如 px。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "色块",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "hex": {
+                    "description": "色值，写成 # 加十六进制数。",
+                    "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "type": "string",
+                  },
+                  "name": {
+                    "description": "这一格规范的名字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                },
+                "required": [
+                  "name",
+                  "hex",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "字号",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "sample": {
+                    "description": "样张上的字，用项目里的真文字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                  "size": {
+                    "description": "字号，单位是像素。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                  "weight": {
+                    "description": "字重，例如 400、600。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                },
+                "required": [
+                  "size",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "间距",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "img": {
+              "description": "截图的路径，相对工作区。",
+              "type": "string",
+            },
+            "type": {
+              "const": "截图",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "img",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "bg": {
+              "description": "框的底色，默认白色。深色主题的组件要写。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "css": {
+              "description": "这个组件生效的样式。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "from": {
+              "description": "真组件从哪一屏、哪个组件取来。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "height": {
+              "description": "框的高度，默认 160。",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991,
+              "type": "integer",
+            },
+            "html": {
+              "description": "从真实界面取来的 HTML。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "toggles": {
+              "description": "真组件下面的按钮，用来切类名或改属性。悬停和聚焦不用写。",
+              "items": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "class": {
+                        "description": "按下按钮时，给这个元素加或去掉的类名。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "class",
+                    ],
+                    "type": "object",
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "attr": {
+                        "description": "按下按钮时，改这个元素的哪个属性。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "off": {
+                        "description": "属性关闭时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "on": {
+                        "description": "属性打开时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "attr",
+                    ],
+                    "type": "object",
+                  },
+                ],
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "真组件",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "from",
+            "html",
+            "css",
+          ],
+          "type": "object",
+        },
+      ],
+    },
+    "figure": {
+      "additionalProperties": false,
+      "properties": {
+        "caption": {
+          "description": "图下面的一行说明。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "img": {
+          "description": "图的路径，相对页面数据所在的工作区，例如 img/before.png。",
+          "type": "string",
+        },
+      },
+      "required": [
+        "img",
+      ],
+      "type": "object",
+    },
+    "option": {
+      "additionalProperties": false,
+      "properties": {
+        "cost": {
+          "description": "代价：选它要放弃什么。不写它为什么不如别的选项。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "diffs": {
+          "description": "这个选项在每一行上的做法，和卡上的 rows 一一对应。每格最多两行。",
+          "items": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "key": {
+          "description": "选项的字母，依次写 a、b、c。用户的回复用它指出选了哪个选项。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+        "sketch": {
+          "description": "低保真线稿，HTML 片段，也可以放一张草稿图的 img 标签。设计类的卡每个选项都要有。可用的积木见 ploop page schema --blocks。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这个选项叫什么，不用颜色或阵营称呼选项。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "when": {
+          "description": "适用场景：什么情况下该选它。说不出来的选项是陪衬，删掉。叫「不改」的可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "why": {
+          "description": "理由：它去掉的是哪个根因，指到数据或代码里的事实。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "key",
+        "title",
+        "diffs",
+      ],
+      "type": "object",
+    },
+    "queueRefs": {
+      "items": {
+        "pattern": "^Q[1-9][0-9]*$",
+        "type": "string",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "shared": {
+      "additionalProperties": false,
+      "properties": {
+        "diagrams": {
+          "description": "共同部分的图表。",
+          "items": {
+            "$ref": "#/$defs/diagram",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "text": {
+          "description": "共同部分的文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "text",
+      ],
+      "type": "object",
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "description": "文字来源的文件，写相对项目根目录的路径。原文由命令摘录。",
+          "type": "string",
+        },
+        "img": {
+          "description": "界面来源的截图，写相对工作区的路径，例如 img/before.png。",
+          "type": "string",
+        },
+        "lines": {
+          "description": "摘哪几行，写成 12-20。只摘一行写 12。",
+          "pattern": "^[1-9][0-9]*(-[1-9][0-9]*)?$",
+          "type": "string",
+        },
+        "mark": {
+          "description": "要标出的行号，都在 lines 的范围里。",
+          "items": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "name": {
+          "description": "这样东西叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "outside": {
+          "const": true,
+          "description": "截图来自已有的产品或网上的设计时写 true。设计类的卡至少要有一条。",
+          "type": "boolean",
+        },
+        "quote": {
+          "const": true,
+          "description": "用户说过的原话写 true，原话写在 saw 里，不配图。",
+          "type": "boolean",
+        },
+        "saw": {
+          "description": "在它上面看到了什么。用户的原话来源，在这里照原样写出原话。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "name",
+      ],
+      "type": "object",
+    },
+    "stance": {
+      "additionalProperties": false,
+      "properties": {
+        "because": {
+          "description": "因为什么，一句话。页面显示成我的看法是 a，因为……",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "pick": {
+          "description": "看法选的是哪个选项，写它的字母。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+      },
+      "required": [
+        "pick",
+        "because",
+      ],
+      "type": "object",
+    },
+    "where": {
+      "additionalProperties": false,
+      "properties": {
+        "scene": {
+          "description": "场景编号，例如 S3。",
+          "pattern": "^S[1-9][0-9]*$",
+          "type": "string",
+        },
+        "step": {
+          "description": "步号，从 1 数，和主线里这个场景的步骤编号相同。",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "scene",
+        "step",
+      ],
+      "type": "object",
+    },
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "检查阶段的区块：疑问、发现问题、元素清单。",
+  "properties": {
+    "asks": {
+      "description": "疑问：要用户定的事，或者要追问的事。每张卡一件事。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "design": {
+            "const": true,
+            "description": "设计类的卡写 true，指长什么样、怎么摆的问题。只有构思阶段会查来源和草稿。",
+            "type": "boolean",
+          },
+          "diagrams": {
+            "description": "图表。种类要和内容对得上，例如流程配流程图。",
+            "items": {
+              "$ref": "#/$defs/diagram",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "dropped": {
+            "$ref": "#/$defs/dropped",
+            "description": "想过又排除的方向，每个写名称和一句原因。用户可以在备注里点名捞回来。",
+          },
+          "evidence": {
+            "description": "证据，画在卡片右边。只放能看的东西，不放说明文字。一项也写成数组。",
+            "items": {
+              "$ref": "#/$defs/evidence",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "flow": {
+            "description": "操作流程，每步一句，画成一串带箭头的步骤。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "image": {
+            "$ref": "#/$defs/figure",
+            "description": "一张图，直接显示在右边。",
+          },
+          "mock": {
+            "description": "中保真线稿，画改完的样子，用真文字，HTML 片段。可用的积木见 ploop page schema --blocks。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "mockCaption": {
+            "description": "线稿下面的一句说明，只能和 mock 一起写。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "only": {
+            "const": true,
+            "description": "只有一个方向站得住时写 true。options 只放这一个，dropped 列出排除的方向。",
+            "type": "boolean",
+          },
+          "options": {
+            "description": "选项，两到三个。每个选项按 rows 逐行写差别。不写选项时，这张卡只有备注框，用来追问已经发生的事。",
+            "items": {
+              "$ref": "#/$defs/option",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "research": {
+            "additionalProperties": false,
+            "description": "调研分档。来源里有外面的东西的疑问卡必填。先定下查多深，再去查。",
+            "properties": {
+              "approved": {
+                "description": "深查时写问句和检索计划是哪个阶段给用户批的，例如第 2 版的构思阶段。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "reason": {
+                "description": "不查时写理由，说明这一条为什么不用查。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "tier": {
+                "description": "不查、快查、深查三选一。不查要写 reason，深查要写 approved。",
+                "enum": [
+                  "不查",
+                  "快查",
+                  "深查",
+                ],
+                "type": "string",
+              },
+            },
+            "required": [
+              "tier",
+            ],
+            "type": "object",
+          },
+          "rows": {
+            "description": "选项之间有差别的地方，每处一个名称，不超过八个字。选项的 diffs 按这个顺序一行对一行。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "shared": {
+            "$ref": "#/$defs/shared",
+            "description": "几个选项共同的部分，只写一遍。有两个以上选项时必填。",
+          },
+          "sources": {
+            "description": "这张卡的依据，至少一条。每条只写一样东西。没看过的不写。",
+            "items": {
+              "$ref": "#/$defs/source",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "stance": {
+            "$ref": "#/$defs/stance",
+            "description": "我的看法：选哪个、因为什么。先写完所有选项，最后才写看法。",
+          },
+          "tag": {
+            "description": "一个短语，说这条属于哪一类，显示在标题旁边。例如检查的三个根问题之一。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。说这张卡是哪件事，解释写进 why。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这件事出现在主线的哪个场景的第几步。发现问题和提升必填，疑问可以不写。",
+          },
+          "why": {
+            "description": "含义随卡的种类变。疑问写待决定的事，发现问题写哪里不对，提升写替用户解决什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "why",
+          "sources",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "findings": {
+      "description": "发现问题：检查阶段找出的问题。每张卡写哪里不对，并给选项。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "design": {
+            "const": true,
+            "description": "设计类的卡写 true，指长什么样、怎么摆的问题。只有构思阶段会查来源和草稿。",
+            "type": "boolean",
+          },
+          "diagrams": {
+            "description": "图表。种类要和内容对得上，例如流程配流程图。",
+            "items": {
+              "$ref": "#/$defs/diagram",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "dropped": {
+            "$ref": "#/$defs/dropped",
+            "description": "想过又排除的方向，每个写名称和一句原因。用户可以在备注里点名捞回来。",
+          },
+          "evidence": {
+            "description": "证据，画在卡片右边。只放能看的东西，不放说明文字。一项也写成数组。",
+            "items": {
+              "$ref": "#/$defs/evidence",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "flow": {
+            "description": "操作流程，每步一句，画成一串带箭头的步骤。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "image": {
+            "$ref": "#/$defs/figure",
+            "description": "一张图，直接显示在右边。",
+          },
+          "mock": {
+            "description": "中保真线稿，画改完的样子，用真文字，HTML 片段。可用的积木见 ploop page schema --blocks。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "mockCaption": {
+            "description": "线稿下面的一句说明，只能和 mock 一起写。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "only": {
+            "const": true,
+            "description": "只有一个方向站得住时写 true。options 只放这一个，dropped 列出排除的方向。",
+            "type": "boolean",
+          },
+          "options": {
+            "description": "选项，两到三个。每个选项按 rows 逐行写差别。不写选项时，这张卡只有备注框，用来追问已经发生的事。",
+            "items": {
+              "$ref": "#/$defs/option",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "rows": {
+            "description": "选项之间有差别的地方，每处一个名称，不超过八个字。选项的 diffs 按这个顺序一行对一行。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "shared": {
+            "$ref": "#/$defs/shared",
+            "description": "几个选项共同的部分，只写一遍。有两个以上选项时必填。",
+          },
+          "sources": {
+            "description": "这张卡的依据，至少一条。每条只写一样东西。没看过的不写。",
+            "items": {
+              "$ref": "#/$defs/source",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "stance": {
+            "$ref": "#/$defs/stance",
+            "description": "我的看法：选哪个、因为什么。先写完所有选项，最后才写看法。",
+          },
+          "tag": {
+            "description": "一个短语，说这条属于哪一类，显示在标题旁边。例如检查的三个根问题之一。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。说这张卡是哪件事，解释写进 why。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这件事出现在主线的哪个场景的第几步。发现问题和提升必填，疑问可以不写。",
+          },
+          "why": {
+            "description": "含义随卡的种类变。疑问写待决定的事，发现问题写哪里不对，提升写替用户解决什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "why",
+          "sources",
+          "where",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "screens": {
+      "description": "元素清单：检查阶段逐屏列出屏上的每样东西。页面上不显示。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "elements": {
+            "description": "屏上的每样东西，一样一行，模板写死的字和每一块的名字也要列。",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "answers": {
+                  "description": "它替用户回答什么问题，或让用户做什么。答不出来就写「答不出」。",
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+                "what": {
+                  "description": "这样东西是什么。",
+                  "pattern": "\\S",
+                  "type": "string",
+                },
+              },
+              "required": [
+                "what",
+                "answers",
+              ],
+              "type": "object",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "name": {
+            "description": "这一屏的名字。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这一屏是哪个场景的第几步。新写的页面必填。",
+          },
+        },
+        "required": [
+          "name",
+          "elements",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+  },
+  "title": "检查阶段的页面数据",
+  "type": "object",
+}
+`;
+
+exports[`落地阶段的 JSON Schema > 导出的样子 1`] = `
+{
+  "$defs": {
+    "cardId": {
+      "maxLength": 48,
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$",
+      "type": "string",
+    },
+    "diagram": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "description": "图表库的文字定义。目录树直接写文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "kind": {
+          "description": "图表的种类，从取值里选，按内容配。",
+          "enum": [
+            "流程图",
+            "时序图",
+            "状态图",
+            "架构图",
+            "思维导图",
+            "象限图",
+            "时间线",
+            "改前改后的结构",
+            "目录树",
+          ],
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这张图叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "kind",
+        "title",
+        "code",
+      ],
+      "type": "object",
+    },
+    "dropped": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "because": {
+            "description": "为什么排除，一句话。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "name": {
+            "description": "排除的方向叫什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "name",
+          "because",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "evidence": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "尺寸",
+              "type": "string",
+            },
+            "unit": {
+              "description": "数值的单位，例如 px。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "exclusiveMinimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "色块",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "hex": {
+                    "description": "色值，写成 # 加十六进制数。",
+                    "pattern": "^#(?:[0-9a-fA-F]{3,4}|[0-9a-fA-F]{6}|[0-9a-fA-F]{8})$",
+                    "type": "string",
+                  },
+                  "name": {
+                    "description": "这一格规范的名字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                },
+                "required": [
+                  "name",
+                  "hex",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "type": {
+              "const": "字号",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "sample": {
+                    "description": "样张上的字，用项目里的真文字。",
+                    "pattern": "\\S",
+                    "type": "string",
+                  },
+                  "size": {
+                    "description": "字号，单位是像素。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                  "weight": {
+                    "description": "字重，例如 400、600。",
+                    "exclusiveMinimum": 0,
+                    "type": "number",
+                  },
+                },
+                "required": [
+                  "size",
+                ],
+                "type": "object",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "keep": {
+              "description": "留下的取值，会上色。其余的画成灰色。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "间距",
+              "type": "string",
+            },
+            "values": {
+              "description": "要画的取值。尺寸和间距写数字，色块写名称和色值，字号写字号、字重和样张。",
+              "items": {
+                "minimum": 0,
+                "type": "number",
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+          },
+          "required": [
+            "type",
+            "values",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "img": {
+              "description": "截图的路径，相对工作区。",
+              "type": "string",
+            },
+            "type": {
+              "const": "截图",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "img",
+          ],
+          "type": "object",
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "bg": {
+              "description": "框的底色，默认白色。深色主题的组件要写。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "caption": {
+              "description": "图下面的一行说明。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "css": {
+              "description": "这个组件生效的样式。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "from": {
+              "description": "真组件从哪一屏、哪个组件取来。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "height": {
+              "description": "框的高度，默认 160。",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991,
+              "type": "integer",
+            },
+            "html": {
+              "description": "从真实界面取来的 HTML。",
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "toggles": {
+              "description": "真组件下面的按钮，用来切类名或改属性。悬停和聚焦不用写。",
+              "items": {
+                "anyOf": [
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "class": {
+                        "description": "按下按钮时，给这个元素加或去掉的类名。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "class",
+                    ],
+                    "type": "object",
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "attr": {
+                        "description": "按下按钮时，改这个元素的哪个属性。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "label": {
+                        "description": "按钮上的字。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "off": {
+                        "description": "属性关闭时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "on": {
+                        "description": "属性打开时的值。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                      "selector": {
+                        "description": "按下按钮时，改哪个元素，写 CSS 选择器。",
+                        "pattern": "\\S",
+                        "type": "string",
+                      },
+                    },
+                    "required": [
+                      "label",
+                      "selector",
+                      "attr",
+                    ],
+                    "type": "object",
+                  },
+                ],
+              },
+              "minItems": 1,
+              "type": "array",
+            },
+            "type": {
+              "const": "真组件",
+              "type": "string",
+            },
+          },
+          "required": [
+            "type",
+            "from",
+            "html",
+            "css",
+          ],
+          "type": "object",
+        },
+      ],
+    },
+    "figure": {
+      "additionalProperties": false,
+      "properties": {
+        "caption": {
+          "description": "图下面的一行说明。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "img": {
+          "description": "图的路径，相对页面数据所在的工作区，例如 img/before.png。",
+          "type": "string",
+        },
+      },
+      "required": [
+        "img",
+      ],
+      "type": "object",
+    },
+    "option": {
+      "additionalProperties": false,
+      "properties": {
+        "cost": {
+          "description": "代价：选它要放弃什么。不写它为什么不如别的选项。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "diffs": {
+          "description": "这个选项在每一行上的做法，和卡上的 rows 一一对应。每格最多两行。",
+          "items": {
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "key": {
+          "description": "选项的字母，依次写 a、b、c。用户的回复用它指出选了哪个选项。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+        "sketch": {
+          "description": "低保真线稿，HTML 片段，也可以放一张草稿图的 img 标签。设计类的卡每个选项都要有。可用的积木见 ploop page schema --blocks。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "title": {
+          "description": "一个名字，不超过 16 个字，不写成句子。写这个选项叫什么，不用颜色或阵营称呼选项。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "when": {
+          "description": "适用场景：什么情况下该选它。说不出来的选项是陪衬，删掉。叫「不改」的可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "why": {
+          "description": "理由：它去掉的是哪个根因，指到数据或代码里的事实。最后一个选项叫「不改」时可以不写。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "key",
+        "title",
+        "diffs",
+      ],
+      "type": "object",
+    },
+    "queueRefs": {
+      "items": {
+        "pattern": "^Q[1-9][0-9]*$",
+        "type": "string",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "shared": {
+      "additionalProperties": false,
+      "properties": {
+        "diagrams": {
+          "description": "共同部分的图表。",
+          "items": {
+            "$ref": "#/$defs/diagram",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "text": {
+          "description": "共同部分的文字。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "text",
+      ],
+      "type": "object",
+    },
+    "source": {
+      "additionalProperties": false,
+      "properties": {
+        "file": {
+          "description": "文字来源的文件，写相对项目根目录的路径。原文由命令摘录。",
+          "type": "string",
+        },
+        "img": {
+          "description": "界面来源的截图，写相对工作区的路径，例如 img/before.png。",
+          "type": "string",
+        },
+        "lines": {
+          "description": "摘哪几行，写成 12-20。只摘一行写 12。",
+          "pattern": "^[1-9][0-9]*(-[1-9][0-9]*)?$",
+          "type": "string",
+        },
+        "mark": {
+          "description": "要标出的行号，都在 lines 的范围里。",
+          "items": {
+            "exclusiveMinimum": 0,
+            "maximum": 9007199254740991,
+            "type": "integer",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "name": {
+          "description": "这样东西叫什么。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "outside": {
+          "const": true,
+          "description": "截图来自已有的产品或网上的设计时写 true。设计类的卡至少要有一条。",
+          "type": "boolean",
+        },
+        "quote": {
+          "const": true,
+          "description": "用户说过的原话写 true，原话写在 saw 里，不配图。",
+          "type": "boolean",
+        },
+        "saw": {
+          "description": "在它上面看到了什么。用户的原话来源，在这里照原样写出原话。",
+          "pattern": "\\S",
+          "type": "string",
+        },
+      },
+      "required": [
+        "name",
+      ],
+      "type": "object",
+    },
+    "stance": {
+      "additionalProperties": false,
+      "properties": {
+        "because": {
+          "description": "因为什么，一句话。页面显示成我的看法是 a，因为……",
+          "pattern": "\\S",
+          "type": "string",
+        },
+        "pick": {
+          "description": "看法选的是哪个选项，写它的字母。",
+          "pattern": "^[a-z]$",
+          "type": "string",
+        },
+      },
+      "required": [
+        "pick",
+        "because",
+      ],
+      "type": "object",
+    },
+    "where": {
+      "additionalProperties": false,
+      "properties": {
+        "scene": {
+          "description": "场景编号，例如 S3。",
+          "pattern": "^S[1-9][0-9]*$",
+          "type": "string",
+        },
+        "step": {
+          "description": "步号，从 1 数，和主线里这个场景的步骤编号相同。",
+          "exclusiveMinimum": 0,
+          "maximum": 9007199254740991,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "scene",
+        "step",
+      ],
+      "type": "object",
+    },
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "落地阶段的区块：疑问、更改。",
+  "properties": {
+    "asks": {
+      "description": "疑问：要用户定的事，或者要追问的事。每张卡一件事。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "design": {
+            "const": true,
+            "description": "设计类的卡写 true，指长什么样、怎么摆的问题。只有构思阶段会查来源和草稿。",
+            "type": "boolean",
+          },
+          "diagrams": {
+            "description": "图表。种类要和内容对得上，例如流程配流程图。",
+            "items": {
+              "$ref": "#/$defs/diagram",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "dropped": {
+            "$ref": "#/$defs/dropped",
+            "description": "想过又排除的方向，每个写名称和一句原因。用户可以在备注里点名捞回来。",
+          },
+          "evidence": {
+            "description": "证据，画在卡片右边。只放能看的东西，不放说明文字。一项也写成数组。",
+            "items": {
+              "$ref": "#/$defs/evidence",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "flow": {
+            "description": "操作流程，每步一句，画成一串带箭头的步骤。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "image": {
+            "$ref": "#/$defs/figure",
+            "description": "一张图，直接显示在右边。",
+          },
+          "mock": {
+            "description": "中保真线稿，画改完的样子，用真文字，HTML 片段。可用的积木见 ploop page schema --blocks。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "mockCaption": {
+            "description": "线稿下面的一句说明，只能和 mock 一起写。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "only": {
+            "const": true,
+            "description": "只有一个方向站得住时写 true。options 只放这一个，dropped 列出排除的方向。",
+            "type": "boolean",
+          },
+          "options": {
+            "description": "选项，两到三个。每个选项按 rows 逐行写差别。不写选项时，这张卡只有备注框，用来追问已经发生的事。",
+            "items": {
+              "$ref": "#/$defs/option",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "research": {
+            "additionalProperties": false,
+            "description": "调研分档。来源里有外面的东西的疑问卡必填。先定下查多深，再去查。",
+            "properties": {
+              "approved": {
+                "description": "深查时写问句和检索计划是哪个阶段给用户批的，例如第 2 版的构思阶段。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "reason": {
+                "description": "不查时写理由，说明这一条为什么不用查。",
+                "pattern": "\\S",
+                "type": "string",
+              },
+              "tier": {
+                "description": "不查、快查、深查三选一。不查要写 reason，深查要写 approved。",
+                "enum": [
+                  "不查",
+                  "快查",
+                  "深查",
+                ],
+                "type": "string",
+              },
+            },
+            "required": [
+              "tier",
+            ],
+            "type": "object",
+          },
+          "rows": {
+            "description": "选项之间有差别的地方，每处一个名称，不超过八个字。选项的 diffs 按这个顺序一行对一行。",
+            "items": {
+              "pattern": "\\S",
+              "type": "string",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "shared": {
+            "$ref": "#/$defs/shared",
+            "description": "几个选项共同的部分，只写一遍。有两个以上选项时必填。",
+          },
+          "sources": {
+            "description": "这张卡的依据，至少一条。每条只写一样东西。没看过的不写。",
+            "items": {
+              "$ref": "#/$defs/source",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "stance": {
+            "$ref": "#/$defs/stance",
+            "description": "我的看法：选哪个、因为什么。先写完所有选项，最后才写看法。",
+          },
+          "tag": {
+            "description": "一个短语，说这条属于哪一类，显示在标题旁边。例如检查的三个根问题之一。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。说这张卡是哪件事，解释写进 why。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "where": {
+            "$ref": "#/$defs/where",
+            "description": "这件事出现在主线的哪个场景的第几步。发现问题和提升必填，疑问可以不写。",
+          },
+          "why": {
+            "description": "含义随卡的种类变。疑问写待决定的事，发现问题写哪里不对，提升写替用户解决什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "why",
+          "sources",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+    "changes": {
+      "description": "更改：落地阶段改完的事，给用户验收。每条写之前哪里不对、现在什么样，配改前改后。",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "after": {
+            "$ref": "#/$defs/figure",
+            "description": "改后的图。界面的更改必填。",
+          },
+          "before": {
+            "$ref": "#/$defs/figure",
+            "description": "改前的图。界面的更改用它，之前没有图时不写。",
+          },
+          "fix": {
+            "description": "现在什么样。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "id": {
+            "$ref": "#/$defs/cardId",
+            "description": "卡片编号，小写英文加短横。不写时由命令按标题生成。",
+          },
+          "more": {
+            "description": "补充的改后图。",
+            "items": {
+              "$ref": "#/$defs/figure",
+            },
+            "minItems": 1,
+            "type": "array",
+          },
+          "problem": {
+            "description": "之前哪里不对。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "queue": {
+            "$ref": "#/$defs/queueRefs",
+            "description": "这张卡处理的队列事项，编号的数组，例如 ["Q12"]。拿出来又成立的事，每件都要写进某张卡。",
+          },
+          "textAfter": {
+            "description": "文字的改后原文。文字的更改必填。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "textBefore": {
+            "description": "文字的改前原文。文字的更改必填，逐行对比由后端算。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "textName": {
+            "description": "文字的更改里，这一段叫什么。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+          "title": {
+            "description": "一个名字，不超过 16 个字，不写成句子。写这件改动叫什么，做了什么写进 fix。",
+            "pattern": "\\S",
+            "type": "string",
+          },
+        },
+        "required": [
+          "title",
+          "problem",
+          "fix",
+        ],
+        "type": "object",
+      },
+      "minItems": 1,
+      "type": "array",
+    },
+  },
+  "title": "落地阶段的页面数据",
+  "type": "object",
+}
+`;

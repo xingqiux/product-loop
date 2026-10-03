@@ -1,0 +1,239 @@
+/*
+ * 工作台的主题：只覆盖 Untitled UI 主题里要改的变量，在 untitled-theme.css 后面加载。
+ * 配色是 a 黑白加蓝（决定 191），字号、字体、圆角、动效照原型（决定 190），只做浅色（决定 193）。
+ * 色值只写在这个文件开头的十个颜色里，其余一律引用它们。组件里写死色值由 theme.test.ts 拦下。
+ * 不改 --spacing：Untitled UI 的字号是用它乘出来的。新加的字号要同时登记进 lib/cx.ts。
+ */
+@theme {
+  /* 十个颜色。用途见 design/palettes/a.json。 */
+  --color-white: #ffffff;
+  --color-wash: #fafafa;
+  --color-line: #ebebeb;
+  --color-icon: #8d8d8d;
+  --color-sub: #5c5c5c;
+  --color-ink: #171717;
+  --color-accent: #0066db;
+  --color-done: #15803d;
+  --color-wait: #cb4600;
+  --color-del: #c62828;
+  --color-black: var(--color-ink);
+  --color-transparent: transparent;
+  --color-alpha-white: var(--color-white);
+  --color-alpha-black: var(--color-ink);
+
+  /* 灰阶：零彩度，字只分墨和次字两级。 */
+  --color-neutral-50: var(--color-wash);
+  --color-neutral-100: var(--color-line);
+  --color-neutral-200: var(--color-line);
+  --color-neutral-300: var(--color-icon);
+  --color-neutral-400: var(--color-icon);
+  --color-neutral-500: var(--color-sub);
+  --color-neutral-600: var(--color-sub);
+  --color-neutral-700: var(--color-ink);
+  --color-neutral-800: var(--color-ink);
+  --color-neutral-900: var(--color-ink);
+  --color-neutral-950: var(--color-ink);
+
+  /* 品牌色阶：蓝只标选中、当前位置、链接和焦点。主按钮和勾选框用墨，见下面的语义色。 */
+  --color-brand-25: var(--color-wash);
+  --color-brand-50: var(--color-wash);
+  --color-brand-100: var(--color-line);
+  --color-brand-200: var(--color-line);
+  --color-brand-300: var(--color-accent);
+  --color-brand-400: var(--color-accent);
+  --color-brand-500: var(--color-accent);
+  --color-brand-600: var(--color-accent);
+  --color-brand-700: var(--color-accent);
+  --color-brand-800: var(--color-accent);
+  --color-brand-900: var(--color-accent);
+  --color-brand-950: var(--color-accent);
+
+  /* 状态色只做字和圆点。浅的两级退回浅底和线，不铺带颜色的底。 */
+  --color-green-50: var(--color-wash);
+  --color-green-100: var(--color-line);
+  --color-green-200: var(--color-done);
+  --color-green-300: var(--color-done);
+  --color-green-400: var(--color-done);
+  --color-green-500: var(--color-done);
+  --color-green-600: var(--color-done);
+  --color-green-700: var(--color-done);
+  --color-green-800: var(--color-done);
+  --color-green-900: var(--color-done);
+  --color-green-950: var(--color-done);
+  --color-red-50: var(--color-wash);
+  --color-red-100: var(--color-line);
+  --color-red-200: var(--color-del);
+  --color-red-300: var(--color-del);
+  --color-red-400: var(--color-del);
+  --color-red-500: var(--color-del);
+  --color-red-600: var(--color-del);
+  --color-red-700: var(--color-del);
+  --color-red-800: var(--color-del);
+  --color-red-900: var(--color-del);
+  --color-red-950: var(--color-del);
+  --color-yellow-50: var(--color-wash);
+  --color-yellow-100: var(--color-line);
+  --color-yellow-200: var(--color-line);
+  --color-yellow-300: var(--color-wait);
+  --color-yellow-400: var(--color-wait);
+  --color-yellow-500: var(--color-wait);
+  --color-yellow-600: var(--color-wait);
+  --color-yellow-700: var(--color-wait);
+  --color-yellow-800: var(--color-wait);
+  --color-yellow-900: var(--color-wait);
+  --color-yellow-950: var(--color-wait);
+  --color-amber-50: var(--color-wash);
+  --color-amber-100: var(--color-line);
+  --color-amber-200: var(--color-line);
+  --color-amber-300: var(--color-wait);
+  --color-amber-400: var(--color-wait);
+  --color-amber-500: var(--color-wait);
+  --color-amber-600: var(--color-wait);
+  --color-amber-700: var(--color-wait);
+  --color-amber-800: var(--color-wait);
+  --color-amber-900: var(--color-wait);
+  --color-amber-950: var(--color-wait);
+  --color-orange-50: var(--color-wash);
+  --color-orange-100: var(--color-line);
+  --color-orange-200: var(--color-line);
+  --color-orange-300: var(--color-wait);
+  --color-orange-400: var(--color-wait);
+  --color-orange-500: var(--color-wait);
+  --color-orange-600: var(--color-wait);
+  --color-orange-700: var(--color-wait);
+  --color-orange-800: var(--color-wait);
+  --color-orange-900: var(--color-wait);
+  --color-orange-950: var(--color-wait);
+
+  /* 用不到的色相退回灰阶，蓝退回品牌色，页面上不会出现配色以外的颜色。 */
+  --color-utility-sky-50: var(--color-neutral-50);
+  --color-utility-sky-100: var(--color-neutral-100);
+  --color-utility-sky-200: var(--color-neutral-200);
+  --color-utility-sky-300: var(--color-neutral-300);
+  --color-utility-sky-400: var(--color-neutral-400);
+  --color-utility-sky-500: var(--color-neutral-500);
+  --color-utility-sky-600: var(--color-neutral-600);
+  --color-utility-sky-700: var(--color-neutral-700);
+  --color-utility-indigo-50: var(--color-neutral-50);
+  --color-utility-indigo-100: var(--color-neutral-100);
+  --color-utility-indigo-200: var(--color-neutral-200);
+  --color-utility-indigo-300: var(--color-neutral-300);
+  --color-utility-indigo-400: var(--color-neutral-400);
+  --color-utility-indigo-500: var(--color-neutral-500);
+  --color-utility-indigo-600: var(--color-neutral-600);
+  --color-utility-indigo-700: var(--color-neutral-700);
+  --color-utility-purple-50: var(--color-neutral-50);
+  --color-utility-purple-100: var(--color-neutral-100);
+  --color-utility-purple-200: var(--color-neutral-200);
+  --color-utility-purple-300: var(--color-neutral-300);
+  --color-utility-purple-400: var(--color-neutral-400);
+  --color-utility-purple-500: var(--color-neutral-500);
+  --color-utility-purple-600: var(--color-neutral-600);
+  --color-utility-purple-700: var(--color-neutral-700);
+  --color-utility-fuchsia-50: var(--color-neutral-50);
+  --color-utility-fuchsia-100: var(--color-neutral-100);
+  --color-utility-fuchsia-200: var(--color-neutral-200);
+  --color-utility-fuchsia-300: var(--color-neutral-300);
+  --color-utility-fuchsia-400: var(--color-neutral-400);
+  --color-utility-fuchsia-500: var(--color-neutral-500);
+  --color-utility-fuchsia-600: var(--color-neutral-600);
+  --color-utility-fuchsia-700: var(--color-neutral-700);
+  --color-utility-pink-50: var(--color-neutral-50);
+  --color-utility-pink-100: var(--color-neutral-100);
+  --color-utility-pink-200: var(--color-neutral-200);
+  --color-utility-pink-300: var(--color-neutral-300);
+  --color-utility-pink-400: var(--color-neutral-400);
+  --color-utility-pink-500: var(--color-neutral-500);
+  --color-utility-pink-600: var(--color-neutral-600);
+  --color-utility-pink-700: var(--color-neutral-700);
+  --color-utility-emerald-50: var(--color-neutral-50);
+  --color-utility-emerald-100: var(--color-neutral-100);
+  --color-utility-emerald-200: var(--color-neutral-200);
+  --color-utility-emerald-300: var(--color-neutral-300);
+  --color-utility-emerald-400: var(--color-neutral-400);
+  --color-utility-emerald-500: var(--color-neutral-500);
+  --color-utility-emerald-600: var(--color-neutral-600);
+  --color-utility-emerald-700: var(--color-neutral-700);
+  --color-utility-slate-50: var(--color-neutral-50);
+  --color-utility-slate-100: var(--color-neutral-100);
+  --color-utility-slate-200: var(--color-neutral-200);
+  --color-utility-slate-300: var(--color-neutral-300);
+  --color-utility-slate-400: var(--color-neutral-400);
+  --color-utility-slate-500: var(--color-neutral-500);
+  --color-utility-slate-600: var(--color-neutral-600);
+  --color-utility-slate-700: var(--color-neutral-700);
+  --color-utility-blue-50: var(--color-brand-50);
+  --color-utility-blue-100: var(--color-brand-100);
+  --color-utility-blue-200: var(--color-brand-200);
+  --color-utility-blue-300: var(--color-brand-300);
+  --color-utility-blue-400: var(--color-brand-400);
+  --color-utility-blue-500: var(--color-brand-500);
+  --color-utility-blue-600: var(--color-brand-600);
+  --color-utility-blue-700: var(--color-brand-700);
+
+  /* 语义色里和上游对应关系不同的几项。 */
+  --color-bg-brand-solid: var(--color-ink);
+  --color-bg-brand-solid_hover: color-mix(in srgb, var(--color-ink) 90%, transparent);
+  --color-bg-brand-section: var(--color-ink);
+  --color-bg-brand-section_subtle: var(--color-ink);
+  --color-border-primary: var(--color-line);
+  --color-border-secondary_alt: color-mix(in srgb, var(--color-ink) 10%, transparent);
+  --color-text-brand-primary: var(--color-accent);
+  --color-focus-ring: var(--color-accent);
+  --color-slider-handle-border: var(--color-ink);
+  --color-avatar-styles-bg-neutral: var(--color-line);
+  --color-app-store-badge-border: var(--color-icon);
+
+  --shadow-xs: 0 1px 2px color-mix(in srgb, var(--color-ink) 4%, transparent);
+  --shadow-skeuomorphic:
+    0 0 0 1px color-mix(in srgb, var(--color-ink) 18%, transparent) inset,
+    0 -2px 0 0 color-mix(in srgb, var(--color-ink) 5%, transparent) inset;
+
+  /* 字体：西文 Inter，中文先用本机的思源黑体，没有再加载 Noto Sans SC 的切片，最后是苹方。 */
+  --font-body:
+    "Inter Variable", "Source Han Sans SC", "Noto Sans SC Variable", "PingFang SC", sans-serif;
+  --font-display: var(--font-body);
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* 字号：标题、小标题、正文、界面字、注、标签。中文正文的行高比 Untitled UI 的大。 */
+  --text-title: 22px;
+  --text-title--line-height: 30px;
+  --text-title--font-weight: 600;
+  --text-heading: 18px;
+  --text-heading--line-height: 26px;
+  --text-heading--font-weight: 600;
+  --text-body: 15px;
+  --text-body--line-height: 26px;
+  --text-ui: 14px;
+  --text-ui--line-height: 22px;
+  --text-meta: 13px;
+  --text-meta--line-height: 20px;
+  --text-label: 12px;
+  --text-label--line-height: 18px;
+  --text-label--font-weight: 500;
+
+  /* 圆角：标签 6，按钮和输入框 8，卡片 10，弹层 14。 */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 14px;
+
+  /* 动效：和 lib/motion.ts 的取值相同，CSS 的过渡用这里的，Motion 用那边的。 */
+  --duration-hover: 120ms;
+  --duration-select: 160ms;
+  --duration-fade: 200ms;
+  --duration-screen: 220ms;
+  --duration-submit: 240ms;
+  --duration-card: 360ms;
+  --duration-stage: 420ms;
+  --ease-screen: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-select: cubic-bezier(0.2, 0, 0, 1);
+  --ease-card: cubic-bezier(0.32, 0.72, 0, 1);
+  --default-transition-duration: var(--duration-hover);
+}
+
+:root {
+  /* 输入框右下角的拉伸图标，用图标灰。数据地址里引用不了变量，所以写在这里。 */
+  --resize-handle-bg: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 2L2 10' stroke='%238d8d8d' stroke-linecap='round'/%3E%3Cpath d='M11 7L7 11' stroke='%238d8d8d' stroke-linecap='round'/%3E%3C/svg%3E");
+}

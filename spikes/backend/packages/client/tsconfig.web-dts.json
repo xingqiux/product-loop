@@ -1,0 +1,10 @@
+{
+  // 同样是浏览器一侧的配置，但 AppType 改从包 A 出的类型声明拿（先运行 tsc -p ../backend/tsconfig.types.json）。
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2024", "dom"],
+    "types": [],
+    "paths": { "@spike/backend": ["../backend/dist/types/index.d.ts"] }
+  },
+  "include": ["src/index.ts", "src/type-assertions.ts"]
+}

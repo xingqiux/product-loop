@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/noto-sans-sc";
+
+/*
+ * 只覆盖要改的主题变量（02 选型第十一节）：品牌色换掉紫色，字体栈加上中文。不改 --spacing。
+ * 字体栈按 02 的写法：西文 Inter，中文先用本机装的思源黑体，没有再加载 Noto Sans SC 的切片。
+ */
+@theme {
+  --font-sans: "Inter Variable", "Source Han Sans SC", "Noto Sans SC Variable", "PingFang SC", sans-serif;
+  --color-brand-50: #eff5ff;
+  --color-brand-100: #dce8fd;
+  --color-brand-500: #3a72e4;
+  --color-brand-600: #2457c8;
+  --color-brand-700: #1c45a0;
+}

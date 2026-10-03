@@ -1,0 +1,23 @@
+{
+  "name": "@spike/bundle",
+  "version": "0.0.0",
+  "private": true,
+  "description": "tsdown 把一个小后端（Hono + better-sqlite3 + Drizzle）打成一个 ES 模块文件，原生文件用 nativeBinding 加载",
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "db:generate": "drizzle-kit generate",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "catalog:",
+    "better-sqlite3": "catalog:",
+    "drizzle-orm": "catalog:",
+    "hono": "catalog:"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "catalog:",
+    "drizzle-kit": "catalog:",
+    "tsdown": "catalog:"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "product-loop",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.27.1",
+  "engines": {
+    "node": ">=24.12.0"
+  },
+  "scripts": {
+    "check": "pnpm lint && pnpm typecheck && pnpm knip && pnpm test",
+    "build": "node scripts/build.ts",
+    "ploop:setup": "node scripts/build.ts && node dist/app/ploop.mjs setup",
+    "lint": "biome check",
+    "fix": "biome check --write",
+    "types": "pnpm --filter @product-loop/backend types",
+    "typecheck": "pnpm types && tsc --noEmit && pnpm --recursive typecheck",
+    "knip": "knip",
+    "test": "vitest run --exclude '**/*.use.test.ts'",
+    "use": "vitest run --config vitest.use.config.ts",
+    "perf": "node scripts/perf/round-page.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "catalog:",
+    "@types/node": "catalog:",
+    "knip": "catalog:",
+    "playwright-core": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:"
+  }
+}

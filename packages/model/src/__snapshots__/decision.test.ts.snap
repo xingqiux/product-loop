@@ -1,0 +1,140 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`JSON Schema > decision 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "case": {
+      "type": "string",
+    },
+    "date": {
+      "format": "date",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))$",
+      "type": "string",
+    },
+    "decision": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "fromLine": {
+      "additionalProperties": false,
+      "properties": {
+        "line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "submission": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "submission",
+        "line",
+      ],
+      "type": "object",
+    },
+    "id": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer",
+    },
+    "kind": {
+      "enum": [
+        "决定",
+        "以后再说",
+      ],
+      "type": "string",
+    },
+    "reason": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "status": {
+      "enum": [
+        "有效",
+        "已作废",
+      ],
+      "type": "string",
+    },
+    "voidReason": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "voidedBy": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer",
+    },
+  },
+  "required": [
+    "id",
+    "kind",
+    "decision",
+    "reason",
+    "case",
+    "date",
+    "status",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`JSON Schema > decisionCreate 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "case": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "decision": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "kind": {
+      "enum": [
+        "决定",
+        "以后再说",
+      ],
+      "type": "string",
+    },
+    "reason": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+  },
+  "required": [
+    "decision",
+    "reason",
+    "case",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`JSON Schema > decisionVoid 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "by": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer",
+    },
+    "reason": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+  },
+  "required": [
+    "by",
+  ],
+  "type": "object",
+}
+`;

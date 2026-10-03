@@ -1,0 +1,12 @@
+{
+  // 浏览器的类型检查配置：lib 有 dom，没有 Node 的类型，见「01 架构」第三节。
+  // AppType 从后端生成的 dist/types/index.d.ts 取，pnpm typecheck 先生成它。
+  // src/node/ 是只给 Node 用的入口，用到 Node 的模块，不在这里查。
+  // 它和测试要用 Node 的类型，另见 tsconfig.test.json。
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["es2024", "dom"]
+  },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts", "src/node"]
+}

@@ -1,0 +1,297 @@
+{
+  "at": "2026-09-28T07:25:57.373Z",
+  "ok": true,
+  "facts": {
+    "versions": {
+      "node": "v24.20.0",
+      "pnpm": "pnpm@11.27.1",
+      "vite": "8.3.1",
+      "@vitejs/plugin-react": "（未找到）",
+      "react": "19.3.0",
+      "react-dom": "19.3.0",
+      "@tanstack/react-router": "1.170.39",
+      "@tanstack/router-plugin": "1.168.40",
+      "@tanstack/router-generator": "1.167.38",
+      "@tanstack/react-query": "5.104.0",
+      "react-aria-components": "1.21.1",
+      "tailwindcss": "4.3.3",
+      "@tailwindcss/vite": "（未找到）",
+      "motion": "13.4.4",
+      "zustand": "5.0.15",
+      "zod": "4.6.5",
+      "typescript": "7.0.2",
+      "@fontsource-variable/inter": "5.3.0",
+      "@fontsource-variable/noto-sans-sc": "5.3.0"
+    },
+    "playwrightCore": "1.62.0",
+    "chrome": "153.0.8010.54",
+    "fonts": {
+      "cjk": true,
+      "latin": true,
+      "requested": [
+        "inter-latin-wght-normal",
+        "noto-sans-sc-103-wght-normal",
+        "noto-sans-sc-105-wght-normal",
+        "noto-sans-sc-108-wght-normal",
+        "noto-sans-sc-109-wght-normal",
+        "noto-sans-sc-111-wght-normal",
+        "noto-sans-sc-113-wght-normal",
+        "noto-sans-sc-114-wght-normal",
+        "noto-sans-sc-115-wght-normal",
+        "noto-sans-sc-116-wght-normal",
+        "noto-sans-sc-117-wght-normal",
+        "noto-sans-sc-118-wght-normal",
+        "noto-sans-sc-119-wght-normal"
+      ]
+    },
+    "consoleProblems": [
+      "[正常·?item=3 探针，预期报错] error: tn: [ { \"expected\": \"string\", \"code\": \"invalid_type\", \"path\": [ \"item\" ], \"message\": \"Invalid input: expected string, received number\" } ] at E (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:3:19009) at Rr.matchRoutesInternal (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:3:16548) at Rr.matchRoutes (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:3:8049) at $n (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:3:35381) at Rr.load (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:3:12524) at http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:3:45085 at wl (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:10:95015) at vu (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:10:104490) at Iu (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:10:115730) at vu (http://127.0.0.1:4780/assets/index-Bn_N-GDE.js:10:104477)"
+    ],
+    "fontRequests": [
+      "inter-latin-wght-normal",
+      "noto-sans-sc-118-wght-normal",
+      "noto-sans-sc-117-wght-normal",
+      "noto-sans-sc-113-wght-normal",
+      "noto-sans-sc-108-wght-normal",
+      "noto-sans-sc-119-wght-normal",
+      "noto-sans-sc-116-wght-normal",
+      "noto-sans-sc-114-wght-normal",
+      "noto-sans-sc-115-wght-normal",
+      "noto-sans-sc-103-wght-normal",
+      "noto-sans-sc-109-wght-normal",
+      "noto-sans-sc-111-wght-normal",
+      "noto-sans-sc-105-wght-normal"
+    ]
+  },
+  "checks": [
+    {
+      "item": 1,
+      "name": "vite build",
+      "ok": true,
+      "detail": "1092 ms"
+    },
+    {
+      "item": 1,
+      "name": "路由树由 Vite 插件从 src/routes 生成",
+      "ok": true,
+      "detail": "src/routeTree.gen.ts 的 fullPaths: '/' | '/p/$project' | '/p/$project/' | '/p/$project/r/$round'"
+    },
+    {
+      "item": 1,
+      "name": "按路由拆分代码块（autoCodeSplitting）",
+      "ok": true,
+      "detail": "_project-DHA6joFY.js，_round-1e35_jS1.js，_round-Dsk5GEcK.js，route-RGnyhtUN.js，routes-AbO2n0vh.js"
+    },
+    {
+      "item": 1,
+      "name": "tsc --noEmit（TypeScript 7.0.2）",
+      "ok": true,
+      "detail": "674 ms"
+    },
+    {
+      "item": 2,
+      "name": "类型反例：写错参数名、少参数、没有的路由、查询参数类型不对，都是类型错误",
+      "ok": true,
+      "detail": "src/type-tests/links.tsx 里 4 处 @ts-expect-error 都被 tsc 认可（不是错误的话会报 TS2578）"
+    },
+    {
+      "item": 2,
+      "name": "反例：把 params 的 round 写成 rund，tsc 报错",
+      "ok": true,
+      "detail": "type-tests-negative/wrong-param/wrong-param.tsx(5,65): error TS2353: Object literal may only specify known properties, and 'rund' does not exist in type 'ParamsReducerFn<RouterCore<Route<Reg…"
+    },
+    {
+      "item": 4,
+      "name": "用系统 Chrome 启动无头浏览器",
+      "ok": true,
+      "detail": "playwright-core 1.62.0（借用 atlas），Chrome 153.0.8010.54，页面由 vite preview 提供：http://127.0.0.1:4780"
+    },
+    {
+      "item": 1,
+      "name": "路由 / 渲染",
+      "ok": true,
+      "detail": "地址 /"
+    },
+    {
+      "item": 3,
+      "name": "Tailwind 4：自己的 @theme 变量生成了工具类",
+      "ok": true,
+      "detail": "bg-brand-600 算出来是 rgb(36, 87, 200)"
+    },
+    {
+      "item": 3,
+      "name": "Tailwind 4：字体栈覆盖到 --font-sans",
+      "ok": true,
+      "detail": "\"Inter Variable\", \"Source Han Sans SC\", \"Noto Sans SC Variable\", \"PingFang SC\", sans-serif"
+    },
+    {
+      "item": 2,
+      "name": "React Aria Link（href 字符串）经 RouterProvider 单页跳转",
+      "ok": true,
+      "detail": "href=/p/%E4%BA%A7%E5%93%81%E5%BE%AA%E7%8E%AF，点后地址 /p/%E4%BA%A7%E5%93%81%E5%BE%AA%E7%8E%AF，没有整页刷新=true，历史 +1"
+    },
+    {
+      "item": 1,
+      "name": "路由 /p/$project 渲染，中文项目名经地址往返",
+      "ok": true,
+      "detail": "页面上的项目名「产品循环」"
+    },
+    {
+      "item": 3,
+      "name": "TanStack Query：加载器预取、组件读缓存",
+      "ok": true,
+      "detail": "轮次列表：v2-落地-3落地v2-检查-1检查v1-构思-12构思"
+    },
+    {
+      "item": 2,
+      "name": "AppLink 悬停即预加载（TanStack 的 onMouseEnter 穿过 React Aria Link）",
+      "ok": true,
+      "detail": "悬停后 /p/$project/r/$round 的加载器以 preload=true 跑过"
+    },
+    {
+      "item": 2,
+      "name": "AppLink（createLink 包 React Aria Link）单页跳转",
+      "ok": true,
+      "detail": "href=/p/%E4%BA%A7%E5%93%81%E5%BE%AA%E7%8E%AF/r/v2-%E8%90%BD%E5%9C%B0-3?item=%E7%96%91%E9%97%AE-2，没有整页刷新=true，历史 +1"
+    },
+    {
+      "item": 1,
+      "name": "路由 /p/$project/r/$round 渲染，中文轮次经地址往返为有类型的参数",
+      "ok": true,
+      "detail": "地址 /p/%E4%BA%A7%E5%93%81%E5%BE%AA%E7%8E%AF/r/v2-%E8%90%BD%E5%9C%B0-3?item=%E7%96%91%E9%97%AE-2 → params { project: '产品循环', round: 'v2-落地-3' }"
+    },
+    {
+      "item": 1,
+      "name": "查询参数 item 经 Zod 校验，中文值往返",
+      "ok": true,
+      "detail": "search.item = '疑问-2'"
+    },
+    {
+      "item": 2,
+      "name": "AppLink 指向当前页时，React Aria 的 className 函数照常工作",
+      "ok": true,
+      "detail": "aria-current=page，class=\"block rounded-md px-2 py-1.5 text-sm outline-none data-focus…\""
+    },
+    {
+      "item": 3,
+      "name": "Motion：换一屏有平移动画（正常设置）",
+      "ok": true,
+      "detail": "91 帧里 44 帧处在平移中途（如 x=28.9, 24.5, 20.2, 16.6），38 帧处在透明度中途"
+    },
+    {
+      "item": 1,
+      "name": "点「下一条」只改查询参数",
+      "ok": true,
+      "detail": "地址 /p/%E4%BA%A7%E5%93%81%E5%BE%AA%E7%8E%AF/r/v2-%E8%90%BD%E5%9C%B0-3?item=F-7"
+    },
+    {
+      "item": 3,
+      "name": "Zustand persist：折叠左栏后刷新仍记得",
+      "ok": true,
+      "detail": "存进本地的是 {\"state\":{\"sidebarCollapsed\":true},\"version\":0}"
+    },
+    {
+      "item": 1,
+      "name": "在中文深链接上刷新，路由照常解析",
+      "ok": true,
+      "detail": "刷新后 round='v2-落地-3'"
+    },
+    {
+      "item": 1,
+      "name": "后退、前进回到原处",
+      "ok": true,
+      "detail": "后退到 item='疑问-2'，再后退到项目页，前进回到 item='疑问-2'"
+    },
+    {
+      "item": 2,
+      "name": "React Aria Link 的 href 带 ?查询参数 也能单页跳转",
+      "ok": true,
+      "detail": "href=/p/%E4%BA%A7%E5%93%81%E5%BE%AA%E7%8E%AF/r/v2-%E6%A3%80%E6%9F%A5-1?item=F-1 → round='v2-检查-1'，item='F-1'"
+    },
+    {
+      "item": 2,
+      "name": "键盘：焦点在 React Aria Link 上按回车，单页跳转",
+      "ok": true,
+      "detail": "历史 +1"
+    },
+    {
+      "item": 1,
+      "name": "直接打开中文深链接",
+      "ok": true,
+      "detail": "打开 /p/产品循环/r/v2-落地-3?item=疑问-2 → 地址栏 /p/%E4%BA%A7%E5%93%81%E5%BE%AA%E7%8E%AF/r/v2-%E8%90%BD%E5%9C%B0-3?item=%E7%96%91%E9%97%AE-2"
+    },
+    {
+      "item": 4,
+      "name": "截图",
+      "ok": true,
+      "detail": "evidence/round.png"
+    },
+    {
+      "item": 3,
+      "name": "Motion：MotionConfig reducedMotion=\"user\" 在减少动态效果时去掉平移、保留透明度",
+      "ok": true,
+      "detail": "92 帧里 0 帧处在平移中途，32 帧处在透明度中途"
+    },
+    {
+      "item": 3,
+      "name": "Zustand 安全存储：访问 localStorage 就抛 SecurityError，页面照常用",
+      "ok": true,
+      "detail": "折叠前=false，点后=true，页面报错 0 条"
+    },
+    {
+      "item": 3,
+      "name": "Zustand 安全存储：setItem 抛 QuotaExceededError，页面照常用",
+      "ok": true,
+      "detail": "折叠前=false，点后=true，页面报错 0 条"
+    },
+    {
+      "item": 3,
+      "name": "Zustand 安全存储：存的内容不是合法 JSON，页面照常用",
+      "ok": true,
+      "detail": "折叠前=false，点后=true，页面报错 0 条；读取时的错误被接住：SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+    },
+    {
+      "item": 4,
+      "name": "整个过程没有未捕获的页面错误",
+      "ok": true,
+      "detail": "0 条"
+    }
+  ],
+  "probes": [
+    {
+      "name": "照 React Aria 文档把 RouterConfig.href 声明成 ToOptions['to']，具体地址 '/p/产品循环' 成了类型错误",
+      "confirmed": true,
+      "detail": "type-tests-negative/rac-docs-href/rac-docs-href.tsx(13,31): error TS2322: Type '\"/p/产品循环\"' is not assignable to type '\".\" | \"..\" | \"/\" | \"/p/$project\" | \"/p/$project/r/$round\" | undefined'.…"
+    },
+    {
+      "name": "buildLocation({ to }) 把查询串算进了路径参数；buildLocation({ href }) 拆对了",
+      "confirmed": true,
+      "detail": "to → round='v2-检查-1?item=F-1'；href → round='v2-检查-1'，search.item='F-1'"
+    },
+    {
+      "name": "默认查询参数序列化：字符串 '3' 写成 ?item=%223%22，手写的 ?item=3 读成数字 3",
+      "confirmed": true,
+      "detail": "写：{ item: '3' } → ?item=%223%22；读：?item=3 → {\"item\":3}"
+    },
+    {
+      "name": "不加 activeProps 的 createLink，指向当前页时 className 函数被拼成字符串",
+      "confirmed": true,
+      "detail": "class=\"({isCurrent:e})=>e?`probe-current`:`probe-other` active…\""
+    },
+    {
+      "name": "React Aria 文档的 { to } 接法：href 带查询参数，最终也跳对了（TanStack 写进地址后重新解析）",
+      "confirmed": true,
+      "detail": "round='v2-检查-1'，item='F-1'；但 buildLocation({ to }) 的中间结果把查询串算进了路径参数"
+    },
+    {
+      "name": "?item=3 被 TanStack 的默认解析当成数字，z.string() 校验不过，页面进错误边界",
+      "confirmed": true,
+      "detail": "页面显示：这一页的地址参数不对：[ { \"expected\": \"string\", \"code\": \"invalid_type\", \"path\": [ \"item\" ], \"message\"…"
+    },
+    {
+      "name": "字体按需加载：只下载页面上用到的 Noto Sans SC 切片",
+      "confirmed": true,
+      "detail": "Noto Sans SC 已加载=true，Inter 已加载=true；下载了 12 个 Noto 切片（共 101 个）、1 个 Inter 文件"
+    }
+  ]
+}

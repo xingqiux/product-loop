@@ -1,0 +1,22 @@
+{
+  "name": "spike-backend",
+  "version": "0.0.0",
+  "private": true,
+  "description": "开工前的库验证：Hono 类型化客户端跨包、commander 中文帮助对齐、tsdown 打包后端并用 nativeBinding 加载原生文件",
+  "type": "module",
+  "packageManager": "pnpm@11.27.1",
+  "engines": {
+    "node": ">=24.12"
+  },
+  "scripts": {
+    "verify": "node scripts/verify.ts",
+    "verify:rpc": "node scripts/verify-rpc.ts",
+    "verify:cli": "node scripts/verify-cli.ts",
+    "verify:bundle": "node scripts/verify-bundle.ts"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "string-width": "catalog:",
+    "typescript": "catalog:"
+  }
+}

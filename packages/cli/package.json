@@ -1,0 +1,21 @@
+{
+  "name": "@product-loop/cli",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "commands-doc": "node scripts/commands-doc.ts"
+  },
+  "dependencies": {
+    "@commander-js/extra-typings": "catalog:",
+    "@product-loop/client": "workspace:*",
+    "@product-loop/model": "workspace:*",
+    "commander": "catalog:",
+    "string-width": "catalog:"
+  },
+  "devDependencies": {
+    "playwright-core": "catalog:",
+    "tsdown": "catalog:"
+  }
+}

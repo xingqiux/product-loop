@@ -1,0 +1,4 @@
+/* 清掉 Tailwind 自带的颜色，页面上只能用 theme.css 里定义的颜色（决定 193）。要在 untitled-theme.css 之前加载。 */
+@theme {
+  --color-*: initial;
+}

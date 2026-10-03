@@ -1,0 +1,15 @@
+// 客户端只用 import type 引后端，见「01 架构」第三节。biome.json 把它限定在 packages/client/ 下。
+// 写成 import { type … } 时，运行时仍会加载后端，所以也拦。
+// Biome 的 noRestrictedImports 连 import type 一起拦，也没有只拦运行时引入的选项，所以写成插件。
+language js
+
+or {
+  JsModuleSource() as $source where {
+    not $source <: within `import type $names from $from` ,
+    not $source <: within `export type { $names } from $from`
+  },
+  `import($source)`
+} where {
+  $source <: r".(?:@product-loop/backend|(?:\.\./)+backend)(?:/.*)?.",
+  register_diagnostic(span=$source, message="客户端只能用 import type 引后端，运行时不加载后端，见「01 架构」第三节。")
+}

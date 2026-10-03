@@ -1,0 +1,123 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`使用代码输出格式的 JSON Schema > 和快照一致 1`] = `
+"{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "schemaVersion": {
+      "type": "number",
+      "const": 1,
+      "description": "输出格式的版本，现在是 1。"
+    },
+    "startedAt": {
+      "description": "开始运行的时间，写带时区的 ISO 8601。",
+      "type": "string",
+      "format": "date-time"
+    },
+    "finishedAt": {
+      "description": "运行结束的时间，写带时区的 ISO 8601。",
+      "type": "string",
+      "format": "date-time"
+    },
+    "environment": {
+      "description": "环境说明，例如浏览器、窗口大小、用了哪些假的外部服务。",
+      "type": "string",
+      "minLength": 1
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scene": {
+            "type": "string",
+            "pattern": "^S[1-9][0-9]*$",
+            "description": "场景编号，和主线里的相同，例如 S14。"
+          },
+          "steps": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "step": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991,
+                  "description": "步号，和主线里这个场景的步骤编号相同，从 1 数。"
+                },
+                "width": {
+                  "description": "截图时窗口的宽度，单位是像素。命令行的场景不写。",
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "do": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "这一步做什么，照抄主线。"
+                },
+                "expect": {
+                  "type": "string",
+                  "minLength": 1,
+                  "description": "这一步该看到什么，照抄主线。"
+                },
+                "result": {
+                  "description": "结果。分不清是产品坏了还是环境坏了时，写「环境」。",
+                  "type": "string",
+                  "enum": [
+                    "通过",
+                    "断了",
+                    "没走",
+                    "环境"
+                  ]
+                },
+                "screenshot": {
+                  "description": "截图的路径，相对 PLOOP_USE_OUT 目录，只收 PNG。",
+                  "type": "string",
+                  "pattern": "^(?:(?!\\\\.{1,2}\\\\/)[^/\\\\\\\\]+\\\\/)*[^/\\\\\\\\]+\\\\.png$"
+                },
+                "facts": {
+                  "description": "量到的事实，例如顶栏的文字、选项的个数。",
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string"
+                  },
+                  "additionalProperties": {}
+                },
+                "error": {
+                  "description": "没有通过时写原因：断在哪里、为什么没走，或者环境出了什么问题。",
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "step",
+                "do",
+                "expect",
+                "result"
+              ],
+              "additionalProperties": false
+            },
+            "description": "这个场景的每一步。要看排版的步骤，在几个宽度下各写一项。"
+          }
+        },
+        "required": [
+          "scene",
+          "steps"
+        ],
+        "additionalProperties": false
+      },
+      "description": "这次运行走到的场景，每个场景一项。"
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "scenes"
+  ],
+  "additionalProperties": false,
+  "title": "使用代码的输出",
+  "description": "使用代码写进 PLOOP_USE_OUT 目录的 use-run.json。截图也放在这个目录里。"
+}"
+`;

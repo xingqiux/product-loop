@@ -1,0 +1,57 @@
+packages:
+  - packages/*
+
+# Node 的版本不满足根目录 package.json 的 engines 时，安装直接失败，不只是警告。
+engineStrict: true
+
+# pnpm 11 把没有表态的构建脚本当成错误（ERR_PNPM_IGNORED_BUILDS），要逐个写明，
+# 见「02 技术选型」第四节。两个都不用跑：
+# better-sqlite3 13 自带预编译文件，构建脚本（node-gyp rebuild）用不上。
+# esbuild 由 drizzle-kit 带进来，平台包已经装好，postinstall 用不上。
+allowBuilds:
+  better-sqlite3: false
+  esbuild: false
+
+# 依赖版本目录。各包写 "catalog:"，版本只在这里改。
+# 版本和选择的理由见「02 技术选型」。
+catalog:
+  "@biomejs/biome": 2.5.14
+  "@commander-js/extra-typings": 15.0.0
+  "@fontsource-variable/inter": 5.3.0
+  "@fontsource-variable/jetbrains-mono": 5.3.0
+  "@fontsource-variable/noto-sans-sc": 5.3.0
+  "@hono/node-server": 2.1.1
+  "@hono/zod-validator": 0.9.1
+  "@tailwindcss/vite": 4.3.3
+  "@tanstack/react-query": 5.104.0
+  "@tanstack/react-router": 1.170.39
+  "@tanstack/router-plugin": 1.168.40
+  "@types/better-sqlite3": 9.6.0
+  "@types/node": 24.19.0
+  "@types/react-dom": 19.3.0
+  "@types/react": 19.3.0
+  "@untitledui/icons": 0.0.23
+  "@vitejs/plugin-react": 6.1.1
+  better-sqlite3: 13.0.3
+  commander: 15.0.0
+  drizzle-kit: 0.31.11
+  drizzle-orm: 0.45.3
+  hono: 4.13.9
+  knip: 6.38.0
+  marked: 16.4.2
+  mermaid: 12.0.0
+  motion: 13.4.4
+  playwright-core: 1.63.0
+  react-aria-components: 1.21.1
+  react-dom: 19.3.0
+  react: 19.3.0
+  string-width: 8.3.0
+  tailwind-merge: 3.7.0
+  tailwindcss-react-aria-components: 2.2.0
+  tailwindcss: 4.3.3
+  tsdown: 0.23.0
+  typescript: 7.0.2
+  vite: 8.3.1
+  vitest: 5.0.2
+  zod: 4.6.5
+  zustand: 5.0.15

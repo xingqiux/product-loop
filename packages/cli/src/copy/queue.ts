@@ -1,0 +1,232 @@
+import { copy } from "@product-loop/model";
+
+// ploop queue 各子命令的文案，见「04 命令行」第二节、第三节和第九节。
+// 暂时放在命令行里，以后并进共用定义的文案表。
+
+export const queueCopy = {
+  help: {
+    description: copy("队列的查看和维护"),
+    id: copy("队列事项的编号，例如 Q12"),
+    list: {
+      description: copy("列出队列里的事"),
+      details: {
+        default: copy("不写筛选时只列没做完的：待办、进行中、等待。"),
+        order: copy("事多时列最近放进来的，按编号从小到大排。"),
+      },
+      stage: copy("只列这个阶段的，可以写多次"),
+      status: copy("只列这个状态的，可以写多次"),
+      all: copy("连已完成、已取消的一起列"),
+      limit: copy("最多列几件，列编号靠后的，也就是最近放进来的；写 0 列出全部"),
+      examples: {
+        plain: copy("ploop queue list"),
+        stage: copy("ploop queue list --stage 落地 --status 等待"),
+      },
+      after: copy("ploop queue show <编号>"),
+    },
+    show: {
+      description: copy("查看一件事"),
+      details: { what: copy("写全部字段和状态变化。") },
+      examples: { plain: copy("ploop queue show Q12") },
+      after: copy("ploop queue edit <编号>"),
+    },
+    add: {
+      description: copy("放进一件事"),
+      details: {
+        status: copy("状态从待办开始，打印它的编号。"),
+        writing: copy("写作校验在这里执行。"),
+        length: copy("内容不超过 40 个字，细节写进备注。"),
+      },
+      content: copy("要做的事，一句话写清，不超过 40 个字"),
+      stage: copy("要做它的阶段"),
+      proposer: copy("谁提的"),
+      acceptance: copy("验收标准，例如「窄屏下保存按钮完整可见」"),
+      item: copy("一条子项，可以写多次"),
+      source: copy("来源；重新要做一件已完成或已取消的事时，写明接的是哪一件"),
+      note: copy("备注，多行文字，写内容放不下的细节"),
+      blocks: {
+        writing: {
+          situation: copy("内容过不了写作校验"),
+          fix: copy("按报错改写内容再放进去"),
+        },
+        tooLong: {
+          situation: copy("内容超过 40 个字，规矩是 queue.content.tooLong"),
+          fix: copy("缩短内容，细节写进 --note"),
+        },
+        duplicate: {
+          situation: copy("队列里已有同样的事"),
+          fix: copy("用 ploop queue show 查看那一件，不要重复放"),
+        },
+      },
+      examples: {
+        plain: copy('ploop queue add "设置页的保存按钮在窄屏被挡住" --stage 落地'),
+        full: copy(
+          'ploop queue add "队列看板加上按阶段筛选" --stage 构思 --proposer 用户 --acceptance "只看一个阶段时其余的列隐藏"',
+        ),
+        note: copy(
+          'ploop queue add "队列看板加上按阶段筛选" --stage 构思 --note "先做筛选条，再做隐藏其余的列"',
+        ),
+      },
+      after: copy("ploop queue list"),
+    },
+    edit: {
+      description: copy("改一件事"),
+      details: {
+        what: copy("改内容、阶段、验收标准、子项、来源、备注、状态说明或证据。"),
+        length: copy("内容不超过 40 个字，细节写进备注。"),
+        status: copy("状态用 wait、done、drop、reopen 改。"),
+        text: copy("状态说明、证据和依赖只改文字，不改状态。"),
+        same: copy("已完成的事，证据和状态说明是同一句话，一起改。"),
+        stage: copy("阶段只在待办和等待时改。"),
+      },
+      content: copy("新的内容，不超过 40 个字"),
+      stage: copy("改标要做它的阶段"),
+      statusNote: copy("新的状态说明：最近一次改状态时写的原因、依赖或证据"),
+      evidence: copy("新的证据，已完成的事才有"),
+      dependsOn: copy("新的依赖，改成过等待的事才有"),
+      acceptance: copy("新的验收标准"),
+      noAcceptance: copy("删掉验收标准"),
+      item: copy("一条子项，可以写多次；写了就整份替换原来的子项"),
+      noItems: copy("删掉全部子项"),
+      source: copy("新的来源"),
+      noSource: copy("删掉来源"),
+      note: copy("新的备注，多行文字，整份替换"),
+      noNote: copy("删掉备注"),
+      blocks: {
+        conflict: {
+          situation: copy("别的会话同时改了这件事"),
+          fix: copy("运行 ploop queue show 看最新的内容，再改一次"),
+        },
+        empty: { situation: copy("什么都没写"), fix: copy("至少写一个要改的选项") },
+        tooLong: {
+          situation: copy("新的内容超过 40 个字，规矩是 queue.content.tooLong"),
+          fix: copy("缩短内容，细节写进 --note"),
+        },
+      },
+      examples: {
+        plain: copy('ploop queue edit Q12 --acceptance "窄屏下保存按钮完整可见"'),
+        items: copy('ploop queue edit Q12 --item "设置页" --item "队列页"'),
+        note: copy('ploop queue edit Q12 --note "先看窄屏的截图"'),
+        stage: copy("ploop queue edit Q12 --stage 落地"),
+        evidence: copy('ploop queue edit Q12 --evidence "提交 3f2a9c1，第 2 版的落地阶段验收通过"'),
+        dependsOn: copy('ploop queue edit Q12 --depends-on "等构思阶段定下场景"'),
+      },
+      after: copy("ploop queue show <编号>"),
+    },
+    wait: {
+      description: copy("把一件事改成等待"),
+      details: { what: copy("写明它在等什么。") },
+      dependsOn: copy("在等什么，例如「等构思定下场景 S4」"),
+      examples: { plain: copy('ploop queue wait Q9 --depends-on "等构思定下场景 S4"') },
+      after: copy("ploop queue reopen <编号>"),
+    },
+    reopen: {
+      description: copy("把等待或已取消的事改回待办"),
+      details: {
+        what: copy("等待和已取消的事都能改回，编号不变。"),
+        next: copy("改回以后，下一次开始它的阶段时会拿出来。"),
+        again: copy("已经是待办的什么都不做。"),
+        done: copy("已完成的事不能改回，要重新做就放进一件新的，来源写旧的编号。"),
+      },
+      reason: copy("为什么要再做，例如「等的事做完了」"),
+      examples: {
+        plain: copy("ploop queue reopen Q9"),
+        reason: copy('ploop queue reopen Q15 --reason "用户改主意了"'),
+      },
+      after: copy("ploop queue list"),
+    },
+    done: {
+      description: copy("把一件事改成已完成"),
+      details: { what: copy("进行中的事才能改，写明证据。") },
+      evidence: copy("做完的证据，例如提交号或使用记录"),
+      examples: { plain: copy('ploop queue done Q12 --evidence "提交 3f2a9c1"') },
+      after: copy("ploop queue list"),
+    },
+    drop: {
+      description: copy("取消一件事"),
+      details: {
+        reason: copy("原因必填。"),
+        page: copy("阶段开着时取消的，页面列在「取消的事」里。"),
+      },
+      reason: copy("为什么不做了"),
+      examples: { plain: copy('ploop queue drop Q15 --reason "已在第 2 版的落地阶段修掉"') },
+      after: copy("ploop queue list"),
+    },
+    transitionBlocks: {
+      graph: {
+        situation: copy("状态图里没有这一步，例如已完成的事"),
+        fix: copy("等待、已取消的先 ploop queue reopen；已完成的放进新的一件"),
+      },
+      blank: { situation: copy("原因、依赖或证据只写了空白"), fix: copy("写上具体的文字") },
+    },
+    reads: copy("项目缓存的 project.json、主线.md，集中存储的队列"),
+    writes: copy("集中存储的队列；添加和修改时，主线.md 有改动先交成新的修订"),
+    writesNone: copy("不写"),
+  },
+  output: {
+    /** 内容超过 40 个字被拦截时，命令里怎么改：后端写的「备注」，在 add 和 edit 里是 --note 这个选项。 */
+    noteWord: copy("细节写进备注"),
+    noteOption: copy("细节写进 --note"),
+    listHead: copy("列出了 {count} 件事：", { count: 3 }),
+    /** 事多，只列了前面的：默认最多 30 件，--limit 可以改。 */
+    listHeadLimited: copy("列出了最近的 {shown} 件事，共 {count} 件：", { shown: 30, count: 85 }),
+    listMore: copy("还有更早的 {rest} 件没列出，加 --limit 0 重新运行可以列出全部。", { rest: 55 }),
+    listEmpty: copy("没有符合条件的事。"),
+    listRow: copy("  {id}  {status}  {stage}  {content}", {
+      id: "Q12",
+      status: "待办",
+      stage: "落地",
+      content: "设置页的保存按钮在窄屏被挡住",
+    }),
+    head: copy("{id}：{content}", { id: "Q12", content: "设置页的保存按钮在窄屏被挡住" }),
+    note: copy("备注：{text}", { text: "先看窄屏的截图" }),
+    noteHead: copy("备注："),
+    noteLine: copy("  {text}", { text: "先看窄屏的截图" }),
+    status: copy("状态：{status}", { status: "等待" }),
+    stage: copy("阶段：{stage}", { stage: "落地" }),
+    proposer: copy("提出：{proposer}，{time}{round}", {
+      proposer: "AI",
+      time: "2026-09-28 10:05",
+      round: "，在第 2 版的检查阶段",
+    }),
+    proposedIn: copy("，在{round}", { round: "第 2 版的检查阶段" }),
+    statusNote: copy("状态说明：{note}", { note: "已修掉" }),
+    dependsOn: copy("依赖：{text}", { text: "等构思定下场景 S4" }),
+    acceptance: copy("验收标准：{text}", { text: "窄屏下保存按钮完整可见" }),
+    subItemsHead: copy("子项："),
+    subItem: copy("  {n}. {text}", { n: 1, text: "设置页" }),
+    source: copy("来源：{text}", { text: "接 Q3" }),
+    evidence: copy("证据：{text}", { text: "提交 3f2a9c1" }),
+    fromLine: copy("来自：第 {submission} 份回复的第 {line} 行", { submission: 4, line: 2 }),
+    eventsHead: copy("状态变化："),
+    eventCreated: copy("  {time}  放进队列，{to}{round}", {
+      time: "2026-09-28 10:05",
+      to: "待办",
+      round: "，在第 2 版的检查阶段",
+    }),
+    eventMoved: copy("  {time}  {from} → {to}{round}{note}", {
+      time: "2026-09-28 10:05",
+      from: "待办",
+      to: "等待",
+      round: "，在第 2 版的检查阶段",
+      note: "：等构思定下场景 S4",
+    }),
+    eventNote: copy("：{note}", { note: "等构思定下场景 S4" }),
+    added: copy("放进了队列：{id}", { id: "Q1" }),
+    addedDetail: copy("{stage}，{status}：{content}", {
+      stage: "落地",
+      status: "待办",
+      content: "设置页的保存按钮在窄屏被挡住",
+    }),
+    edited: copy("改好了：{id}", { id: "Q12" }),
+    waiting: copy("改成等待：{id}", { id: "Q9" }),
+    reopened: copy("改回待办：{id}", { id: "Q9" }),
+    reopenedNext: copy("下一次开始{stage}阶段时，会拿出它。", { stage: "落地" }),
+    done: copy("做完了：{id}", { id: "Q12" }),
+    dropped: copy("取消了：{id}", { id: "Q15" }),
+  },
+  next: {
+    list: copy("ploop queue list"),
+    show: copy("ploop queue show {id}", { id: "Q12" }),
+    close: copy("ploop round close"),
+  },
+};

@@ -1,0 +1,357 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`JSON Schema > queueEvent 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "actor": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "at": {
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+      "type": "string",
+    },
+    "from": {
+      "enum": [
+        "待办",
+        "进行中",
+        "等待",
+        "已完成",
+        "已取消",
+      ],
+      "type": "string",
+    },
+    "item": {
+      "pattern": "^Q[1-9]\\d*$",
+      "type": "string",
+    },
+    "note": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "round": {
+      "pattern": "^v[1-9]\\d*-(?:构思|使用|检查|落地|提升)-[1-9]\\d*$",
+      "type": "string",
+    },
+    "to": {
+      "enum": [
+        "待办",
+        "进行中",
+        "等待",
+        "已完成",
+        "已取消",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "item",
+    "at",
+    "to",
+    "actor",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`JSON Schema > queueId 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pattern": "^Q[1-9]\\d*$",
+  "type": "string",
+}
+`;
+
+exports[`JSON Schema > queueItem 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "content": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "createdAt": {
+      "format": "date-time",
+      "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d:[0-5]\\d(?:\\.\\d+)?(?:Z|([+-](?:[01]\\d|2[0-3]):[0-5]\\d)))$",
+      "type": "string",
+    },
+    "dependsOn": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "editCount": {
+      "maximum": 9007199254740991,
+      "minimum": 0,
+      "type": "integer",
+    },
+    "evidence": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "fromLine": {
+      "additionalProperties": false,
+      "properties": {
+        "line": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+        "submission": {
+          "maximum": 9007199254740991,
+          "minimum": 1,
+          "type": "integer",
+        },
+      },
+      "required": [
+        "submission",
+        "line",
+      ],
+      "type": "object",
+    },
+    "id": {
+      "pattern": "^Q[1-9]\\d*$",
+      "type": "string",
+    },
+    "note": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "proposedIn": {
+      "pattern": "^v[1-9]\\d*-(?:构思|使用|检查|落地|提升)-[1-9]\\d*$",
+      "type": "string",
+    },
+    "proposer": {
+      "enum": [
+        "用户",
+        "AI",
+        "评审",
+        "别的项目",
+      ],
+      "type": "string",
+    },
+    "source": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "stage": {
+      "enum": [
+        "构思",
+        "使用",
+        "检查",
+        "落地",
+        "提升",
+      ],
+      "type": "string",
+    },
+    "status": {
+      "enum": [
+        "待办",
+        "进行中",
+        "等待",
+        "已完成",
+        "已取消",
+      ],
+      "type": "string",
+    },
+    "statusNote": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "subItems": {
+      "items": {
+        "pattern": "\\S",
+        "type": "string",
+      },
+      "type": "array",
+    },
+  },
+  "required": [
+    "id",
+    "content",
+    "stage",
+    "proposer",
+    "createdAt",
+    "status",
+    "subItems",
+    "editCount",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`JSON Schema > queueItemCreate 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "content": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "dependsOn": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "note": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "proposer": {
+      "enum": [
+        "用户",
+        "AI",
+        "评审",
+        "别的项目",
+      ],
+      "type": "string",
+    },
+    "source": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "stage": {
+      "enum": [
+        "构思",
+        "使用",
+        "检查",
+        "落地",
+        "提升",
+      ],
+      "type": "string",
+    },
+    "subItems": {
+      "items": {
+        "pattern": "\\S",
+        "type": "string",
+      },
+      "type": "array",
+    },
+  },
+  "required": [
+    "content",
+    "stage",
+    "proposer",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`JSON Schema > queueItemUpdate 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acceptance": {
+      "anyOf": [
+        {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        {
+          "type": "null",
+        },
+      ],
+    },
+    "content": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "dependsOn": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "evidence": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "note": {
+      "anyOf": [
+        {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        {
+          "type": "null",
+        },
+      ],
+    },
+    "source": {
+      "anyOf": [
+        {
+          "pattern": "\\S",
+          "type": "string",
+        },
+        {
+          "type": "null",
+        },
+      ],
+    },
+    "stage": {
+      "enum": [
+        "构思",
+        "使用",
+        "检查",
+        "落地",
+        "提升",
+      ],
+      "type": "string",
+    },
+    "statusNote": {
+      "pattern": "\\S",
+      "type": "string",
+    },
+    "subItems": {
+      "items": {
+        "pattern": "\\S",
+        "type": "string",
+      },
+      "type": "array",
+    },
+  },
+  "type": "object",
+}
+`;
+
+exports[`JSON Schema > replyLineRef 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "line": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer",
+    },
+    "submission": {
+      "maximum": 9007199254740991,
+      "minimum": 1,
+      "type": "integer",
+    },
+  },
+  "required": [
+    "submission",
+    "line",
+  ],
+  "type": "object",
+}
+`;
+
+exports[`JSON Schema > roundLabel 能导出，结果和快照相同 1`] = `
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "pattern": "^v[1-9]\\d*-(?:构思|使用|检查|落地|提升)-[1-9]\\d*$",
+  "type": "string",
+}
+`;

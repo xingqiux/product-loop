@@ -1,0 +1,137 @@
+/* 中保真线稿的积木，从旧模板的 10-base.css 搬来，颜色改用主题变量。放进 Shadow DOM 里用。 */
+:host {
+  display: block;
+  font: 12px / 1.4 var(--font-body);
+  color: var(--color-text-primary);
+}
+.mock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.mk-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px 8px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+.mk-tab {
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: var(--color-text-tertiary);
+}
+.mk-tab.on {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+.mk-btn {
+  padding: 3px 10px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 6px;
+  background: var(--color-bg-primary);
+  white-space: nowrap;
+}
+.mk-btn.primary {
+  background: var(--color-bg-brand-solid);
+  color: var(--color-white);
+  border-color: var(--color-bg-brand-solid);
+}
+.mk-btn.on {
+  border-color: var(--color-fg-brand-primary);
+  color: var(--color-fg-brand-primary);
+}
+.mk-select {
+  padding: 3px 10px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.mk-input {
+  flex: 1;
+  padding: 3px 10px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 6px;
+  color: var(--color-text-tertiary);
+}
+.mk-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--color-border-secondary);
+}
+.mk-row:last-child {
+  border-bottom: 0;
+}
+.mk-row.on {
+  background: var(--color-bg-secondary);
+}
+.mk-meta {
+  margin-left: auto;
+  color: var(--color-text-tertiary);
+  white-space: nowrap;
+}
+.mk-thumb {
+  flex: 0 0 34px;
+  height: 22px;
+  border-radius: 3px;
+  background: var(--color-bg-secondary);
+}
+.mk-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.mk-card {
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.mk-card .mk-img {
+  height: 44px;
+  background: var(--color-bg-secondary);
+}
+.mk-card .mk-title {
+  padding: 4px 6px;
+  font-weight: 600;
+}
+.mk-card .mk-sub {
+  padding: 0 6px 4px;
+  color: var(--color-text-tertiary);
+  font-size: 11px;
+}
+.mk-side {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px;
+}
+.mk-badge {
+  padding: 0 6px;
+  border: 1px solid var(--color-border-secondary);
+  border-radius: 999px;
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+}
+.mk-note {
+  color: var(--color-text-error-primary);
+  font-size: 11px;
+}
+.mk-canvas {
+  min-height: 70px;
+  border: 1px dashed var(--color-border-secondary);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-tertiary);
+}
+img {
+  max-width: 100%;
+}
+/* 表格里长的几列不把短词（「这一步」「写计划」）挤成一字一行。 */
+th,
+td {
+  min-width: 4.5em;
+}

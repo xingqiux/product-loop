@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.env
+.env.*
+coverage/
+
+# 这个软件自己跑产品循环的项目缓存，不进版本库
+.product-loop/
+*.tsbuildinfo

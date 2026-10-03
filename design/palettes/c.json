@@ -1,0 +1,221 @@
+{
+ "id": "c",
+ "name": "系统原生",
+ "direction": "C「系统原生感」：纯白的面，Apple 的三级 label 灰和一条分隔线，系统蓝是唯一的强调色，绿橙红只作小的状态标记；层次靠字重和字号。",
+ "named": [
+  {
+   "name": "底",
+   "hex": "#FFFFFF",
+   "use": "页面、卡片、弹层；状态标签也用白底（不铺彩色浅底）",
+   "apple": "systemBackground"
+  },
+  {
+   "name": "灰底",
+   "hex": "#F5F5F7",
+   "use": "看板的列、表头、左边一栏、灰卡片",
+   "apple": "apple.com --sk-fill-tertiary（≈ secondarySystemBackground）"
+  },
+  {
+   "name": "线",
+   "hex": "#E5E5EA",
+   "use": "卡片和表格的细线、分隔线；悬停的底、阶段条的底、代码小块、进度条的槽",
+   "apple": "systemGray5（≈ macOS separator，黑 10%）"
+  },
+  {
+   "name": "标记灰",
+   "hex": "#86868B",
+   "use": "未选的圆圈、已收尾的小方块、空值的横线和 0、面包屑的斜线、虚线框、输入框提示字",
+   "apple": "apple.com --sk-glyph-gray-tertiary（tertiaryLabel 的实色版）"
+  },
+  {
+   "name": "次字",
+   "hex": "#636369",
+   "use": "说明、属性、时间、小标题、线性图标",
+   "apple": "secondaryLabel 的底色 rgb(60,60,67) 在白上取 80% 的实色（apple.com 的 #6E6E73 约相当于 74%；再深一档，在线灰的填充上也过 4.5:1）"
+  },
+  {
+   "name": "字",
+   "hex": "#1D1D1F",
+   "use": "标题、正文、表格正文、按钮字、深色小块",
+   "apple": "apple.com --sk-body-text-color（label）"
+  },
+  {
+   "name": "蓝",
+   "hex": "#0066CC",
+   "use": "唯一的强调色：主按钮、链接、选中、当前阶段、打勾、等你回复、焦点环；6% 作当前、选中和等你回复的浅底，30% 作细环和选中文字的底",
+   "apple": "apple.com --sk-body-link-color / glyph-blue（systemBlue 的可读版）"
+  },
+  {
+   "name": "绿",
+   "hex": "#008009",
+   "use": "已完成、AI 已收到、加的行的字、打勾；30% 作细环和图例点",
+   "apple": "apple.com --sk-glyph-green（systemGreen 的可读版）"
+  },
+  {
+   "name": "橙",
+   "hex": "#B64400",
+   "use": "等待、没收尾、不认可、要体检；30% 作细环",
+   "apple": "apple.com --sk-glyph-orange（systemOrange 的可读版）"
+  },
+  {
+   "name": "红",
+   "hex": "#E30000",
+   "use": "删的行的字、改前、出错；30% 作删除线和图例点",
+   "apple": "apple.com --sk-glyph-red（systemRed 的可读版）"
+  }
+ ],
+ "roles": {
+  "底": "底",
+  "次一级的底": "灰底",
+  "悬停的底": "线",
+  "线": "线",
+  "重一点的线": "标记灰",
+  "字": "字",
+  "次要的字": "字",
+  "说明的字": "次字",
+  "标注的字": "次字",
+  "图标": "次字",
+  "强调": "蓝",
+  "强调的深色": "蓝",
+  "强调的浅底": "蓝",
+  "选中的底": "蓝",
+  "完成": "绿",
+  "等待": "橙",
+  "删": "红",
+  "删的底": "底",
+  "加的底": "底"
+ },
+ "role_alpha": {
+  "强调的浅底": 0.06,
+  "选中的底": 0.06
+ },
+ "vars": {
+  "--color-neutral-50": "#F5F5F7",
+  "--color-neutral-100": "#E5E5EA",
+  "--color-neutral-200": "#E5E5EA",
+  "--color-neutral-300": "#86868B",
+  "--color-neutral-400": "#636369",
+  "--color-neutral-500": "#636369",
+  "--color-neutral-600": "#636369",
+  "--color-neutral-700": "#1D1D1F",
+  "--color-neutral-800": "#1D1D1F",
+  "--color-neutral-900": "#1D1D1F",
+  "--color-neutral-950": "#1D1D1F",
+  "--color-brand-25": "#0066CC0F",
+  "--color-brand-50": "#0066CC0F",
+  "--color-brand-100": "#0066CC4C",
+  "--color-brand-200": "#0066CC4C",
+  "--color-brand-300": "#0066CC4C",
+  "--color-brand-400": "#0066CC",
+  "--color-brand-500": "#0066CC",
+  "--color-brand-600": "#0066CC",
+  "--color-brand-700": "#0066CC",
+  "--color-brand-800": "#0066CC",
+  "--color-brand-900": "#0066CC",
+  "--color-brand-950": "#0066CC",
+  "--color-green-50": "#FFFFFF",
+  "--color-green-100": "#FFFFFF",
+  "--color-green-200": "#0080094C",
+  "--color-green-300": "#0080094C",
+  "--color-green-400": "#008009",
+  "--color-green-500": "#008009",
+  "--color-green-600": "#008009",
+  "--color-green-700": "#008009",
+  "--color-green-800": "#008009",
+  "--color-green-900": "#008009",
+  "--color-green-950": "#008009",
+  "--color-yellow-50": "#FFFFFF",
+  "--color-yellow-100": "#FFFFFF",
+  "--color-yellow-200": "#B644004C",
+  "--color-yellow-300": "#B644004C",
+  "--color-yellow-400": "#FFFFFF",
+  "--color-yellow-500": "#B64400",
+  "--color-yellow-600": "#B64400",
+  "--color-yellow-700": "#B64400",
+  "--color-yellow-800": "#B64400",
+  "--color-yellow-900": "#B64400",
+  "--color-yellow-950": "#B64400",
+  "--color-red-50": "#FFFFFF",
+  "--color-red-100": "#FFFFFF",
+  "--color-red-200": "#E300004C",
+  "--color-red-300": "#E300004C",
+  "--color-red-400": "#E30000",
+  "--color-red-500": "#E30000",
+  "--color-red-600": "#E30000",
+  "--color-red-700": "#E30000",
+  "--color-red-800": "#E30000",
+  "--color-red-900": "#E30000",
+  "--color-red-950": "#E30000",
+  "--color-border-primary": "var(--color-neutral-200)",
+  "--color-border-secondary_alt": "var(--color-neutral-200)",
+  "--color-text-placeholder": "var(--color-neutral-300)",
+  "--color-bg-brand-solid_hover": "#0066CCD9",
+  "--color-gray-600": "#636369",
+  "--color-gray-900": "#1D1D1F"
+ },
+ "literals": {
+  "#FFFFFF": "#FFFFFF",
+  "#F7F8FA": "#F5F5F7",
+  "#F0F1F4": "#E5E5EA",
+  "#E4E6EB": "#E5E5EA",
+  "#D0D4DB": "#86868B",
+  "#16191E": "#1D1D1F",
+  "#3A404A": "#1D1D1F",
+  "#545B67": "#636369",
+  "#717885": "#636369",
+  "#9EA4AE": "#636369",
+  "#3558D4": "#0066CC",
+  "#2B47B3": "#0066CC",
+  "#EEF2FD": "#0066CC0F",
+  "#F6F8FE": "#0066CC0F",
+  "#1F7A4D": "#008009",
+  "#8A5A00": "#B64400",
+  "#9A2D24": "#E30000",
+  "#EEF7F2": "#FFFFFF",
+  "#FDF1F0": "#FFFFFF"
+ },
+ "literals_extra": {
+  "#10141C": "#1D1D1F",
+  "#000000": "#1D1D1F",
+  "#D5D7DA": "#86868B"
+ },
+ "rationale": "照 Apple 平台的做法：纯白的面，灰只分三级——字 #1D1D1F / 次字 #636369 / 标记灰 #86868B，对应 label / secondaryLabel / tertiaryLabel 在白底上的实色版；一条线（systemGray5 #E5E5EA，和 macOS separatorColor 黑 9.8% 一样深），一块灰底（apple.com 的 #F5F5F7）。蓝 #0066CC 是唯一的强调色；绿、橙、红只出现在字、小点和细环上，状态标签一律白底，删/加的行也不再铺红绿底，靠字色、删除线和 −/+ 区分。为什么不用 Apple 的原值：iOS 的 secondaryLabel 是 rgb(60,60,67) 的 60% 透明度，叠在白上只有 3.4:1，macOS 的 secondaryLabelColor（黑 49.8%）只有 3.9:1；apple.com 用的实色 #6E6E73（白底 5.0:1）约相当于同一底色取 74%，但原型里次字还会落在线灰的填充上（阶段条的槽、代码小块），只有 4.0–4.2:1，所以同一个底色取到 80%，得 #636369，白底 6.0、灰底 5.5、线灰上 4.75。HIG 的高对比度绿/橙/红在白底只有约 4.55:1、上了灰底就不够；apple.com 的 glyph 色 #008009 / #B64400 / #E30000 在白底和灰底都过 4.5:1，而且是高彩度的纯色相，不是棕、橄榄或发灰的浅底。所有灰都是 Apple 的近中性灰（OKLCH 彩度 ≤0.01；旧的中深灰是 0.016–0.022 的蓝灰）；状态色彩度 0.16–0.24（旧的 0.11–0.15，#8A5A00 落在 73° 的橄榄棕上）。层次靠字重和字号：原型里 900/800/700 三档字合成一个字色，600/500/400 三档合成一个次字色。透明度只用两档：蓝 6% 作当前、选中和等你回复的浅底（两层叠在一起时蓝字仍有 4.7:1），四个色相各 30% 作同色细环、图例点和删除线（Apple 网页的徽标同样用本色的透明度作底）。其余改动：按钮和输入框的边从重线改为细线（它们不表示状态），输入提示字改为标记灰，主按钮悬停改为 85% 的蓝（变浅，apple.com 的做法）；原型阴影里的蓝黑 #10141C 和 Untitled 的黑色阴影换成字色的透明度版本；yellow-400 只出现在原型顶栏的候选高亮上，映射为底色。代价：已收尾的小方块从 #D0D4DB 变成标记灰 #86868B（它们是可点的按钮，要 3:1），项目页的阶段格子比原来重一些。",
+ "sources": [
+  {
+   "title": "Apple Human Interface Guidelines — Color（语义色按用途定义：label / secondaryLabel / tertiaryLabel、separator；不要只靠颜色传达信息；强调色只给真正需要强调的元素）",
+   "url": "https://developer.apple.com/design/human-interface-guidelines/color"
+  },
+  {
+   "title": "HIG Color 页面数据（系统色与 systemGray 各档的默认 / 高对比度 RGB，如 systemGray5 = 229,229,234）",
+   "url": "https://developer.apple.com/tutorials/data/design/human-interface-guidelines/color.json"
+  },
+  {
+   "title": "iOS 浅色模式 UIColor 实际值（secondaryLabel = rgb(60,60,67) 60%、separator 29%、opaqueSeparator、systemGray1–6）",
+   "url": "https://noahgilmore.com/blog/dark-mode-uicolor-compatibility"
+  },
+  {
+   "title": "macOS 系统色实际值（labelColor 黑 84.7%、secondaryLabelColor 黑 49.8%、separatorColor 黑 9.8%、linkColor rgb(0,104,218)）",
+   "url": "https://gist.github.com/andrejilderda/8677c565cddc969e6aae7df48622d47c"
+  },
+  {
+   "title": "apple.com 样式表的 --sk-* 变量（glyph-gray #1D1D1F / glyph-gray-secondary #6E6E73 / glyph-gray-tertiary #86868B、glyph-blue #0066CC、fill-tertiary #F5F5F7、glyph-green/orange/red、徽标底用本色 10% 透明度）",
+   "url": "https://www.apple.com/v/homepage/a/styles/main.built.css"
+  },
+  {
+   "title": "NSColor.linkColor — “The color to use for links.”",
+   "url": "https://developer.apple.com/documentation/appkit/nscolor/linkcolor"
+  },
+  {
+   "title": "MacStories：Things 3 — “dominated by white space, but it uses bold fonts, lovely icons, and thoughtful splashes of color”",
+   "url": "https://www.macstories.net/reviews/things-3-beauty-and-delight-in-a-task-manager/"
+  },
+  {
+   "title": "Things 的设计变量拆解：一个系统字体、一个钴蓝强调色，只出现在链接和主按钮上",
+   "url": "https://www.shadcn.io/design/things"
+  },
+  {
+   "title": "MacStories：Craft 评测 — “a thoroughly native experience”，字体全部来自 Apple 的 San Francisco，页边距宽",
+   "url": "https://www.macstories.net/reviews/craft-review-a-powerful-native-notes-and-collaboration-app/"
+  }
+ ]
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@spike/backend",
+  "version": "0.0.0",
+  "private": true,
+  "description": "包 A：导出 Hono 应用和它的类型 AppType（代表正式仓库的 packages/backend）",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "start": "node src/serve.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@hono/node-server": "catalog:",
+    "@hono/zod-validator": "catalog:",
+    "hono": "catalog:",
+    "zod": "catalog:"
+  }
+}

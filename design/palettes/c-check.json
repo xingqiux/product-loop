@@ -1,0 +1,209 @@
+{
+ "palette": [
+  "底 #FFFFFF",
+  "灰底 #F5F5F7",
+  "线 #E5E5EA",
+  "标记灰 #86868B",
+  "次字 #636369",
+  "字 #1D1D1F",
+  "蓝 #0066CC",
+  "绿 #008009",
+  "橙 #B64400",
+  "红 #E30000"
+ ],
+ "distinct_named_colors_rendered_in_ui": 10,
+ "named_colors_rendered": {
+  "底": 283,
+  "线": 414,
+  "字": 555,
+  "标记灰": 147,
+  "次字": 805,
+  "蓝": 192,
+  "灰底": 71,
+  "橙": 56,
+  "绿": 66,
+  "红": 36
+ },
+ "alpha_variants_rendered": {
+  "蓝 6% (bg)": 17,
+  "蓝 30% (shadow/ring)": 34,
+  "字 18% (shadow/ring)": 26,
+  "字 5% (shadow/ring)": 26,
+  "字 4% (shadow/ring)": 50,
+  "底 60% (stroke)": 20,
+  "橙 30% (shadow/ring)": 17,
+  "线 80% (bg)": 14,
+  "灰底 60% (bg)": 5,
+  "绿 30% (shadow/ring)": 15,
+  "灰底 70% (bg)": 2,
+  "字 8% (shadow/ring)": 1,
+  "线 80% (shadow/ring)": 5,
+  "红 30% (bg)": 2,
+  "绿 30% (bg)": 2,
+  "红 30% (decoration)": 11
+ },
+ "colors_not_in_palette": {},
+ "contrast_palette": [
+  {
+   "color": "字",
+   "hex": "#1D1D1F",
+   "need": 7,
+   "on_white": 16.83,
+   "on_gray": 15.46,
+   "on_blue_tint": 14.99,
+   "note": "标题、正文、表格正文"
+  },
+  {
+   "color": "次字",
+   "hex": "#636369",
+   "need": 4.5,
+   "on_white": 5.97,
+   "on_gray": 5.48,
+   "on_blue_tint": 5.31,
+   "note": "说明、属性、时间、小标题、图标"
+  },
+  {
+   "color": "标记灰",
+   "hex": "#86868B",
+   "need": 3,
+   "on_white": 3.62,
+   "on_gray": 3.33,
+   "on_blue_tint": 3.23,
+   "note": "未选圆圈、已收尾方块、空值横线（状态标记）"
+  },
+  {
+   "color": "蓝",
+   "hex": "#0066CC",
+   "need": 4.5,
+   "on_white": 5.57,
+   "on_gray": 5.11,
+   "on_blue_tint": 4.96,
+   "note": "链接、选中的字、等你回复的字"
+  },
+  {
+   "color": "绿",
+   "hex": "#008009",
+   "need": 4.5,
+   "on_white": 5.13,
+   "on_gray": 4.71,
+   "on_blue_tint": 4.57,
+   "note": "已完成、加的行的字"
+  },
+  {
+   "color": "橙",
+   "hex": "#B64400",
+   "need": 4.5,
+   "on_white": 5.5,
+   "on_gray": 5.05,
+   "on_blue_tint": 4.9,
+   "note": "等待、没收尾、要体检"
+  },
+  {
+   "color": "红",
+   "hex": "#E30000",
+   "need": 4.5,
+   "on_white": 4.92,
+   "on_gray": 4.52,
+   "on_blue_tint": 4.38,
+   "note": "删的行的字"
+  },
+  {
+   "color": "线",
+   "hex": "#E5E5EA",
+   "need": null,
+   "on_white": 1.26,
+   "on_gray": 1.15,
+   "on_blue_tint": 1.12,
+   "note": "装饰性细线（不表示状态）"
+  }
+ ],
+ "contrast_extra": {
+  "white_on_blue_button": 5.57,
+  "gray_bg_vs_white": 1.09
+ },
+ "contrast_rendered_text": {
+  "字": {
+   "n": 427,
+   "min": 13.41,
+   "minSample": "skill: 「ploop doctor」 on #E5E5EA",
+   "bgs": [
+    "#FFFFFF",
+    "#F5F5F7",
+    "#F0F6FC",
+    "#F8F8F9",
+    "#F9F9FA",
+    "#E5E5EA"
+   ]
+  },
+  "标记灰": {
+   "n": 68,
+   "min": 3.33,
+   "minSample": "project: 「0」 on #F5F5F7",
+   "bgs": [
+    "#FFFFFF",
+    "#F5F5F7"
+   ]
+  },
+  "次字": {
+   "n": 690,
+   "min": 4.75,
+   "minSample": "boardb: 「ploop doctor」 on #E5E5EA",
+   "bgs": [
+    "#FFFFFF",
+    "#F5F5F7",
+    "#EAEAEE",
+    "#E5E5EA",
+    "#F0F6FC",
+    "#F8F8F9",
+    "#F9F9FA"
+   ]
+  },
+  "底": {
+   "n": 38,
+   "min": 5.57,
+   "minSample": "skill: 「1」 on #0066CC",
+   "bgs": [
+    "#0066CC",
+    "#1D1D1F"
+   ]
+  },
+  "蓝": {
+   "n": 51,
+   "min": 4.65,
+   "minSample": "accept: 「落地」 on #EAEAEE",
+   "bgs": [
+    "#F0F6FC",
+    "#EAEAEE",
+    "#FFFFFF",
+    "#F5F5F7",
+    "#E1EDF9",
+    "#F8F8F9"
+   ]
+  },
+  "橙": {
+   "n": 21,
+   "min": 5.5,
+   "minSample": "board: 「在那个项目的会话里运行」 on #FFFFFF",
+   "bgs": [
+    "#FFFFFF"
+   ]
+  },
+  "绿": {
+   "n": 27,
+   "min": 5.13,
+   "minSample": "queue: 「已完成」 on #FFFFFF",
+   "bgs": [
+    "#FFFFFF"
+   ]
+  },
+  "红": {
+   "n": 22,
+   "min": 4.92,
+   "minSample": "compare: 「−」 on #FFFFFF",
+   "bgs": [
+    "#FFFFFF"
+   ]
+  }
+ },
+ "text_below_threshold": []
+}

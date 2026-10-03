@@ -1,0 +1,20 @@
+{
+  "name": "@spike/client",
+  "version": "0.0.0",
+  "private": true,
+  "description": "包 B：只引入包 A 的类型，用 hc<AppType> 调接口（代表正式仓库的 packages/client）",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "typecheck:errors": "tsc --noEmit -p tsconfig.type-errors.json"
+  },
+  "dependencies": {
+    "hono": "catalog:"
+  },
+  "devDependencies": {
+    "@spike/backend": "workspace:*"
+  }
+}

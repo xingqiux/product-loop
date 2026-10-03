@@ -1,0 +1,5 @@
+{
+  // 反例：verify 期望这个工程的类型检查失败，并且只错在 wrong-param.tsx 的 rund 上。
+  "extends": "../../tsconfig.json",
+  "include": ["../../src", "./*.tsx"]
+}
